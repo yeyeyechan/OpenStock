@@ -35,21 +35,22 @@ if __name__ == "__main__":
     input_dict["2nd_trans_price"] = "13000000000"
     input_dict["2nd_gubun"] = ""
     input_dict["2nd_up_target"] = 3.0
+    TR_1206_collection = make_collection("stock_data", "TR_1206")
 
 
     expected_stock_code_list = {}
     for i in test_date:
-        first_condition_data = first_condition(i , input_dict)
+        first_condition_data = first_condition(i , input_dict, TR_1206_collection)
         expected_stock_code_list[i.strftime("%Y%m%d")] = copy(first_condition_data)
         update_collection(collection, {"일자":i.strftime("%Y%m%d") , "stock_code" : copy(first_condition_data) })
-    result_data_dict = checked_result_data = check_with_data(expected_stock_code_list , 5.0)
-    actual_data_dict = actual_data = check_actual_total_data(test_date, 5.0)
+    result_data_dict = checked_result_data = check_with_data(expected_stock_code_list , 5.0, TR_1206_collection)
+    actual_data_dict = actual_data = check_actual_total_data(test_date, 5.0, TR_1206_collection)
 
     for key , value in result_data_dict.items():
         if type(value) == list:
             print("예측 종목 중 실제 5퍼 이상 상승 종목    "+ key + "   실제 값 " +'     '.join(value))
         else:
-            #print("예측 종목 중 실제 5퍼 이상 상승 종목    "+ key + "   실제 값 " +value)
+            print("예측 종목 중 실제 5퍼 이상 상승 종목    "+ key + "   실제 값 " +value)
     #print("전 종목 중 실제 5퍼 이상 상승 종목    "+ actual_data_dict)
     for i in test_date:
         print(i.strftime("%Y%m%d")+ "일자 상승 예상 종목  수  " + str(checked_result_data[i.strftime("%Y%m%d")+"_total_count"]))

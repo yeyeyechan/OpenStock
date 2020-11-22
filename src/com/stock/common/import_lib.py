@@ -28,7 +28,6 @@ from src.com.stock.util.date import *
 from src.com.stock.util.data_check import *
 from src.com.stock.analysis.analysis import *
 from src.com.stock.util.toExcel import *
-
 TR_1206_len_counts = 0
 
 myLogger = logging.getLogger("myLogger")
@@ -38,6 +37,37 @@ upjong_code_mst_logger = logging.getLogger("upjong_code_mst")
 Today_date = datetime.now()
 Today_date = Today_date.strftime("%Y%m%d")
 
+TR_output_dict ={
+    "TR_1500": {
+        "single_output": []
+        ,
+        "multi_output": [
+            "L분류코드",
+            "S분류코드",
+            "테마명   ",
+            "평균상승 ",
+        ],
+    },
+    "TR_1500_1" : {
+        "single_output": [
+            "상승종목수      " ,
+            "총종목수        " ,
+            "상승율          "
+        ] ,
+        "multi_output": [
+            "단축코드        " ,
+            "한글종목명      " ,
+            "현재가          " ,
+            "전일대비구분    " ,
+            "전일대비        " ,
+            "전일대비율      " ,
+            "거래강도        " ,
+            "누적거래량      " ,
+            "업종구분        "
+        ] ,
+    }
+
+}
 '''KOSPI_UPJONG_CODE={
 "0001"	:"종합주가지수(KOSPI)",
 "0002"	:"대형주",

@@ -51,16 +51,17 @@ pk_dict = {"일자": "" , "데이터구분":""} # document 간 pk나 중요정�
 last_call = False
 
 if __name__ == "__main__":
-    #drop_collection("stock_data", "TR_1205")
+    drop_collection("stock_data", "TR_1205")
     app = QApplication(sys.argv)
+    IndiControl = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
 
     collection = make_collection("stock_data", "TR_1205")
-    activate_Tr = tr_object("TR_1205", collection)
+    activate_Tr = tr_object("TR_1205", collection, IndiControl)
 
 
     upjong = ["0", "1"]
 
-    start_date = get_kr_working_day("20201117", "20201117")
+    start_date = get_kr_working_day("20200101", "20201120")
 
     data_kind = "price"
 

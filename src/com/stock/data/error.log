@@ -6800,3 +6800,274 @@
 2020-11-17 20:47:21,110 DEBUG [TR_1206] [TR_1206.py:146] - TR_1206 호占쏙옙 占싹뤄옙
 2020-11-18 23:10:20,824 DEBUG [TR_1206] [TR_1206.py:144] - TR_1206 호占쏙옙 占쏙옙占쏙옙
 2020-11-18 23:10:20,828 DEBUG [TR_1206] [TR_1206.py:146] - TR_1206 호占쏙옙 占싹뤄옙
+2020-11-22 15:51:43,351 DEBUG [TR_1206] [TR_1206.py:144] - TR_1206 호출 시작
+2020-11-22 15:51:43,354 DEBUG [TR_1206] [TR_1206.py:146] - TR_1206 호출 완료
+2020-11-22 15:51:44,536 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 900080가 4 만큼 적재 되었습니다.
+2020-11-22 15:51:46,397 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 900290가 4 만큼 적재 되었습니다.
+2020-11-22 15:52:55,324 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 002420가 4 만큼 적재 되었습니다.
+2020-11-22 15:53:15,050 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 003280가 4 만큼 적재 되었습니다.
+2020-11-22 15:53:17,341 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 003410가 4 만큼 적재 되었습니다.
+2020-11-22 15:53:17,880 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 003415가 4 만큼 적재 되었습니다.
+2020-11-22 15:54:42,199 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 007630가 4 만큼 적재 되었습니다.
+2020-11-22 15:54:57,186 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 008800가 4 만큼 적재 되었습니다.
+2020-11-22 15:55:11,454 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 009730가 4 만큼 적재 되었습니다.
+2020-11-22 15:55:12,907 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 009810가 4 만큼 적재 되었습니다.
+2020-11-22 15:55:21,004 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 010580가 4 만큼 적재 되었습니다.
+2020-11-22 15:55:35,292 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 011690가 4 만큼 적재 되었습니다.
+2020-11-22 15:55:39,796 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 012170가 4 만큼 적재 되었습니다.
+2020-11-22 15:55:54,570 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 014100가 4 만큼 적재 되었습니다.
+2020-11-22 15:56:05,745 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 015230가 4 만큼 적재 되었습니다.
+2020-11-22 15:56:11,623 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 016250가 4 만큼 적재 되었습니다.
+2020-11-22 15:56:46,438 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 021820가 4 만큼 적재 되었습니다.
+2020-11-22 15:57:01,048 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 024830가 4 만큼 적재 되었습니다.
+2020-11-22 15:57:20,181 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 028040가 4 만큼 적재 되었습니다.
+2020-11-22 15:57:41,969 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 032790가 4 만큼 적재 되었습니다.
+2020-11-22 15:57:47,020 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 033110가 4 만큼 적재 되었습니다.
+2020-11-22 15:57:53,415 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 033430가 4 만큼 적재 되었습니다.
+2020-11-22 15:57:55,796 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 033600가 4 만큼 적재 되었습니다.
+2020-11-22 15:57:57,703 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 033790가 4 만큼 적재 되었습니다.
+2020-11-22 15:58:07,251 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 035290가 4 만큼 적재 되었습니다.
+2020-11-22 15:58:15,336 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 036180가 4 만큼 적재 되었습니다.
+2020-11-22 15:58:16,802 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 036260가 4 만큼 적재 되었습니다.
+2020-11-22 15:58:34,342 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 038160가 4 만큼 적재 되었습니다.
+2020-11-22 15:58:42,474 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 039230가 4 만큼 적재 되었습니다.
+2020-11-22 15:58:47,439 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 039670가 4 만큼 적재 되었습니다.
+2020-11-22 15:59:05,308 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 043100가 4 만큼 적재 되었습니다.
+2020-11-22 15:59:09,411 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 043590가 4 만큼 적재 되었습니다.
+2020-11-22 15:59:35,966 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 049180가 4 만큼 적재 되었습니다.
+2020-11-22 15:59:43,355 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 050320가 4 만큼 적재 되었습니다.
+2020-11-22 15:59:43,955 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 050540가 4 만큼 적재 되었습니다.
+2020-11-22 15:59:53,617 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 052190가 4 만큼 적재 되었습니다.
+2020-11-22 15:59:59,173 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 052770가 4 만큼 적재 되었습니다.
+2020-11-22 16:00:09,211 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 053660가 4 만큼 적재 되었습니다.
+2020-11-22 16:00:14,293 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 054220가 4 만큼 적재 되었습니다.
+2020-11-22 16:00:24,409 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 056730가 4 만큼 적재 되었습니다.
+2020-11-22 16:00:28,292 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 058220가 4 만큼 적재 되었습니다.
+2020-11-22 16:00:30,187 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 058450가 4 만큼 적재 되었습니다.
+2020-11-22 16:00:31,184 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 058530가 4 만큼 적재 되었습니다.
+2020-11-22 16:00:39,311 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 060300가 4 만큼 적재 되었습니다.
+2020-11-22 16:00:53,288 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 064520가 4 만큼 적재 되었습니다.
+2020-11-22 16:00:56,939 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 065150가 4 만큼 적재 되었습니다.
+2020-11-22 16:00:58,833 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 065420가 4 만큼 적재 되었습니다.
+2020-11-22 16:01:02,483 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 065620가 4 만큼 적재 되었습니다.
+2020-11-22 16:01:06,172 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 066110가 4 만큼 적재 되었습니다.
+2020-11-22 16:01:11,588 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 066790가 4 만큼 적재 되었습니다.
+2020-11-22 16:01:27,718 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 069330가 4 만큼 적재 되었습니다.
+2020-11-22 16:01:30,124 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 069540가 4 만큼 적재 되었습니다.
+2020-11-22 16:01:33,362 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 070300가 4 만큼 적재 되었습니다.
+2020-11-22 16:01:44,646 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 073070가 4 만큼 적재 되었습니다.
+2020-11-22 16:02:03,494 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 079190가 4 만큼 적재 되었습니다.
+2020-11-22 16:02:10,751 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 080440가 4 만큼 적재 되었습니다.
+2020-11-22 16:02:20,332 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 083470가 4 만큼 적재 되었습니다.
+2020-11-22 16:02:34,290 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 086250가 4 만큼 적재 되었습니다.
+2020-11-22 16:02:41,193 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 087730가 4 만큼 적재 되었습니다.
+2020-11-22 16:03:53,527 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 102210가 4 만큼 적재 되었습니다.
+2020-11-22 16:04:07,868 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 106080가 4 만큼 적재 되었습니다.
+2020-11-22 16:04:14,206 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 109070가 4 만큼 적재 되었습니다.
+2020-11-22 16:04:20,171 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 111820가 4 만큼 적재 되었습니다.
+2020-11-22 16:04:23,900 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 114190가 4 만큼 적재 되었습니다.
+2020-11-22 16:04:26,209 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 114570가 4 만큼 적재 되었습니다.
+2020-11-22 16:04:32,174 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 115530가 4 만큼 적재 되었습니다.
+2020-11-22 16:04:44,432 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 121890가 4 만큼 적재 되었습니다.
+2020-11-22 16:05:22,553 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 138360가 4 만큼 적재 되었습니다.
+2020-11-22 16:05:39,589 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 141020가 4 만큼 적재 되었습니다.
+2020-11-22 16:06:07,866 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 158310가 4 만큼 적재 되었습니다.
+2020-11-22 16:06:09,304 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 159800가 4 만큼 적재 되었습니다.
+2020-11-22 16:06:09,864 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 159910가 4 만큼 적재 되었습니다.
+2020-11-22 16:06:11,330 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 160600가 4 만큼 적재 되었습니다.
+2020-11-22 16:06:18,153 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 168330가 4 만큼 적재 되었습니다.
+2020-11-22 16:06:28,698 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 176440가 4 만큼 적재 되었습니다.
+2020-11-22 16:06:33,408 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 180400가 4 만큼 적재 되었습니다.
+2020-11-22 16:06:56,082 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 195440가 4 만큼 적재 되었습니다.
+2020-11-22 16:06:59,323 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 195990가 4 만큼 적재 되었습니다.
+2020-11-22 16:07:01,664 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 196450가 4 만큼 적재 되었습니다.
+2020-11-22 16:07:39,102 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 215600가 4 만큼 적재 되었습니다.
+2020-11-22 16:07:59,229 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 223310가 4 만큼 적재 되었습니다.
+2020-11-22 16:08:07,858 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 226350가 4 만큼 적재 되었습니다.
+2020-11-22 16:09:23,504 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 263540가 4 만큼 적재 되었습니다.
+2020-11-22 16:09:28,176 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 263920가 4 만큼 적재 되었습니다.
+2020-11-22 16:10:21,834 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 287410가 4 만큼 적재 되었습니다.
+2020-11-22 16:10:44,776 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 292770가 4 만큼 적재 되었습니다.
+2020-11-22 16:10:58,305 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 299070가 4 만큼 적재 되었습니다.
+2020-11-22 16:11:06,430 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 302170가 4 만큼 적재 되었습니다.
+2020-11-22 16:11:06,987 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 302180가 4 만큼 적재 되었습니다.
+2020-11-22 16:11:08,049 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 302200가 4 만큼 적재 되었습니다.
+2020-11-22 16:11:18,492 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 306540가 4 만큼 적재 되었습니다.
+2020-11-22 16:11:20,839 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 307070가 4 만큼 적재 되었습니다.
+2020-11-22 16:11:44,897 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 319400가 4 만큼 적재 되었습니다.
+2020-11-22 16:12:09,027 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 333430가 4 만큼 적재 되었습니다.
+2020-11-22 16:12:22,773 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 340360가 4 만큼 적재 되었습니다.
+2020-11-22 16:12:27,412 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 343510가 4 만큼 적재 되었습니다.
+2020-11-22 16:12:42,366 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 357870가 4 만큼 적재 되었습니다.
+2020-11-22 16:12:47,878 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 363570가 4 만큼 적재 되었습니다.
+2020-11-22 16:12:57,517 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 950160가 4 만큼 적재 되었습니다.
+2020-11-22 16:13:01,181 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 500043가 4 만큼 적재 되었습니다.
+2020-11-22 16:13:04,438 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 500046가 4 만큼 적재 되었습니다.
+2020-11-22 16:13:05,429 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 500048가 4 만큼 적재 되었습니다.
+2020-11-22 16:13:31,129 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 520020가 4 만큼 적재 되었습니다.
+2020-11-22 16:13:31,691 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 520021가 4 만큼 적재 되었습니다.
+2020-11-22 16:13:39,415 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 530053가 4 만큼 적재 되었습니다.
+2020-11-22 16:13:50,825 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 550001가 4 만큼 적재 되었습니다.
+2020-11-22 16:13:54,111 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 550009가 4 만큼 적재 되었습니다.
+2020-11-22 16:13:54,665 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 550010가 4 만큼 적재 되었습니다.
+2020-11-22 16:13:59,242 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 550047가 4 만큼 적재 되었습니다.
+2020-11-22 16:13:59,799 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 550056가 4 만큼 적재 되었습니다.
+2020-11-22 16:14:10,176 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 570029가 4 만큼 적재 되었습니다.
+2020-11-22 16:14:10,749 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 570030가 4 만큼 적재 되었습니다.
+2020-11-22 16:14:16,199 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 570035가 4 만큼 적재 되었습니다.
+2020-11-22 16:14:20,314 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 580008가 4 만큼 적재 되었습니다.
+2020-11-22 16:14:24,948 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 590017가 4 만큼 적재 되었습니다.
+2020-11-22 16:14:26,458 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 590005가 4 만큼 적재 되었습니다.
+2020-11-22 16:14:31,164 DEBUG [TR_1206] [indi_interect.py:225] - TR_1206 단축코드 : 900100가 4 만큼 적재 되었습니다.
+2020-11-22 17:22:55,328 DEBUG [TR_1206] [TR_1206.py:144] - TR_1206 호출 시작
+2020-11-22 17:22:55,329 DEBUG [TR_1206] [TR_1206.py:146] - TR_1206 호출 완료
+2020-11-22 17:23:54,729 DEBUG [TR_1206] [TR_1206.py:144] - TR_1206 호출 시작
+2020-11-22 17:23:54,731 DEBUG [TR_1206] [TR_1206.py:146] - TR_1206 호출 완료
+2020-11-22 17:24:25,263 DEBUG [TR_1206] [TR_1206.py:144] - TR_1206 호출 시작
+2020-11-22 17:25:06,339 DEBUG [TR_1206] [TR_1206.py:144] - TR_1206 호출 시작
+2020-11-22 17:25:06,341 DEBUG [TR_1206] [TR_1206.py:146] - TR_1206 호출 완료
+2020-11-22 17:25:29,017 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900080가 200 만큼 적재 되었습니다.
+2020-11-22 17:25:52,501 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900110가 200 만큼 적재 되었습니다.
+2020-11-22 17:26:03,781 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  0  value   0
+2020-11-22 17:26:03,781 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  1  value   20200127
+2020-11-22 17:26:03,781 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  2  value   20200127
+2020-11-22 17:26:03,781 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  3  value   K
+2020-11-22 17:26:03,781 DEBUG [upjong_code_mst] [indi_interect.py:227] - 데이터없음  key  일자  value   20200127
+2020-11-22 17:26:03,781 DEBUG [upjong_code_mst] [indi_interect.py:227] - 데이터없음  key  데이터구분  value   price
+2020-11-22 17:26:03,782 DEBUG [upjong_code_mst] [indi_interect.py:228] - 데이터 없음 체크 완료
+2020-11-22 17:26:10,257 DEBUG [TR_1206] [TR_1206.py:144] - TR_1206 호출 시작
+2020-11-22 17:26:10,258 DEBUG [TR_1206] [TR_1206.py:146] - TR_1206 호출 완료
+2020-11-22 17:26:32,652 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900080가 200 만큼 적재 되었습니다.
+2020-11-22 17:26:55,985 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900110가 200 만큼 적재 되었습니다.
+2020-11-22 17:27:18,517 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900270가 200 만큼 적재 되었습니다.
+2020-11-22 17:27:41,069 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900260가 200 만큼 적재 되었습니다.
+2020-11-22 17:28:03,680 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900290가 200 만큼 적재 되었습니다.
+2020-11-22 17:28:26,869 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900300가 200 만큼 적재 되었습니다.
+2020-11-22 17:28:49,498 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900310가 200 만큼 적재 되었습니다.
+2020-11-22 17:29:07,744 DEBUG [TR_1206] [TR_1206.py:147] - TR_1206 호출 시작
+2020-11-22 17:29:07,746 DEBUG [TR_1206] [TR_1206.py:149] - TR_1206 호출 완료
+2020-11-22 17:29:30,260 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900080가 200 만큼 적재 되었습니다.
+2020-11-22 17:29:53,783 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900110가 200 만큼 적재 되었습니다.
+2020-11-22 17:30:16,870 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900270가 200 만큼 적재 되었습니다.
+2020-11-22 17:30:39,334 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900260가 200 만큼 적재 되었습니다.
+2020-11-22 17:31:01,961 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900290가 200 만큼 적재 되었습니다.
+2020-11-22 17:31:24,456 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900300가 200 만큼 적재 되었습니다.
+2020-11-22 17:31:46,931 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900310가 200 만큼 적재 되었습니다.
+2020-11-22 17:32:09,485 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 900340가 200 만큼 적재 되었습니다.
+2020-11-22 17:32:32,065 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000020가 200 만큼 적재 되었습니다.
+2020-11-22 17:32:55,113 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000040가 200 만큼 적재 되었습니다.
+2020-11-22 17:33:18,616 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000050가 200 만큼 적재 되었습니다.
+2020-11-22 17:33:41,399 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000060가 200 만큼 적재 되었습니다.
+2020-11-22 17:34:04,065 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000070가 200 만큼 적재 되었습니다.
+2020-11-22 17:34:26,728 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000075가 200 만큼 적재 되었습니다.
+2020-11-22 17:34:49,550 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000080가 200 만큼 적재 되었습니다.
+2020-11-22 17:35:12,526 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000087가 200 만큼 적재 되었습니다.
+2020-11-22 17:35:35,709 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000100가 200 만큼 적재 되었습니다.
+2020-11-22 17:35:35,712 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  0  value   0
+2020-11-22 17:35:35,712 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  1  value   20200127
+2020-11-22 17:35:35,712 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  2  value   20200127
+2020-11-22 17:35:35,712 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  3  value   K
+2020-11-22 17:35:35,712 DEBUG [upjong_code_mst] [indi_interect.py:227] - 데이터없음  key  일자  value   20200127
+2020-11-22 17:35:35,712 DEBUG [upjong_code_mst] [indi_interect.py:227] - 데이터없음  key  데이터구분  value   price
+2020-11-22 17:35:35,712 DEBUG [upjong_code_mst] [indi_interect.py:228] - 데이터 없음 체크 완료
+2020-11-22 17:35:58,774 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000105가 200 만큼 적재 되었습니다.
+2020-11-22 17:36:21,705 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000120가 200 만큼 적재 되었습니다.
+2020-11-22 17:36:44,476 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000140가 200 만큼 적재 되었습니다.
+2020-11-22 17:37:07,446 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000145가 200 만큼 적재 되었습니다.
+2020-11-22 17:37:30,256 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000150가 200 만큼 적재 되었습니다.
+2020-11-22 17:37:52,997 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000155가 200 만큼 적재 되었습니다.
+2020-11-22 17:38:16,149 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000157가 200 만큼 적재 되었습니다.
+2020-11-22 17:38:39,079 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000180가 200 만큼 적재 되었습니다.
+2020-11-22 17:39:01,880 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000210가 200 만큼 적재 되었습니다.
+2020-11-22 17:39:24,644 DEBUG [TR_1206] [indi_interect.py:232] - TR_1206 단축코드 : 000215가 200 만큼 적재 되었습니다.
+2020-11-22 17:39:43,543 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  0  value   0
+2020-11-22 17:39:43,543 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  1  value   20200415
+2020-11-22 17:39:43,543 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  2  value   20200415
+2020-11-22 17:39:43,543 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  3  value   K
+2020-11-22 17:39:43,543 DEBUG [upjong_code_mst] [indi_interect.py:227] - 데이터없음  key  일자  value   20200415
+2020-11-22 17:39:43,543 DEBUG [upjong_code_mst] [indi_interect.py:227] - 데이터없음  key  데이터구분  value   price
+2020-11-22 17:39:43,544 DEBUG [upjong_code_mst] [indi_interect.py:228] - 데이터 없음 체크 완료
+2020-11-22 17:39:45,398 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  0  value   0
+2020-11-22 17:39:45,398 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  1  value   20200501
+2020-11-22 17:39:45,398 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  2  value   20200501
+2020-11-22 17:39:45,398 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  3  value   K
+2020-11-22 17:39:45,399 DEBUG [upjong_code_mst] [indi_interect.py:227] - 데이터없음  key  일자  value   20200501
+2020-11-22 17:39:45,399 DEBUG [upjong_code_mst] [indi_interect.py:227] - 데이터없음  key  데이터구분  value   price
+2020-11-22 17:39:45,399 DEBUG [upjong_code_mst] [indi_interect.py:228] - 데이터 없음 체크 완료
+2020-11-22 17:39:58,146 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  0  value   1
+2020-11-22 17:39:58,147 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  1  value   20200127
+2020-11-22 17:39:58,147 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  2  value   20200127
+2020-11-22 17:39:58,147 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  3  value   K
+2020-11-22 17:39:58,147 DEBUG [upjong_code_mst] [indi_interect.py:227] - 데이터없음  key  일자  value   20200127
+2020-11-22 17:39:58,147 DEBUG [upjong_code_mst] [indi_interect.py:227] - 데이터없음  key  데이터구분  value   price
+2020-11-22 17:39:58,147 DEBUG [upjong_code_mst] [indi_interect.py:228] - 데이터 없음 체크 완료
+2020-11-22 17:40:17,021 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  0  value   1
+2020-11-22 17:40:17,022 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  1  value   20200415
+2020-11-22 17:40:17,022 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  2  value   20200415
+2020-11-22 17:40:17,022 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  3  value   K
+2020-11-22 17:40:17,022 DEBUG [upjong_code_mst] [indi_interect.py:227] - 데이터없음  key  일자  value   20200415
+2020-11-22 17:40:17,022 DEBUG [upjong_code_mst] [indi_interect.py:227] - 데이터없음  key  데이터구분  value   price
+2020-11-22 17:40:17,022 DEBUG [upjong_code_mst] [indi_interect.py:228] - 데이터 없음 체크 완료
+2020-11-22 17:40:20,969 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  0  value   1
+2020-11-22 17:40:20,969 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  1  value   20200501
+2020-11-22 17:40:20,969 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  2  value   20200501
+2020-11-22 17:40:20,969 DEBUG [upjong_code_mst] [indi_interect.py:225] - 데이터없음  key  3  value   K
+2020-11-22 17:40:20,969 DEBUG [upjong_code_mst] [indi_interect.py:227] - 데이터없음  key  일자  value   20200501
+2020-11-22 17:40:20,970 DEBUG [upjong_code_mst] [indi_interect.py:227] - 데이터없음  key  데이터구분  value   price
+2020-11-22 17:40:20,970 DEBUG [upjong_code_mst] [indi_interect.py:228] - 데이터 없음 체크 완료
+2020-11-23 01:09:11,063 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   0
+2020-11-23 01:09:11,063 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20200127
+2020-11-23 01:09:11,063 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20200127
+2020-11-23 01:09:11,063 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   K
+2020-11-23 01:09:11,064 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  일자  value   20200127
+2020-11-23 01:09:11,064 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   price
+2020-11-23 01:09:11,064 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-23 01:09:18,008 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   0
+2020-11-23 01:09:18,008 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20200415
+2020-11-23 01:09:18,008 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20200415
+2020-11-23 01:09:18,008 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   K
+2020-11-23 01:09:18,008 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  일자  value   20200415
+2020-11-23 01:09:18,008 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   price
+2020-11-23 01:09:18,008 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-23 01:09:19,475 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   0
+2020-11-23 01:09:19,476 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20200501
+2020-11-23 01:09:19,476 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20200501
+2020-11-23 01:09:19,476 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   K
+2020-11-23 01:09:19,476 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  일자  value   20200501
+2020-11-23 01:09:19,476 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   price
+2020-11-23 01:09:19,476 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-23 01:09:32,492 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   0
+2020-11-23 01:09:32,492 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20200817
+2020-11-23 01:09:32,492 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20200817
+2020-11-23 01:09:32,492 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   K
+2020-11-23 01:09:32,492 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  일자  value   20200817
+2020-11-23 01:09:32,492 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   price
+2020-11-23 01:09:32,492 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-23 01:09:53,163 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   1
+2020-11-23 01:09:53,164 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20200127
+2020-11-23 01:09:53,164 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20200127
+2020-11-23 01:09:53,164 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   K
+2020-11-23 01:09:53,164 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  일자  value   20200127
+2020-11-23 01:09:53,164 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   price
+2020-11-23 01:09:53,164 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-23 01:10:17,712 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   1
+2020-11-23 01:10:17,712 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20200415
+2020-11-23 01:10:17,712 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20200415
+2020-11-23 01:10:17,712 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   K
+2020-11-23 01:10:17,712 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  일자  value   20200415
+2020-11-23 01:10:17,713 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   price
+2020-11-23 01:10:17,713 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-23 01:10:22,780 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   1
+2020-11-23 01:10:22,780 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20200501
+2020-11-23 01:10:22,781 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20200501
+2020-11-23 01:10:22,781 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   K
+2020-11-23 01:10:22,781 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  일자  value   20200501
+2020-11-23 01:10:22,781 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   price
+2020-11-23 01:10:22,781 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-23 01:11:01,396 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   1
+2020-11-23 01:11:01,396 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20200817
+2020-11-23 01:11:01,396 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20200817
+2020-11-23 01:11:01,396 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   K
+2020-11-23 01:11:01,396 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  일자  value   20200817
+2020-11-23 01:11:01,397 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   price
+2020-11-23 01:11:01,397 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
