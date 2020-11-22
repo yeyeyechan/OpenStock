@@ -1,0 +1,247 @@
+2020-11-15 14:42:43,880 DEBUG [upjong_code_mst] [upjong_code_mst.py:55] - upjong_code_mst 호출 시작
+2020-11-15 14:42:43,883 DEBUG [upjong_code_mst] [upjong_code_mst.py:57] - upjong_code_mst 호출 완료
+2020-11-15 14:42:57,708 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1005
+2020-11-15 14:42:57,708 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1005
+2020-11-15 14:42:57,708 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥 150 지수
+2020-11-15 14:42:57,709 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:20,616 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:20,622 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1006
+2020-11-15 14:43:20,622 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1006
+2020-11-15 14:43:20,622 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥 150 레버리지
+2020-11-15 14:43:20,622 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:27,192 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:27,196 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1007
+2020-11-15 14:43:27,196 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1007
+2020-11-15 14:43:27,196 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥 150 동일가중
+2020-11-15 14:43:27,196 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:27,196 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,669 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1120
+2020-11-15 14:43:35,669 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1120
+2020-11-15 14:43:35,669 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   F-KOSDAQ150 지수
+2020-11-15 14:43:35,669 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,670 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,674 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1121
+2020-11-15 14:43:35,675 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1121
+2020-11-15 14:43:35,675 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   F-KOSDAQ150인버스
+2020-11-15 14:43:35,675 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,675 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,678 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1122
+2020-11-15 14:43:35,678 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1122
+2020-11-15 14:43:35,678 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   F-KOSDAQ150인버스-2X
+2020-11-15 14:43:35,679 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,679 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,682 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1123
+2020-11-15 14:43:35,682 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1123
+2020-11-15 14:43:35,682 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   F-KOSDAQ150인버스-3X
+2020-11-15 14:43:35,682 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,682 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,685 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1124
+2020-11-15 14:43:35,685 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1124
+2020-11-15 14:43:35,685 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   KOSDAQ150레버리지0.5
+2020-11-15 14:43:35,685 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,686 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,689 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1125
+2020-11-15 14:43:35,689 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1125
+2020-11-15 14:43:35,689 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   F-KOSDAQ150 레버리지
+2020-11-15 14:43:35,690 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,690 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,693 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1131
+2020-11-15 14:43:35,693 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1131
+2020-11-15 14:43:35,693 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 기술주
+2020-11-15 14:43:35,693 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,694 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,697 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1132
+2020-11-15 14:43:35,697 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1132
+2020-11-15 14:43:35,697 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 소재
+2020-11-15 14:43:35,697 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,697 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,701 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1133
+2020-11-15 14:43:35,701 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1133
+2020-11-15 14:43:35,701 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 산업재
+2020-11-15 14:43:35,701 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,701 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,704 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1134
+2020-11-15 14:43:35,705 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1134
+2020-11-15 14:43:35,705 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 필수소비재
+2020-11-15 14:43:35,705 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,705 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,708 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1135
+2020-11-15 14:43:35,708 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1135
+2020-11-15 14:43:35,708 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 자유소비재
+2020-11-15 14:43:35,709 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,709 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,712 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1136
+2020-11-15 14:43:35,712 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1136
+2020-11-15 14:43:35,712 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 정보기술
+2020-11-15 14:43:35,712 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,713 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,716 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1137
+2020-11-15 14:43:35,716 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1137
+2020-11-15 14:43:35,716 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 헬스케어
+2020-11-15 14:43:35,716 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,716 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,720 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1138
+2020-11-15 14:43:35,720 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1138
+2020-11-15 14:43:35,720 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 문화기술
+2020-11-15 14:43:35,720 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,720 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:35,724 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1139
+2020-11-15 14:43:35,724 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1139
+2020-11-15 14:43:35,724 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 저변동지수
+2020-11-15 14:43:35,724 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:35,724 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:44,128 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1196
+2020-11-15 14:43:44,128 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1196
+2020-11-15 14:43:44,128 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥 TR
+2020-11-15 14:43:44,128 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:44,128 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:44,131 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1197
+2020-11-15 14:43:44,132 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1197
+2020-11-15 14:43:44,132 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥 150 TR
+2020-11-15 14:43:44,132 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:44,132 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-15 14:43:44,135 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1331
+2020-11-15 14:43:44,135 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1331
+2020-11-15 14:43:44,136 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 지배구조
+2020-11-15 14:43:44,136 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-15 14:43:44,136 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:23:05,806 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   4
+2020-11-16 01:23:05,806 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장코드  value   4
+2020-11-16 01:23:05,806 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ50
+2020-11-16 01:23:05,806 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:23:15,569 DEBUG [upjong_code_mst] [upjong_code_mst.py:55] - upjong_code_mst 호출 시작
+2020-11-16 01:23:57,327 DEBUG [upjong_code_mst] [upjong_code_mst.py:55] - upjong_code_mst 호출 시작
+2020-11-16 01:23:57,328 DEBUG [upjong_code_mst] [upjong_code_mst.py:57] - upjong_code_mst 호출 완료
+2020-11-16 01:24:09,711 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1005
+2020-11-16 01:24:09,711 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1005
+2020-11-16 01:24:09,711 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥 150 지수
+2020-11-16 01:24:09,711 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:09,711 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:09,712 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1006
+2020-11-16 01:24:09,713 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1006
+2020-11-16 01:24:09,713 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥 150 레버리지
+2020-11-16 01:24:09,713 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:09,713 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:09,714 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1007
+2020-11-16 01:24:09,714 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1007
+2020-11-16 01:24:09,714 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥 150 동일가중
+2020-11-16 01:24:09,714 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:09,714 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,712 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1120
+2020-11-16 01:24:17,712 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1120
+2020-11-16 01:24:17,713 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   F-KOSDAQ150 지수
+2020-11-16 01:24:17,713 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,713 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,714 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1121
+2020-11-16 01:24:17,714 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1121
+2020-11-16 01:24:17,714 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   F-KOSDAQ150인버스
+2020-11-16 01:24:17,714 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,714 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,715 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1122
+2020-11-16 01:24:17,716 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1122
+2020-11-16 01:24:17,716 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   F-KOSDAQ150인버스-2X
+2020-11-16 01:24:17,716 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,716 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,717 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1123
+2020-11-16 01:24:17,717 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1123
+2020-11-16 01:24:17,717 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   F-KOSDAQ150인버스-3X
+2020-11-16 01:24:17,717 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,717 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,718 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1124
+2020-11-16 01:24:17,718 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1124
+2020-11-16 01:24:17,718 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   KOSDAQ150레버리지0.5
+2020-11-16 01:24:17,718 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,718 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,719 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1125
+2020-11-16 01:24:17,719 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1125
+2020-11-16 01:24:17,719 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   F-KOSDAQ150 레버리지
+2020-11-16 01:24:17,719 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,719 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,720 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1131
+2020-11-16 01:24:17,720 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1131
+2020-11-16 01:24:17,720 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 기술주
+2020-11-16 01:24:17,720 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,720 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,721 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1132
+2020-11-16 01:24:17,721 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1132
+2020-11-16 01:24:17,721 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 소재
+2020-11-16 01:24:17,722 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,722 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,722 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1133
+2020-11-16 01:24:17,723 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1133
+2020-11-16 01:24:17,723 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 산업재
+2020-11-16 01:24:17,723 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,723 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,724 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1134
+2020-11-16 01:24:17,724 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1134
+2020-11-16 01:24:17,724 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 필수소비재
+2020-11-16 01:24:17,724 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,724 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,725 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1135
+2020-11-16 01:24:17,725 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1135
+2020-11-16 01:24:17,725 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 자유소비재
+2020-11-16 01:24:17,725 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,725 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,725 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1136
+2020-11-16 01:24:17,725 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1136
+2020-11-16 01:24:17,725 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 정보기술
+2020-11-16 01:24:17,725 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,725 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,726 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1137
+2020-11-16 01:24:17,726 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1137
+2020-11-16 01:24:17,726 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 헬스케어
+2020-11-16 01:24:17,726 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,726 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,727 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1138
+2020-11-16 01:24:17,727 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1138
+2020-11-16 01:24:17,727 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 문화기술
+2020-11-16 01:24:17,728 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,728 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:17,729 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1139
+2020-11-16 01:24:17,729 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1139
+2020-11-16 01:24:17,729 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 저변동지수
+2020-11-16 01:24:17,729 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:17,729 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:25,889 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1196
+2020-11-16 01:24:25,889 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1196
+2020-11-16 01:24:25,889 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥 TR
+2020-11-16 01:24:25,890 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:25,890 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:25,891 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1197
+2020-11-16 01:24:25,891 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1197
+2020-11-16 01:24:25,891 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥 150 TR
+2020-11-16 01:24:25,891 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:25,891 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:25,892 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1331
+2020-11-16 01:24:25,892 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종코드  value   1331
+2020-11-16 01:24:25,893 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  업종명  value   코스닥150 지배구조
+2020-11-16 01:24:25,893 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  시장명  value   KOSDAQ
+2020-11-16 01:24:25,893 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:48,017 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   0
+2020-11-16 01:24:48,017 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  1  value   20200817
+2020-11-16 01:24:48,017 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  2  value   20200817
+2020-11-16 01:24:48,017 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  3  value   K
+2020-11-16 01:24:48,018 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  일자  value   20200817
+2020-11-16 01:24:48,018 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  데이터구분  value   price
+2020-11-16 01:24:48,018 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 01:24:56,328 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1
+2020-11-16 01:24:56,328 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  1  value   20200817
+2020-11-16 01:24:56,328 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  2  value   20200817
+2020-11-16 01:24:56,329 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  3  value   K
+2020-11-16 01:24:56,329 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  일자  value   20200817
+2020-11-16 01:24:56,329 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  데이터구분  value   price
+2020-11-16 01:24:56,329 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 02:20:18,887 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   0
+2020-11-16 02:20:18,887 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  1  value   20200817
+2020-11-16 02:20:18,888 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  2  value   20200817
+2020-11-16 02:20:18,888 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  3  value   K
+2020-11-16 02:20:18,888 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  일자  value   20200817
+2020-11-16 02:20:18,888 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  데이터구분  value   price
+2020-11-16 02:20:18,888 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
+2020-11-16 02:20:27,067 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  0  value   1
+2020-11-16 02:20:27,067 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  1  value   20200817
+2020-11-16 02:20:27,067 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  2  value   20200817
+2020-11-16 02:20:27,068 DEBUG [upjong_code_mst] [indi_interect.py:114] - 데이터없음  key  3  value   K
+2020-11-16 02:20:27,068 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  일자  value   20200817
+2020-11-16 02:20:27,068 DEBUG [upjong_code_mst] [indi_interect.py:116] - 데이터없음  key  데이터구분  value   price
+2020-11-16 02:20:27,068 DEBUG [upjong_code_mst] [indi_interect.py:117] - 데이터 없음 체크 완료
