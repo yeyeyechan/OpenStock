@@ -117,12 +117,14 @@ if __name__ == "__main__":
     from_collection = make_collection("stock_data", "stock_mst")
     collection_len = from_collection.estimated_document_count()
     index =0
+    IndiControl = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
+
     collection = make_collection("stock_data", "TR_1206")
-    activate_Tr = tr_object("TR_1206", collection)
+    activate_Tr = tr_object("TR_1206", collection , IndiControl)
 
 
-    start_date = "20190101"
-    end_date = "20191201"
+    start_date = "20201123"
+    end_date = "20201123"
     gubun = "1"
     data_kind = "0"
 

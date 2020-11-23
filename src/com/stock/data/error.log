@@ -7071,3 +7071,5 @@
 2020-11-23 01:11:01,396 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  일자  value   20200817
 2020-11-23 01:11:01,397 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   price
 2020-11-23 01:11:01,397 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-23 21:56:45,239 DEBUG [TR_1206] [TR_1206.py:146] - TR_1206 호출 시작
+2020-11-23 21:56:45,240 DEBUG [TR_1206] [TR_1206.py:148] - TR_1206 호출 완료

@@ -15,6 +15,7 @@ import urllib.parse as urlparse
 from pytimekr.pytimekr import is_red_day
 from datetime import date, timedelta
 from datetime import datetime
+from datetime import date as dt_dt
 from PyQt5.QAxContainer import *
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import QCoreApplication
@@ -28,6 +29,8 @@ from src.com.stock.util.date import *
 from src.com.stock.util.data_check import *
 from src.com.stock.analysis.analysis import *
 from src.com.stock.util.toExcel import *
+from src.com.stock.analysis.analysis2 import *
+from src.com.stock.data.fix_data import *
 TR_1206_len_counts = 0
 
 myLogger = logging.getLogger("myLogger")

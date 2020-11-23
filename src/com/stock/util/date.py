@@ -16,6 +16,39 @@ def make_year_list (start_year, end_year):
     else:
         result.append(start_year)
     return  result
+def get_kr_str_working_day_list_by_diff(input_working_date, diff):
+    if type(input_working_date) is str :
+        input_working_date = dt_dt(int(input_working_date[:4]), int(input_working_date[4:6]), int(input_working_date[6:8]))
+    year = input_working_date.strftime("%Y%m%d")[:4]
+    year_list = make_year_list(year , year)
+    kr_holiday = get_holiday(year_list, "ALL")
+    target_date = input_working_date
+    work_day_list = []
+    if diff == 0 :
+        return input_working_date
+    elif diff < 0:
+        while diff != 0:
+            target_date = target_date - timedelta(days= abs(1))
+            if is_red_day(target_date):
+                continue
+            elif target_date.strftime("%Y%m%d") in kr_holiday:
+                continue
+            else:
+                work_day_list.append(target_date.strftime("%Y%m%d"))
+                diff = diff+1
+        return work_day_list
+    else:
+        while diff != 0:
+            target_date = target_date + timedelta(days= abs(1))
+            if is_red_day(target_date):
+                continue
+            elif target_date.strftime("%Y%m%d") in kr_holiday:
+                continue
+            else:
+                work_day_list.append(target_date.strftime("%Y%m%d"))
+                diff = diff-1
+        return work_day_list
+
 
 def get_kr_working_day_by_diff(input_working_date, diff):
     year = input_working_date.strftime("%Y%m%d")[:4]
