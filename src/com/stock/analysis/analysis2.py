@@ -19,6 +19,10 @@ field_name_list = [
 "국가지자체순매수거래량    ",
 "프로그램순매수            "
 ]
+
+target_date_stock_supply = {}
+
+
 def find_rising_other_stock_codes(target_rising_rate, date ):
     result_list = []
     for i in collection.find({"일자" :date , "전일대비율" : {"$lt" : target_rising_rate} }):
@@ -27,8 +31,16 @@ def find_rising_other_stock_codes(target_rising_rate, date ):
     return result_list
 def find_rising_stock_codes(target_rising_rate, date ):
     result_list = []
+
     for i in collection.find({"일자" :date , "전일대비율" : {"$gt" : target_rising_rate} }):
+       # if (float(i["고가"]) + float(i["저가"]))/2 *float(i["누적거래량"]) > 13000000000:
         result_list.append(i)
+        target_date_stock_supply[i["단축코드"]] = {}
+        target_date_stock_supply[i["단축코드"]]["개인순매수거래량"] = float(i["개인순매수거래량"])
+        target_date_stock_supply[i["단축코드"]]["외국인순매수거래량"] = float(i["외국인순매수거래량"])
+        target_date_stock_supply[i["단축코드"]]["기관순매수거래량"] = float(i["기관순매수거래량"])
+        target_date_stock_supply[i["단축코드"]]["누적거래량"] = float(i["누적거래량"])
+
         #print(i)
     return result_list
 def make_int_value_dict(field_name_list, collection_dict):
@@ -83,19 +95,51 @@ def find_supply_data(stock_code, date, day_range):
 if __name__ ==  "__main__":
     #1. 분석 대상 날짜의 목표 상승 가 달성한 주식을 뽑는다.
     stock_code_list = find_rising_stock_codes(5.0 , "20201123")
-    stock_code_other_list = find_rising_other_stock_codes(2.0 , "20201123")
+    #stock_code_other_list = find_rising_other_stock_codes(2.0 , "20201123")
     #2.해당 종목들의 5일근(특정일)간 수급을 분석한다.
 
     #2-1 특정일치 수급 데이터를 모은다.
-    sugup_dict = find_supply_data(stock_code_list, "20201123", -5)
+    #sugup_dict = find_supply_data(stock_code_list, "20201123", -5)
     #print(stock_code_other_list)
-    sugup_other_dict = find_supply_data(stock_code_other_list, "20201123", -5)
+    #sugup_other_dict = find_supply_data(stock_code_other_list, "20201123", -5)
 
     #2-2 분석로직을 만든다.
 
-    for key , value in sugup_dict.items():
-        print(value)
+    #1) 상승 당일 수급 현황 조사
+    foreign_count = 0
+    per_count = 0
+    com_count = 0
 
+    count1 = 0
+    count2 = 0
+
+    total_len = len(target_date_stock_supply)
+    result = []
+    for key ,value in target_date_stock_supply.items():
+        if value["외국인순매수거래량"] > 0  and value["기관순매수거래량"] > 0  and value["개인순매수거래량"]  <0:
+            count1 +=1
+            result.append(key)
+            print("종목코드   " + key + "  의 수급현황 조사    누적거래량 " + str(value["누적거래량"]) + "     개인순매수거래량 " + str(value["개인순매수거래량"])+ "    외국인순매수거래량 " + str(value["외국인순매수거래량"])+ "     기관순매수거래량 " + str(value["기관순매수거래량"]))
+        if value["외국인순매수거래량"] < 0  and value["기관순매수거래량"] < 0  and value["개인순매수거래량"]  >0:
+            count2 +=1
+        if value["개인순매수거래량"] > 0 :
+            per_count +=1
+        if value["외국인순매수거래량"] > 0 :
+            foreign_count +=1
+        if value["기관순매수거래량"] > 0 :
+            com_count +=1
+    print("총종목수  " + str(total_len))
+    print("개인 수급 플러스  " + str(per_count))
+    print("외국인 수급 플러스   " + str(foreign_count))
+    print("기관 수급 플러스   " + str(com_count))
+    print("count1   " + str(count1))
+    print("count2  " + str(count2))
+
+    collection = make_collection("stock_data" , "TR_1206")
+
+    for j in collection.find({"일자" : "20201123" ,"단축코드" : {"$in" : result}}).sort("전일대비율" , -1):
+        #print("종목코드   " + j["단축코드"] + "  의 수급현황 조사    누적거래량 " + str(j["누적거래량"]) + "     개인순매수거래량 " + str(j["개인순매수거래량"]) + "    외국인순매수거래량 " + str(j["외국인순매수거래량"]) + "     기관순매수거래량 " + str(j["기관순매수거래량"]))
+        print("종목코드   " + j["단축코드"] + "  의 수급현황 조사    누적거래량 " + (j["누적거래량"]) + "     개인순매수거래비율 " + str(float(j["개인순매수거래량"])/float(j["누적거래량"])) + "    외국인순매수거래비율 " + str(float(j["외국인순매수거래량"])/float(j["누적거래량"])) + "     기관순매수거래비율 " + str(float(j["기관순매수거래량"])/float(j["누적거래량"])))
 
 
 
