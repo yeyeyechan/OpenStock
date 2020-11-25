@@ -11,4 +11,4 @@ def make_new_float_field (collection, target_field , filter ):
 if __name__ == "__main__":
     collection = make_collection("stock_data" , "TR_1206")
 
-    make_new_float_field(collection, "전일대비율" , {"일자": "20201124"})
+    make_new_float_field(collection, "전일대비율" , {"일자": "20201125"})

@@ -10,7 +10,8 @@ if __name__ ==  "__main__":
     file_dir = excel_dir+"/util_data/"+file_name
 
     print(file_dir)
-    from_collection = make_collection("stock_data", "logic3")
+    #from_collection = make_collection("stock_data", "logic3")
+    from_collection = make_collection("stock_data", "logic4")
 
     from_collection_data =  from_collection.find_one({"일자": Today_date})
 

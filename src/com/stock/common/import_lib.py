@@ -30,6 +30,7 @@ from src.com.stock.util.data_check import *
 from src.com.stock.analysis.analysis import *
 from src.com.stock.util.toExcel import *
 from src.com.stock.analysis.analysis2 import *
+from src.com.stock.analysis.analysis3 import *
 from src.com.stock.data.fix_data import *
 TR_1206_len_counts = 0
 
