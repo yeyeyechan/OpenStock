@@ -10,6 +10,13 @@ def make_collection(db_name, collection_name):
     else:
         return None
     return collection
+def update_collection_sec(collection_name, data, filter):
+    if ( collection_name is not None):
+        try:
+            collection_name.update(filter, data, upsert=True)
+        except:
+            print("collection update error   ")
+            return
 def update_collection(collection_name, data):
     if ( collection_name is not None):
         try:

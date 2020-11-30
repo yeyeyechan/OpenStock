@@ -51,8 +51,8 @@ class real_tr_object(QMainWindow):
         # Indi API event
         self.tr_name = tr_name
 
-        if com_vari.indiReal_dict[tr_name] == "" or com_vari.indiReal_dict[tr_name] is None:
-            com_vari.indiReal_dict[tr_name] == QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
+        if tr_name not in com_vari.indiReal_dict.keys():
+            com_vari.indiReal_dict[tr_name] = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
         # Indi API event
         com_vari.indiReal_dict[self.tr_name ].ReceiveRTData.connect(self.ReceiveRTData)
         com_vari.indiReal_dict[self.tr_name ].ReceiveSysMsg.connect(self.ReceiveSysMsg)

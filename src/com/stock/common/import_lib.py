@@ -31,6 +31,7 @@ from src.com.stock.analysis.analysis import *
 from src.com.stock.util.toExcel import *
 from src.com.stock.analysis.analysis2 import *
 from src.com.stock.analysis.analysis3 import *
+from src.com.stock.analysis.analysis4 import *
 from src.com.stock.data.fix_data import *
 TR_1206_len_counts = 0
 
@@ -40,7 +41,7 @@ simulation_1_logger = logging.getLogger("simulation_1")
 upjong_code_mst_logger = logging.getLogger("upjong_code_mst")
 Today_date = datetime.now()
 Today_date = Today_date.strftime("%Y%m%d")
-
+indiReal_dict = {}
 TR_output_dict ={
     "TR_1500": {
         "single_output": []

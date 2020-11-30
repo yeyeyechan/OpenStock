@@ -454,3 +454,315 @@
 2020-11-25 22:18:11,533 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530022
 2020-11-25 22:18:11,533 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
 2020-11-25 22:18:11,533 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 14:41:06,990 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530003
+2020-11-29 14:41:06,990 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201125
+2020-11-29 14:41:06,990 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 14:41:06,990 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 14:41:06,990 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 14:41:06,990 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530003
+2020-11-29 14:41:06,990 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 14:41:06,990 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 14:41:07,573 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530005
+2020-11-29 14:41:07,573 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201125
+2020-11-29 14:41:07,573 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 14:41:07,573 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 14:41:07,574 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 14:41:07,574 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530005
+2020-11-29 14:41:07,574 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 14:41:07,574 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 14:41:07,585 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530006
+2020-11-29 14:41:07,585 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201125
+2020-11-29 14:41:07,585 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 14:41:07,585 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 14:41:07,586 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 14:41:07,586 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530006
+2020-11-29 14:41:07,586 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 14:41:07,586 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 14:41:07,597 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530007
+2020-11-29 14:41:07,597 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201125
+2020-11-29 14:41:07,598 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 14:41:07,598 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 14:41:07,598 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 14:41:07,598 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530007
+2020-11-29 14:41:07,598 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 14:41:07,598 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 14:41:07,610 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530008
+2020-11-29 14:41:07,610 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201125
+2020-11-29 14:41:07,610 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 14:41:07,610 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 14:41:07,610 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 14:41:07,610 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530008
+2020-11-29 14:41:07,610 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 14:41:07,610 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 14:41:07,621 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530009
+2020-11-29 14:41:07,621 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201125
+2020-11-29 14:41:07,622 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 14:41:07,622 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 14:41:07,622 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 14:41:07,622 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530009
+2020-11-29 14:41:07,622 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 14:41:07,622 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 14:41:07,633 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530010
+2020-11-29 14:41:07,634 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201125
+2020-11-29 14:41:07,634 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 14:41:07,634 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 14:41:07,634 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 14:41:07,634 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530010
+2020-11-29 14:41:07,634 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 14:41:07,634 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 14:41:07,645 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530011
+2020-11-29 14:41:07,646 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201125
+2020-11-29 14:41:07,646 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 14:41:07,646 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 14:41:07,646 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 14:41:07,646 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530011
+2020-11-29 14:41:07,646 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 14:41:07,646 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 14:41:07,657 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530012
+2020-11-29 14:41:07,657 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201125
+2020-11-29 14:41:07,657 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 14:41:07,658 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 14:41:07,658 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 14:41:07,658 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530012
+2020-11-29 14:41:07,658 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 14:41:07,658 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 14:41:12,202 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530017
+2020-11-29 14:41:12,202 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201125
+2020-11-29 14:41:12,202 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 14:41:12,202 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 14:41:12,202 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 14:41:12,202 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530017
+2020-11-29 14:41:12,202 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 14:41:12,202 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 14:41:12,210 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530018
+2020-11-29 14:41:12,210 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201125
+2020-11-29 14:41:12,210 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 14:41:12,210 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 14:41:12,210 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 14:41:12,210 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530018
+2020-11-29 14:41:12,210 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 14:41:12,211 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 14:41:13,538 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530021
+2020-11-29 14:41:13,538 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201125
+2020-11-29 14:41:13,538 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 14:41:13,539 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 14:41:13,539 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 14:41:13,539 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530021
+2020-11-29 14:41:13,539 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 14:41:13,539 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 14:41:13,546 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530022
+2020-11-29 14:41:13,546 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201125
+2020-11-29 14:41:13,546 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 14:41:13,546 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 14:41:13,546 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 14:41:13,546 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530022
+2020-11-29 14:41:13,547 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 14:41:13,547 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 16:19:55,009 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530003
+2020-11-29 16:19:55,009 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201001
+2020-11-29 16:19:55,009 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 16:19:55,009 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 16:19:55,009 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 16:19:55,009 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530003
+2020-11-29 16:19:55,009 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 16:19:55,010 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 16:19:57,476 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530005
+2020-11-29 16:19:57,476 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201001
+2020-11-29 16:19:57,476 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 16:19:57,476 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 16:19:57,476 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 16:19:57,476 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530005
+2020-11-29 16:19:57,477 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 16:19:57,477 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 16:19:57,484 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530006
+2020-11-29 16:19:57,484 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201001
+2020-11-29 16:19:57,484 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 16:19:57,484 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 16:19:57,484 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 16:19:57,484 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530006
+2020-11-29 16:19:57,484 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 16:19:57,485 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 16:19:57,492 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530007
+2020-11-29 16:19:57,492 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201001
+2020-11-29 16:19:57,492 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 16:19:57,492 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 16:19:57,492 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 16:19:57,492 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530007
+2020-11-29 16:19:57,492 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 16:19:57,492 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 16:19:57,500 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530008
+2020-11-29 16:19:57,500 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201001
+2020-11-29 16:19:57,500 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 16:19:57,500 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 16:19:57,500 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 16:19:57,501 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530008
+2020-11-29 16:19:57,501 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 16:19:57,501 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 16:19:57,508 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530009
+2020-11-29 16:19:57,508 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201001
+2020-11-29 16:19:57,508 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 16:19:57,508 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 16:19:57,508 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 16:19:57,509 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530009
+2020-11-29 16:19:57,509 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 16:19:57,509 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 16:19:57,516 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530010
+2020-11-29 16:19:57,516 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201001
+2020-11-29 16:19:57,516 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 16:19:57,516 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 16:19:57,517 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 16:19:57,517 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530010
+2020-11-29 16:19:57,517 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 16:19:57,517 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 16:19:57,524 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530011
+2020-11-29 16:19:57,524 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201001
+2020-11-29 16:19:57,524 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 16:19:57,525 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 16:19:57,525 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 16:19:57,525 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530011
+2020-11-29 16:19:57,525 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 16:19:57,525 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 16:19:57,532 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530012
+2020-11-29 16:19:57,532 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201001
+2020-11-29 16:19:57,533 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 16:19:57,533 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 16:19:57,533 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 16:19:57,533 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530012
+2020-11-29 16:19:57,533 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 16:19:57,533 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 16:20:14,873 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530017
+2020-11-29 16:20:14,873 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201001
+2020-11-29 16:20:14,873 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 16:20:14,873 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 16:20:14,873 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 16:20:14,873 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530017
+2020-11-29 16:20:14,873 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 16:20:14,874 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 16:20:14,881 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530018
+2020-11-29 16:20:14,881 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201001
+2020-11-29 16:20:14,881 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 16:20:14,881 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 16:20:14,881 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 16:20:14,881 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530018
+2020-11-29 16:20:14,881 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 16:20:14,882 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 16:20:19,924 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530021
+2020-11-29 16:20:19,924 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201001
+2020-11-29 16:20:19,924 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 16:20:19,924 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 16:20:19,924 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 16:20:19,924 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530021
+2020-11-29 16:20:19,924 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 16:20:19,924 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-11-29 16:20:19,932 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530022
+2020-11-29 16:20:19,932 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201001
+2020-11-29 16:20:19,933 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201129
+2020-11-29 16:20:19,933 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-11-29 16:20:19,933 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-11-29 16:20:19,933 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530022
+2020-11-29 16:20:19,933 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-11-29 16:20:19,933 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-12-01 00:31:16,274 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530003
+2020-12-01 00:31:16,274 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201130
+2020-12-01 00:31:16,274 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201130
+2020-12-01 00:31:16,274 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-12-01 00:31:16,274 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-12-01 00:31:16,275 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530003
+2020-12-01 00:31:16,275 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-12-01 00:31:16,275 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-12-01 00:31:16,453 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530005
+2020-12-01 00:31:16,454 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201130
+2020-12-01 00:31:16,454 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201130
+2020-12-01 00:31:16,454 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-12-01 00:31:16,454 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-12-01 00:31:16,454 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530005
+2020-12-01 00:31:16,454 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-12-01 00:31:16,454 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-12-01 00:31:16,466 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530006
+2020-12-01 00:31:16,466 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201130
+2020-12-01 00:31:16,466 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201130
+2020-12-01 00:31:16,466 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-12-01 00:31:16,466 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-12-01 00:31:16,466 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530006
+2020-12-01 00:31:16,466 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-12-01 00:31:16,466 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-12-01 00:31:16,477 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530007
+2020-12-01 00:31:16,478 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201130
+2020-12-01 00:31:16,478 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201130
+2020-12-01 00:31:16,478 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-12-01 00:31:16,478 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-12-01 00:31:16,478 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530007
+2020-12-01 00:31:16,478 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-12-01 00:31:16,478 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-12-01 00:31:16,490 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530008
+2020-12-01 00:31:16,490 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201130
+2020-12-01 00:31:16,490 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201130
+2020-12-01 00:31:16,490 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-12-01 00:31:16,490 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-12-01 00:31:16,490 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530008
+2020-12-01 00:31:16,490 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-12-01 00:31:16,490 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-12-01 00:31:16,502 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530009
+2020-12-01 00:31:16,502 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201130
+2020-12-01 00:31:16,502 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201130
+2020-12-01 00:31:16,502 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-12-01 00:31:16,502 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-12-01 00:31:16,502 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530009
+2020-12-01 00:31:16,503 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-12-01 00:31:16,503 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-12-01 00:31:16,514 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530010
+2020-12-01 00:31:16,514 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201130
+2020-12-01 00:31:16,514 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201130
+2020-12-01 00:31:16,514 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-12-01 00:31:16,514 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-12-01 00:31:16,515 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530010
+2020-12-01 00:31:16,515 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-12-01 00:31:16,515 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-12-01 00:31:16,526 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530011
+2020-12-01 00:31:16,526 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201130
+2020-12-01 00:31:16,526 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201130
+2020-12-01 00:31:16,526 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-12-01 00:31:16,526 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-12-01 00:31:16,527 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530011
+2020-12-01 00:31:16,527 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-12-01 00:31:16,527 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-12-01 00:31:16,538 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530012
+2020-12-01 00:31:16,538 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201130
+2020-12-01 00:31:16,538 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201130
+2020-12-01 00:31:16,538 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-12-01 00:31:16,538 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-12-01 00:31:16,538 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530012
+2020-12-01 00:31:16,538 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-12-01 00:31:16,539 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-12-01 00:31:17,801 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530017
+2020-12-01 00:31:17,801 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201130
+2020-12-01 00:31:17,801 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201130
+2020-12-01 00:31:17,801 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-12-01 00:31:17,801 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-12-01 00:31:17,801 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530017
+2020-12-01 00:31:17,802 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-12-01 00:31:17,802 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-12-01 00:31:17,813 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530018
+2020-12-01 00:31:17,813 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201130
+2020-12-01 00:31:17,813 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201130
+2020-12-01 00:31:17,814 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-12-01 00:31:17,814 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-12-01 00:31:17,814 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530018
+2020-12-01 00:31:17,814 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-12-01 00:31:17,814 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-12-01 00:31:18,174 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530021
+2020-12-01 00:31:18,174 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201130
+2020-12-01 00:31:18,174 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201130
+2020-12-01 00:31:18,174 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-12-01 00:31:18,174 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-12-01 00:31:18,174 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530021
+2020-12-01 00:31:18,174 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-12-01 00:31:18,174 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료
+2020-12-01 00:31:18,185 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  0  value   530022
+2020-12-01 00:31:18,185 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  1  value   20201130
+2020-12-01 00:31:18,186 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  2  value   20201130
+2020-12-01 00:31:18,186 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  3  value   1
+2020-12-01 00:31:18,186 DEBUG [upjong_code_mst] [indi_interect.py:363] - 데이터없음  key  4  value   0
+2020-12-01 00:31:18,186 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  단축코드  value   530022
+2020-12-01 00:31:18,186 DEBUG [upjong_code_mst] [indi_interect.py:365] - 데이터없음  key  데이터구분  value   0
+2020-12-01 00:31:18,186 DEBUG [upjong_code_mst] [indi_interect.py:366] - 데이터 없음 체크 완료

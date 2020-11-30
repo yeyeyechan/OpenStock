@@ -76,9 +76,19 @@ col_name = make_dict(col_name_in) # 아웃풋 컬럼명 배열을 index ,value �
 pk_dict = {"일자": ""} # document 간 pk나 중요정보로 추가되어야하는 값
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
 
-    logic_name = "logic3"
+    app = QApplication(sys.argv)
+    logic_name= "3daySupply"
+    from_collection = make_collection("stock_data", logic_name)
+    from_collection = from_collection.find_one({"일자": com_vari.Today_date})["stock_code"]
+    collection = make_collection("stock_data", "Real_Time_SK")
+    activate_Tr = real_tr_object("SK", collection)
+    pk_dict["일자"] = com_vari.Today_date
+    input_list = from_collection
+    collection_len = len(input_list)
+    activate_Tr.set_multi_call(input_list, col_name, pk_dict, collection_len)
+
+    '''logic_name = "logic3"
 
 
     from_collection = make_collection("stock_data", logic_name)
@@ -92,7 +102,7 @@ if __name__ == "__main__":
     pk_dict["일자"] = com_vari.Today_date
 
     collection_len = len(input_list)
-    activate_Tr.set_multi_call(input_list, col_name, pk_dict, collection_len)
+    activate_Tr.set_multi_call(input_list, col_name, pk_dict, collection_len)'''
 
     app.exec_()
 
