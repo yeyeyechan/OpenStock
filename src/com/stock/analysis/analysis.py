@@ -56,6 +56,13 @@ def check_per_min_amount(volume , target):
         return False
     else:
         return True
+def check_first_price(price,  before, target_down, target_up):
+    diff = int(price) -int(before)
+    if  int(diff)/int(before) *100 >=target_down and int(diff)/int(before) *100 <=target_up:
+        return True
+    else:
+        return False
+
 def check_up_price(price,  diff, target):
     before = int(price) -int(diff)
     if  int(diff)/before *100 >=target:

@@ -39,10 +39,12 @@ if __name__ ==  "__main__":
         per_vol = 0
         for_vol = 0
         com_vol = 0
+        pro_vol = 0
 
         last_per_vol = 0
         last_for_vol = 0
         last_com_vol = 0
+        last_pro_vol = 0
 
         if len(date_list) == date_count:
             for j in collection.find({"단축코드" : i["단축코드"], "일자" :{"$in" : date_list}}):
@@ -50,14 +52,17 @@ if __name__ ==  "__main__":
                     last_per_vol = int(j["개인순매수거래량"])
                     last_for_vol = int(j["외국인순매수거래량"])
                     last_com_vol = int(j["기관순매수거래량"])
+                    last_pro_vol = int(j["프로그램순매수"])
+
                     index = False
                 per_vol += int(j["개인순매수거래량"])
                 for_vol += int(j["외국인순매수거래량"])
                 com_vol += int(j["기관순매수거래량"])
+                pro_vol += int(j["프로그램순매수"])
         else:
             continue
 
-        if per_vol <0 and for_vol >0 and com_vol >0 and  last_per_vol <0 and last_for_vol >0 and last_com_vol >0 :
+        if per_vol <0 and for_vol >0 and com_vol >0 and pro_vol >0 and  last_per_vol <0 and last_for_vol >0 and last_com_vol >0 and last_pro_vol >0:
             print(i["단축코드"])
             result_list.append(i["단축코드"])
 
