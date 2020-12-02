@@ -123,8 +123,8 @@ if __name__ == "__main__":
     activate_Tr = tr_object("TR_1206", collection , IndiControl)
 
 
-    start_date = "20201130"
-    end_date = "20201201"
+    start_date = "20201202"
+    end_date = "20201202"
     gubun = "1"
     data_kind = "0"
 

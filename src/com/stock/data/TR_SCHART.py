@@ -18,11 +18,11 @@ last_call = False
 if __name__ == "__main__":
     #drop_collection("stock_data", "TR_SCHART")
     app = QApplication(sys.argv)
-    date = "20201201"
-    from_collection = make_collection("stock_data", "3daySupply").find_one({"일자": date})["stock_code"]
+    date = "20201202"
+    #from_collection = make_collection("stock_data", "additional_data").find_one({"일자": date})["stock_code"]
     index =0
     IndiControl = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
-
+    from_collection = make_collection("stock_data" , "stock_mst")
     collection = make_collection("stock_data", "TR_SCHART")
     activate_Tr = tr_class("TR_SCHART", collection , IndiControl)
 
@@ -31,14 +31,14 @@ if __name__ == "__main__":
 
     graph_kind = "1"
     time_gap = "5"
-    start_date = "20201201"
-    end_date = "20201201"
-    search_count = "79"
+    start_date = "20201130"
+    end_date = "20201202"
+    search_count = "158"
 
     pk_dict["데이터구분"] = "1"
     pk_dict["시간간격"] = "5"
-    for i in from_collection:
-        input_dict = make_dict([i, graph_kind, time_gap, start_date, end_date,search_count])
+    for i in from_collection.find():
+        input_dict = make_dict([i["단축코드"], graph_kind, time_gap, start_date, end_date,search_count])
         input_dict_list.append(copy(input_dict))
         pk_dict["단축코드"] = i
         pk_dict_list.append(copy(pk_dict))

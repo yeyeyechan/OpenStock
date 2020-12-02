@@ -51,6 +51,8 @@ def get_kr_str_working_day_list_by_diff(input_working_date, diff):
 
 
 def get_kr_working_day_by_diff(input_working_date, diff):
+    if type(input_working_date) is str:
+        input_working_date = dt_dt(int(input_working_date[:4]), int(input_working_date[4:6]), int(input_working_date[6:8]))
     year = input_working_date.strftime("%Y%m%d")[:4]
     year_list = make_year_list(year , year)
     kr_holiday = get_holiday(year_list, "ALL")

@@ -18,8 +18,10 @@ def get_holiday(solYear, solMonth):
     date_db = make_collection("stock_data" , "kr_holidays")
     if date_db.find_one({"일자" : today}) is None :
         drop_collection("stock_data" , "kr_holidays")
-    if date_db.find_one({"연도": solYear}) is not None:
-        return date_db.find_one({"연도": solYear})["kr_holidays"]
+    if date_db.find_one({"일자" : today}) is not None:
+        for i in date_db.find() :
+            if "kr_holidays" in i:
+                return i["kr_holidays"]
     URL = 'http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService'
     # OPERATION = 'getHoliDeInfo' # 국경일 + 공휴일 정보 조회 오퍼레이션
     OPERATION = "getHoliDeInfo"
