@@ -77,7 +77,8 @@ class real_tr_object(QMainWindow):
         self.col_name = output_dict
         print(self.input_list)
         for input in input_list :
-            ret1 = com_vari.indiReal_dict[self.tr_name ].dynamicCall("UnRequestRTReg(QString, QString)", self.tr_name, input)
+            #ret1 = com_vari.indiReal_dict[self.tr_name ].dynamicCall("UnRequestRTReg(QString, QString)", self.tr_name, input)
+            ret1 = True
             if not ret1:
                 print("실시간 TR   "+ self.tr_name +"  에 대한   종목코드  " + input + " 등록 해제 실패")
                 ret1 = com_vari.indiReal_dict[self.tr_name ].dynamicCall("RequestRTReg(QString, QString)", self.tr_name, input)
@@ -104,15 +105,18 @@ class real_tr_object(QMainWindow):
             DATA['국내총순매수수량'] = (int)(com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 41))
             DATA['외국계순매수수량'] = (int)(com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 47))
             DATA['전체순매수수량'] = (int)(com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 53))
-            for key , value in self.pk_dict:
+            for key , value in self.pk_dict.items():
                 DATA[key] = value
 
             if self.collection.find_one({'단축코드': DATA['단축코드'], '시간':DATA['시간'], "일자": DATA["일자"]}) != None:
                 data_input = self.collection.find_one({'단축코드': DATA['단축코드'], '시간':DATA['시간'], "일자": DATA["일자"]}).copy()
                 DATA['_id'] = data_input['_id']
                 self.collection.replace_one(data_input, DATA, upsert=True)
+                print(data_input)
             else:
                 self.collection.insert_one(DATA)
+                print(DATA)
+
 
         if realType == "SP":
             DATA = {}
@@ -141,8 +145,12 @@ class real_tr_object(QMainWindow):
                 data_input = self.collection.find_one({'단축코드': DATA['단축코드'], '시간':DATA['시간'], "일자": DATA["일자"]}).copy()
                 DATA['_id'] = data_input['_id']
                 self.collection.replace_one(data_input, DATA, upsert=True)
+                print(data_input)
+
             else:
                 self.collection.insert_one(DATA)
+
+                print(DATA)
 
     # 시스템 메시지를 받은 경우 출력합니다.
     def ReceiveSysMsg(self, MsgID):

@@ -80,7 +80,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     logic_name= "3daySupply"
     from_collection = make_collection("stock_data", logic_name)
-    from_collection = from_collection.find_one({"일자": com_vari.Today_date})["stock_code"]
+    from_collection = from_collection.find_one({"일자": com_vari.Today_date})["stock_code"][:50]
     collection = make_collection("stock_data", "Real_Time_SK")
     activate_Tr = real_tr_object("SK", collection)
     pk_dict["일자"] = com_vari.Today_date

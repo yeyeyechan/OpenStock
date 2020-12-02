@@ -1,6 +1,7 @@
 from src.com.stock.common.import_lib import *
 def print_anal4(date, from_collection):
     check_data = from_collection.find_one({'일자' : date})["stock_code"]
+    print(len(check_data))
     print(str(check_data))
 def additional_condition(data, collection):
     result = {}
@@ -41,11 +42,11 @@ def check_stock_data_anal4(date, from_collection , check_collection, target_perc
             print("단축코드   " + i["단축코드"] + "  누적거래량   "  + i["누적거래량"] +   "  외국인 매수 비율  " + str(int(i["외국인순매수거래량"])/int(i["누적거래량"])) + " 개인 매수 배율   " +str(int(i["개인순매수거래량"])/int(i["누적거래량"]))  +"    기관 매수 비율  " + str(int(i["기관순매수거래량"])/int(i["누적거래량"])) +" 전일대비율  " + str(i["전일대비율"]) )
 
 if __name__ ==  "__main__":
-    date = "20201201"
+    date = "20201202"
     collection = make_collection("stock_data" , "3daySupply")
 
-    #print_anal4(date,collection )
-    db_name ="3daySupply"
+    print_anal4(date,collection )
+    '''db_name ="3daySupply"
     collection = make_collection("stock_data" , "new_TR_1206")
     from_collection = make_collection("stock_data" , db_name)
     target_percent = 5.0
@@ -64,7 +65,7 @@ if __name__ ==  "__main__":
     print("전체종목수 - 후보종목수   " + str( result["전체종목수"]-result["후보종목수"]))
     print("후보종목외상승종목   " + str(len(result["후보종목외상승종목"])))
 
-    check_stock_data_anal4(date, from_collection ,collection ,target_percent)
+    check_stock_data_anal4(date, from_collection ,collection ,target_percent)'''
     '''collection = make_collection("stock_data" , "5daySupply")
 
     stock_code = collection.find_one({"일자" : "20201125"})["stock_code"]
