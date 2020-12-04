@@ -24,7 +24,7 @@ def check_rising_stock(data, db, target_percent):
 if __name__ ==  "__main__":
 
     collection = make_collection("stock_data" , "new_TR_1206")
-    date = "20201202"
+    date = "20201203"
     day_range = -3
     date_count = abs(day_range)
     result_db_name = "3daySupply"

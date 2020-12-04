@@ -283,7 +283,7 @@ class tr_object(QMainWindow):
 class tr_object(QMainWindow):
     def __init__(self, tr_name, db_collection, control):
         super().__init__()
-
+        self.total_list = []
         # Indi API event
         self.IndiTR = control
         # Indi API event
@@ -362,9 +362,11 @@ class tr_object(QMainWindow):
                         else:
                             DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key).strip()
                         # print(DATA)
-                    update_collection(self.collection, DATA)
                     self.list.append(DATA)
-
+                if len(self.list) != 0 :
+                    self.total_list.extend(copy(self.list))
+                else:
+                    print("self list 데이터 가 없어 시발")
                 print(self.list)
                 if(self.list == []):
                     for key, value in self.input_dict_list[self.input_index].items():
@@ -381,6 +383,10 @@ class tr_object(QMainWindow):
                 if self.input_index != self.collection_len:
                     self.inner_call()
                 else:
+                    if self.total_list == []:
+                        pass
+                    else:
+                        self.collection.insert_many(self.total_list)
                     QCoreApplication.instance().exit()
             else:
                 for i in range(0, nCnt):
@@ -391,7 +397,10 @@ class tr_object(QMainWindow):
                     for key, value in self.col_name.items():
                         DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
                     print(DATA)
-                    update_collection(self.collection, DATA)
+                    if self.pk_dict_list == []:
+                        update_collection(self.collection, DATA)
+                    else:
+                        update_collection_sec(self.collection, DATA,self.pk_dict_list[self.input_index])
                 QCoreApplication.instance().exit()
 
     def GetDataAll(self):
@@ -491,9 +500,13 @@ class tr_class(QMainWindow):
                                     DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
                             else:
                                 DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
-                        update_collection(self.collection, DATA)
+                        #update_collection(self.collection, DATA)
                         self.list.append(DATA)
                 print(self.list)
+                if self.list == []:
+                    pass
+                else:
+                    self.collection.insert_many(self.list)
                 if(self.list == []):
                     for key, value in self.input_dict_list[self.input_index].items():
                         com_vari.upjong_code_mst_logger.debug("데이터없음  key  "  +  str(key)  + "  value   " + value)

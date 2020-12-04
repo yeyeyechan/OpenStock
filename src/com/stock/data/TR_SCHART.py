@@ -16,7 +16,7 @@ pk_dict = {"단축코드": "" , "데이터구분":"", "시간간격" : ""} # doc
 last_call = False
 
 if __name__ == "__main__":
-    #drop_collection("stock_data", "TR_SCHART")
+    drop_collection("stock_data", "TR_SCHART")
     app = QApplication(sys.argv)
     date = "20201202"
     #from_collection = make_collection("stock_data", "additional_data").find_one({"일자": date})["stock_code"]
@@ -31,16 +31,18 @@ if __name__ == "__main__":
 
     graph_kind = "1"
     time_gap = "5"
-    start_date = "20201130"
+    start_date = "20201201"
     end_date = "20201202"
     search_count = "158"
 
     pk_dict["데이터구분"] = "1"
     pk_dict["시간간격"] = "5"
     for i in from_collection.find():
+        if i['단축코드'] =="003670":
+            print(i)
         input_dict = make_dict([i["단축코드"], graph_kind, time_gap, start_date, end_date,search_count])
         input_dict_list.append(copy(input_dict))
-        pk_dict["단축코드"] = i
+        pk_dict["단축코드"] = i["단축코드"]
         pk_dict_list.append(copy(pk_dict))
 
     collection_len = len(input_dict_list)

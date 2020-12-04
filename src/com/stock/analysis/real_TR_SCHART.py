@@ -14,7 +14,7 @@ if __name__ ==  "__main__":
     #from_collection = make_collection("stock_data", "additional_data").find_one({"일자": date})["stock_code"]
     index =0
     IndiControl = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
-    from_collection = make_collection("stock_data" , "additional_data").find_one({"일자" : "20201203"})
+    from_collection = make_collection("stock_data" , "3daySupply").find_one({"일자" : "20201203"})
     collection = make_collection("stock_data", "TR_SCHART")
     activate_Tr = tr_class("TR_SCHART", collection , IndiControl)
 
@@ -30,7 +30,7 @@ if __name__ ==  "__main__":
     pk_dict["데이터구분"] = "1"
     pk_dict["시간간격"] = "5"
     for i in from_collection["stock_code"]:
-        input_dict = make_dict([i["단축코드"], graph_kind, time_gap, start_date, end_date,search_count])
+        input_dict = make_dict([i, graph_kind, time_gap, start_date, end_date,search_count])
         input_dict_list.append(copy(input_dict))
         pk_dict["단축코드"] = i
         pk_dict_list.append(copy(pk_dict))

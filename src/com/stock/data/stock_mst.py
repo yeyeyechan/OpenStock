@@ -39,11 +39,12 @@ if __name__ == "__main__":
     pk_dict = {}
     #종목코드 삭제된 종목을 날리기 위해 전부 날려버림
     drop_collection("stock_data", "stock_mst")
+    IndiControl = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
 
     collection = make_collection("stock_data", "stock_mst")
-    activate_Tr = tr_object("stock_mst", collection)
+    activate_Tr = tr_object("stock_mst", collection, IndiControl)
 
     last_call = True
 
-    activate_Tr.set_single_call(input_dict, col_name, pk_dict, last_call)
+    activate_Tr.set_single_call(input_dict, col_name, pk_dict)
     app.exec_()

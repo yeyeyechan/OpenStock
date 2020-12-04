@@ -9,7 +9,8 @@ if __name__ ==  "__main__":
     today = com_vari.Today_date
     before_today = get_kr_working_day_by_diff(com_vari.Today_date, -1).strftime("%Y%m%d")
 
-    from_collection = make_collection("stock_data" , "additional_data")
+    #from_collection = make_collection("stock_data" , "additional_data")
+    from_collection = make_collection("stock_data" , "3daySupply")
     from_collection2 = make_collection("stock_data", "TR_SCHART")
 
     from_collection3 = make_collection("stock_data", "TR_1206")
@@ -17,8 +18,8 @@ if __name__ ==  "__main__":
     stock_code =  from_collection.find_one({"일자" : today})["stock_code"]
 
     for i in stock_code:
-        before_TR_SCHART_DATA = from_collection2.find_one({"일자" : before_today, "시간" : "0905"})["단위거래량"]
-        today_TR_SCHART_DATA = from_collection2.find_one({"일자" : today, "시간" : "0905"})["단위거래량"]
+        before_TR_SCHART_DATA = from_collection2.find_one({"일자" : before_today, "시간" : "0905", "단축코드" : i })["단위거래량"]
+        today_TR_SCHART_DATA = from_collection2.find_one({"일자" : today, "시간" : "1005", "단축코드" : i })["단위거래량"]
         before_TR_1206_DATA = int(from_collection3.find_one({"일자" : before_today, "단축코드" : i})["누적거래량"])/79
         if int(today_TR_SCHART_DATA)/int(before_TR_SCHART_DATA) >=1.9:
             if int(today_TR_SCHART_DATA)/before_TR_1206_DATA>=2.0:

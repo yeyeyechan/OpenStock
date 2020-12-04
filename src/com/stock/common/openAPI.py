@@ -16,8 +16,6 @@ def call_api(ServiceKey, url, params, operation):
 # 공공데이터 포탈 공휴일 호출 함수
 def get_holiday(solYear, solMonth):
     date_db = make_collection("stock_data" , "kr_holidays")
-    if date_db.find_one({"일자" : today}) is None :
-        drop_collection("stock_data" , "kr_holidays")
     if date_db.find_one({"일자" : today}) is not None:
         for i in date_db.find() :
             if "kr_holidays" in i:
@@ -30,31 +28,36 @@ def get_holiday(solYear, solMonth):
     xmlObject = ""
     allData = ""
     lenAllData = ""
-
-    if solMonth == "ALL":
-        solMonth = all_month
-    for i in solYear:
-        for j in solMonth:
-            params = {
-                "solYear": "",
-                "solMonth": ""}
-            params["solYear"] = i
-            params["solMonth"] = j
-            xmlObject = call_api(ServiceKey, URL, params, OPERATION)
-            if xmlObject["response"]["body"]["items"] is None:
-                continue
-            allData = xmlObject["response"]["body"]["items"]["item"]
-            if type(allData) is list:
-                lenAllData = len(allData)
-                for k in range(lenAllData):
-                    print(allData[k]["locdate"])
-                    list_kor_holiday.append(allData[k]["locdate"])
-            else:
-                list_kor_holiday.append(allData["locdate"])
-                print(allData["locdate"])
-    update_collection(date_db , {"일자" : today})
-    update_collection(date_db,{"kr_holidays" : list_kor_holiday} )
-
+    try:
+        if solMonth == "ALL":
+            solMonth = all_month
+        for i in solYear:
+            for j in solMonth:
+                params = {
+                    "solYear": "",
+                    "solMonth": ""}
+                params["solYear"] = i
+                params["solMonth"] = j
+                xmlObject = call_api(ServiceKey, URL, params, OPERATION)
+                if xmlObject["response"]["body"]["items"] is None:
+                    continue
+                allData = xmlObject["response"]["body"]["items"]["item"]
+                if type(allData) is list:
+                    lenAllData = len(allData)
+                    for k in range(lenAllData):
+                        print(allData[k]["locdate"])
+                        list_kor_holiday.append(allData[k]["locdate"])
+                else:
+                    list_kor_holiday.append(allData["locdate"])
+                    print(allData["locdate"])
+        drop_collection("stock_data" , "kr_holidays")
+        update_collection(date_db,{"kr_holidays" : list_kor_holiday, "일자" : today})
+    except:
+         if date_db.find().count() >0:
+           for i in date_db.find():
+               return i["kr_holidays"]
+         else:
+            print('기존 kr holidays 정보가 없습니다.')
     return list_kor_holiday
 
 if __name__ == "__main__":

@@ -12,14 +12,18 @@ def additional_condition(data, collection):
     result['stock_code'] = []
     from_collection = make_collection("stock_data", "TR_1206")
     for i in data["stock_code"]:
-        today_data = collection.find_one({"일자": data["일자"], "단축코드" : i, "시간" : "0905"})["종가"]
-        print(i)
-        before_data = from_collection.find_one({"일자": "20201201", "단축코드" : i})["가격"]
-        if check_first_price(today_data , before_data , 0.7 ,2.0):
-            result['stock_code'].append(i)
-            print("additional_condition" + i)
+        if from_collection.find_one({"일자": data["일자"], "단축코드": i}) is not None:
+            today_data = collection.find_one({"일자": data["일자"], "단축코드" : i, "시간" : "0905"})["종가"]
+            print(i)
+            before_data = from_collection.find_one({"일자": "20201202", "단축코드" : i})["가격"]
+            if check_first_price(today_data , before_data , 0.7 ,2.0):
+                result['stock_code'].append(i)
+                print("additional_condition" + i)
+        else:
+            return "몰라"
     to_collection = make_collection("stock_data" , "additional_data")
     update_collection_sec(to_collection,result, {"일자":  result['일자'] })
+
     return result
 
 def check_stock_data_anal4(date, from_collection , check_collection, target_percent):
@@ -47,8 +51,8 @@ def check_stock_data_anal4(date, from_collection , check_collection, target_perc
         check_before_data = check_collection.find_one({"일자": before_date, "단축코드" : i["단축코드"]})
         print("단축코드   " + i["단축코드"] + "  누적거래량   " + i["누적거래량"] + " 전일 누적거래량   " + check_before_data["누적거래량"] + "  외국인 매수 비율  " + str(int(i["외국인순매수거래량"]) / int(i["누적거래량"])) + " 개인 매수 배율   " + str(int(i["개인순매수거래량"]) / int(i["누적거래량"])) + "    기관 매수 비율  " + str(int(i["기관순매수거래량"]) / int(i["누적거래량"])) + " 전일대비율  " + str(i["전일대비율"]))
         print("당일 0905 거래량   " + TR_SCHART_data.find_one({"단축코드" : i["단축코드"] , "일자" : date, "시간" : "0905"})["단위거래량"] + "    전일 0905 거래량   " + TR_SCHART_data.find_one({"단축코드" : i["단축코드"] , "일자" : before_date, "시간" : "0905"})["단위거래량"] )
-        print(" 토탈 거래량 비교   전일비  " + str (int(i["누적거래량"])/check_before_data["누적거래량"]))
-        print(" 5분 거래량 비교   전일비  " + str (int(TR_SCHART_data.find_one({"단축코드" : i["단축코드"] , "일자" : date, "시간" : "0905"})["단위거래량"])/TR_SCHART_data.find_one({"단축코드" : i["단축코드"] , "일자" : before_date, "시간" : "0905"})["단위거래량"]))
+        print(" 토탈 거래량 비교   전일비  " + str (int(i["누적거래량"])/int(check_before_data["누적거래량"])))
+        print(" 5분 거래량 비교   전일비  " + str (int(TR_SCHART_data.find_one({"단축코드" : i["단축코드"] , "일자" : date, "시간" : "0905"})["단위거래량"])/int(TR_SCHART_data.find_one({"단축코드" : i["단축코드"] , "일자" : before_date, "시간" : "0905"})["단위거래량"])))
         '''if int(i["외국인순매수누적거래량"]) >0 :
             print("단축코드   " + i["단축코드"] + "  누적거래량   "  + i["누적거래량"] +   "  외국인 매수 비율  " + str(int(i["외국인순매수거래량"])/int(i["누적거래량"])) + " 개인 매수 배율   " +str(int(i["개인순매수거래량"])/int(i["누적거래량"]))  +"    기관 매수 비율  " + str(int(i["기관순매수거래량"])/int(i["누적거래량"])) +" 전일대비율  " + str(i["전일대비율"]) )
         else:
@@ -60,8 +64,8 @@ def check_stock_data_anal4(date, from_collection , check_collection, target_perc
         check_before_data = check_collection.find_one({"일자": before_date, "단축코드" : i["단축코드"]})
         print("단축코드   " + i["단축코드"] + "  누적거래량   " + i["누적거래량"] + " 전일 누적거래량   " + check_before_data["누적거래량"] + "  외국인 매수 비율  " + str(int(i["외국인순매수거래량"]) / int(i["누적거래량"])) + " 개인 매수 배율   " + str(int(i["개인순매수거래량"]) / int(i["누적거래량"])) + "    기관 매수 비율  " + str(int(i["기관순매수거래량"]) / int(i["누적거래량"])) + " 전일대비율  " + str(i["전일대비율"]))
         print("당일 0905 거래량   " + TR_SCHART_data.find_one({"단축코드" : i["단축코드"] , "일자" : date, "시간" : "0905"})["단위거래량"] + "    전일 0905 거래량   " + TR_SCHART_data.find_one({"단축코드" : i["단축코드"] , "일자" : before_date, "시간" : "0905"})["단위거래량"] )
-        print(" 토탈 거래량 비교   전일비  " + str (int(i["누적거래량"])/check_before_data["누적거래량"]))
-        print(" 5분 거래량 비교   전일비  " + str (int(TR_SCHART_data.find_one({"단축코드" : i["단축코드"] , "일자" : date, "시간" : "0905"})["단위거래량"])/TR_SCHART_data.find_one({"단축코드" : i["단축코드"] , "일자" : before_date, "시간" : "0905"})["단위거래량"]))
+        print(" 토탈 거래량 비교   전일비  " + str (int(i["누적거래량"])/int(check_before_data["누적거래량"])))
+        print(" 5분 거래량 비교   전일비  " + str (int(TR_SCHART_data.find_one({"단축코드" : i["단축코드"] , "일자" : date, "시간" : "0905"})["단위거래량"])/int(TR_SCHART_data.find_one({"단축코드" : i["단축코드"] , "일자" : before_date, "시간" : "0905"})["단위거래량"])))
 
         '''if int(i["외국인순매수누적거래량"]) >0 :
             print("단축코드   " + i["단축코드"] + "  누적거래량   "  + i["누적거래량"] +   "  외국인 매수 비율  " + str(int(i["외국인순매수거래량"])/int(i["누적거래량"])) + " 개인 매수 배율   " +str(int(i["개인순매수거래량"])/int(i["누적거래량"]))  +"    기관 매수 비율  " + str(int(i["기관순매수거래량"])/int(i["누적거래량"])) +" 전일대비율  " + str(i["전일대비율"]) )
@@ -69,10 +73,14 @@ def check_stock_data_anal4(date, from_collection , check_collection, target_perc
             print("단축코드   " + i["단축코드"] + "  누적거래량   "  + i["누적거래량"] +   "  외국인 매수 비율  " + str(int(i["외국인순매수거래량"])/int(i["누적거래량"])) + " 개인 매수 배율   " +str(int(i["개인순매수거래량"])/int(i["누적거래량"]))  +"    기관 매수 비율  " + str(int(i["기관순매수거래량"])/int(i["누적거래량"])) +" 전일대비율  " + str(i["전일대비율"]) )'''
 
 if __name__ ==  "__main__":
-    date = "20201202"
+    date = "20201203"
     collection = make_collection("stock_data" , "3daySupply")
 
-    #print_anal4(date,collection )
+    '''print_anal4(date,collection )
+    stock_code = collection.find_one({"일자" : date})
+    collection2 = make_collection("stock_data" , "TR_SCHART")
+    additional_result = additional_condition(stock_code,collection2)'''
+
     db_name ="3daySupply"
     collection = make_collection("stock_data" , "new_TR_1206")
     to_collection = make_collection("stock_data" , "additional_data")
