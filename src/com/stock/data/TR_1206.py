@@ -111,7 +111,7 @@ pk_dict = {"단축코드": "" , "데이터구분":""} # document 간 pk나 중�
 last_call = False
 
 if __name__ == "__main__":
-    #drop_collection("stock_data", "TR_1206")
+    drop_collection("stock_data", "TR_1206")
     app = QApplication(sys.argv)
 
     from_collection = make_collection("stock_data", "stock_mst")
@@ -119,32 +119,26 @@ if __name__ == "__main__":
     index =0
     IndiControl = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
 
-    collection = make_collection("stock_data", "TR_1206")
-    activate_Tr = tr_object("TR_1206", collection , IndiControl)
-
-
-    start_date = "20201127"
-    end_date = "20201203"
+    TR_1206 = indi_object("TR_1206", IndiControl)
+    start_date = "20201001"
+    end_date = "20201207"
     gubun = "1"
     data_kind = "0"
 
     check_list = integrity_db_count(start_date, end_date , collection_len)
     com_vari.TR_1206_len_counts = check_list[0]
-    pk_dict["데이터구분"] = data_kind
-    input_dict = make_dict(["", start_date, end_date, gubun, data_kind])
+    input_list = ["", start_date, end_date, gubun, data_kind]
 
-    pk_dict_list = []
     input_dict_list = []
     for i in from_collection.find():
         stock_code = i["단축코드"]
 
-        pk_dict["단축코드"] = stock_code
-        input_dict[0] = stock_code
+        input_list[0] = stock_code
+        input_dict_list.append(copy(input_list))
 
-        pk_dict_list.append(copy(pk_dict))
-        input_dict_list.append(copy(input_dict))
     com_vari.TR_1206_logger.debug("TR_1206 호출 시작")
-    activate_Tr.set_multi_call(input_dict_list, col_name, pk_dict_list, collection_len)
+    TR_1206.set_input_data(input_dict_list)
+    TR_1206.call_tr()
     com_vari.TR_1206_logger.debug("TR_1206 호출 완료")
 
     app.exec_()

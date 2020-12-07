@@ -23,6 +23,7 @@ from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import *
 from src.com.stock.util.logger.myLogging import *
 from src.com.stock.util.mongo_db import *
+from src.com.stock.data.in_out_builder import *
 from src.com.stock.util.indi_interect import *
 from src.com.stock.common.openAPI import *
 from src.com.stock.util.date import *
@@ -35,8 +36,6 @@ from src.com.stock.analysis.analysis4 import *
 from src.com.stock.analysis.real_TR_SCHART import *
 from src.com.stock.analysis.real_checking import *
 from src.com.stock.data.fix_data import *
-from src.com.stock.data.in_out_builder import *
-from src.com.stock.data.indi_object import *
 TR_1206_len_counts = 0
 
 myLogger = logging.getLogger("myLogger")
@@ -194,7 +193,7 @@ TR_output_dict ={
     }
 
 }
-
+path_to_tr_file = "C:\dev\OpenStock\src\com\stock\\tr_data\Indi_TR.xlsx"
 DEFAILT_TR_DB_NAME ={
     "TR_1206" : "TR_1206"
 }
