@@ -1,4 +1,12 @@
 import sys
+sys.path.append("C:\\dev\\OpenStock\\src\\com\\stock\\analysis")
+sys.path.append("C:\\dev\\OpenStock\\src\\com\\stock\\common")
+sys.path.append("C:\\dev\\OpenStock\\src\\com\\stock\\data")
+sys.path.append("C:\\dev\\OpenStock\\src\\com\\stock\\login")
+sys.path.append("C:\\dev\\OpenStock\\src\\com\\stock\\tr_data")
+sys.path.append("C:\\dev\\OpenStock\\src\\com\\stock\\util")
+sys.path.append("C:\\dev\\OpenStock\\src\\com\\stock\\util\\logger")
+sys.path.append("C:\\dev\\OpenStock\\src\\com\\stock\\util\\util_data")
 import os
 import numpy as np
 import pandas as pd
@@ -8,6 +16,7 @@ import xmltodict
 import time
 import win32com.client as com
 from threading import Thread
+import telegram
 import pythoncom
 from copy import copy
 import requests
@@ -22,7 +31,10 @@ from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import *
 from src.com.stock.util.logger.myLogging import *
+from src.com.stock.common.telegram_bot import *
+from src.com.stock.data.common_data import *
 from src.com.stock.util.mongo_db import *
+from src.com.stock.analysis.analysis_filter import *
 from src.com.stock.data.in_out_builder import *
 from src.com.stock.util.indi_interect import *
 from src.com.stock.common.openAPI import *
@@ -39,163 +51,36 @@ from src.com.stock.data.fix_data import *
 TR_1206_len_counts = 0
 
 myLogger = logging.getLogger("myLogger")
+OpenStock = logging.getLogger("OpenStock")
 TR_1206_logger = logging.getLogger("TR_1206")
 simulation_1_logger = logging.getLogger("simulation_1")
 upjong_code_mst_logger = logging.getLogger("upjong_code_mst")
 Today_date = datetime.now()
 Today_date = Today_date.strftime("%Y%m%d")
-indiReal_dict = {}
-TR_output_dict ={
-    "TR_1206": {
-      "multi_output":[
-"일자                      " ,
-"가격                      " ,
-"시가                      " ,
-"고가                      " ,
-"저가                      " ,
-"전일대비구분              " ,
-"전일대비                  " ,
-"누적거래량                " ,
-"개인매수거래량            " ,
-"개인매도거래량            " ,
-"개인순매수거래량          " ,
-"개인매수누적              " ,
-"개인매도누적              " ,
-"개인순매수누적거래량      " ,
-"외국인매수거래량          " ,
-"외국인매도거래량          " ,
-"외국인순매수거래량        " ,
-"외국인매수누적            " ,
-"외국인매도누적            " ,
-"외국인순매수누적거래량    " ,
-"기관매수거래량            " ,
-"기관매도거래량            " ,
-"기관순매수거래량          " ,
-"기관매수누적              " ,
-"기관매도누적              " ,
-"기관순매수누적거래량      " ,
-"금융투자매수거래량        " ,
-"금융투자매도거래량        " ,
-"금융투자순매수거래량      " ,
-"금융투자매수누적          " ,
-"금융투자매도누적          " ,
-"금융투자순매수누적거래량  " ,
-"투신매수거래량            " ,
-"투신매도거래량            " ,
-"투신순매수거래량          " ,
-"투신매수누적              " ,
-"투신매도누적              " ,
-"투신순매수누적거래량      " ,
-"은행매수거래량            " ,
-"은행매도거래량            " ,
-"은행순매수거래량          " ,
-"은행매수누적              " ,
-"은행매도누적              " ,
-"은행순매수누적거래량      " ,
-"기타금융매수거래량        " ,
-"기타금융매도거래량        " ,
-"기타금융순매수거래량      " ,
-"기타금융매수누적          " ,
-"기타금융매도누적          " ,
-"기타금융순매수누적거래량  " ,
-"보험매수거래량            " ,
-"보험매도거래량            " ,
-"보험순매수거래량          " ,
-"보험매수누적              " ,
-"보험매도누적              " ,
-"보험순매수누적거래량      " ,
-"기금매수거래량            " ,
-"기금매도거래량            " ,
-"기금순매수거래량          " ,
-"기금매수누적              " ,
-"기금매도누적              " ,
-"기금순매수누적거래량      " ,
-"기타매수거래량            " ,
-"기타매도거래량            " ,
-"기타순매수거래량          " ,
-"기타매수누적              " ,
-"기타매도누적              " ,
-"기타순매수누적거래량      " ,
-"외국인기타매수거래량      " ,
-"외국인기타매도거래량      " ,
-"외국인기타순매수거래량    " ,
-"외국인기타매수누적        " ,
-"외국인기타매도누적        " ,
-"외국인기타순매수누적거래량" ,
-"국가지자체매수거래량      " ,
-"국가지자체매도거래량      " ,
-"국가지자체순매수거래량    " ,
-"국가지자체매수누적        " ,
-"국가지자체매도누적        " ,
-"국가지자체순매수누적거래량" ,
-"프로그램매수              " ,
-"프로그램매도              " ,
-"프로그램순매수            " ,
-"프로그램누적매수          " ,
-"프로그램누적매도          " ,
-"프로그램누적순매수        " ,
-"사모펀드매수              " ,
-"사모펀드매도              " ,
-"사모펀드순매수            " ,
-"사모펀드누적매수          " ,
-"사모펀드누적매도          " ,
-"사모펀드누적순매수        " ,
-"전일대비율                " ,
-"외국인지분율              "
-      ]
-    },
-    "TR_1500": {
-        "single_output": []
-        ,
-        "multi_output": [
-            "L분류코드",
-            "S분류코드",
-            "테마명   ",
-            "평균상승 ",
-        ],
-    },
-    "TR_1500_1" : {
-        "single_output": [
-            "상승종목수      " ,
-            "총종목수        " ,
-            "상승율          "
-        ] ,
-        "multi_output": [
-            "단축코드        " ,
-            "한글종목명      " ,
-            "현재가          " ,
-            "전일대비구분    " ,
-            "전일대비        " ,
-            "전일대비율      " ,
-            "거래강도        " ,
-            "누적거래량      " ,
-            "업종구분        "
-        ] ,
-    },
-    "TR_SCHART":{
-        "single_output": []
-        ,
-        "multi_output": [
-            "일자             ",
-            "시간             ",
-            "시가             ",
-            "고가             ",
-            "저가             ",
-            "종가             ",
-            "주가수정계수     ",
-            "거래량수정계수   ",
-            "락구분           ",
-            "단위거래량       ",
-            "단위거래대금     ",
-
-        ],
-
-    }
-
+real_time_pk_dict = {
+    "일자" : Today_date
 }
+mylogger_dict = {
+    "OpenStock" : OpenStock,
+    "myLogger" : myLogger,
+    "TR_1206" : TR_1206_logger,
+    "simulation_1" : simulation_1_logger,
+    "upjong_code_mst" : upjong_code_mst_logger,
+}
+
+
+indiReal_dict = {}
+
 path_to_tr_file = "C:\dev\OpenStock\src\com\stock\\tr_data\Indi_TR.xlsx"
 DEFAILT_TR_DB_NAME ={
-    "TR_1206" : "TR_1206"
+    "TR_1206" : "TR_1206",
+    "stock_mst" : "stock_mst",
+    "TR_1205" : "TR_1205",
+    "TR_SCHART" : "TR_SCHART",
+    "SK" : "SK",
+    "SC" : "SC",
+    "SP" : "SP",
+    "SABA101U1" : "SABA101U1",
 }
 
 '''KOSPI_UPJONG_CODE={

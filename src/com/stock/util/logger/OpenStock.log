@@ -1,0 +1,98 @@
+2020-12-10 17:18:12,212 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   009900
+2020-12-10 17:18:12,212 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:20:08,350 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   129890
+2020-12-10 17:20:08,350 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:20:31,670 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   199820
+2020-12-10 17:20:31,670 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:20:37,790 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   214610
+2020-12-10 17:20:37,790 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:20:51,991 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   244920
+2020-12-10 17:20:51,991 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:00,965 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   265740
+2020-12-10 17:21:00,965 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:12,864 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   290690
+2020-12-10 17:21:12,864 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:18,155 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   299030
+2020-12-10 17:21:18,155 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:19,491 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   301300
+2020-12-10 17:21:19,492 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:21,055 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   304840
+2020-12-10 17:21:21,055 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:26,501 DEBUG [OpenStock] [indi_interect.py:219] -  ssibal 데이터 없어  
+2020-12-10 17:21:26,501 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   317690
+2020-12-10 17:21:26,502 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:27,049 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   318020
+2020-12-10 17:21:27,049 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:30,455 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   330860
+2020-12-10 17:21:30,455 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:34,220 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   339770
+2020-12-10 17:21:34,220 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:34,714 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   340570
+2020-12-10 17:21:34,715 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:35,761 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   347000
+2020-12-10 17:21:35,761 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:36,189 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   348150
+2020-12-10 17:21:36,189 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:36,264 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   348210
+2020-12-10 17:21:36,264 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:36,347 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   348350
+2020-12-10 17:21:36,347 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:37,002 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   352770
+2020-12-10 17:21:37,002 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:37,071 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   352820
+2020-12-10 17:21:37,071 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:37,612 DEBUG [OpenStock] [indi_interect.py:219] -  ssibal 데이터 없어  
+2020-12-10 17:21:37,612 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   354200
+2020-12-10 17:21:37,612 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:39,705 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   364960
+2020-12-10 17:21:39,705 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:39,790 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   364970
+2020-12-10 17:21:39,790 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:39,878 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   364980
+2020-12-10 17:21:39,878 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:39,962 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   364990
+2020-12-10 17:21:39,962 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:40,050 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   365000
+2020-12-10 17:21:40,051 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:40,262 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   365780
+2020-12-10 17:21:40,263 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:40,290 DEBUG [OpenStock] [indi_interect.py:219] -  ssibal 데이터 없어  
+2020-12-10 17:21:40,290 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   367340
+2020-12-10 17:21:40,291 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:40,373 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   367380
+2020-12-10 17:21:40,373 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:40,459 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   367740
+2020-12-10 17:21:40,460 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:40,540 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   367760
+2020-12-10 17:21:40,540 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:40,625 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   367770
+2020-12-10 17:21:40,625 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:40,708 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   368190
+2020-12-10 17:21:40,708 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:40,789 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   368200
+2020-12-10 17:21:40,790 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:40,812 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   368470
+2020-12-10 17:21:40,813 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:40,891 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   368590
+2020-12-10 17:21:40,892 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:40,967 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   368680
+2020-12-10 17:21:40,968 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:40,986 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   371130
+2020-12-10 17:21:40,987 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:41,002 DEBUG [OpenStock] [indi_interect.py:219] -  ssibal 데이터 없어  
+2020-12-10 17:21:41,002 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   371450
+2020-12-10 17:21:41,002 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:41,015 DEBUG [OpenStock] [indi_interect.py:219] -  ssibal 데이터 없어  
+2020-12-10 17:21:41,015 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   371460
+2020-12-10 17:21:41,015 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:41,026 DEBUG [OpenStock] [indi_interect.py:219] -  ssibal 데이터 없어  
+2020-12-10 17:21:41,026 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   371470
+2020-12-10 17:21:41,026 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:41,896 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   500055
+2020-12-10 17:21:41,896 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:41,914 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   500056
+2020-12-10 17:21:41,914 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:41,934 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   500057
+2020-12-10 17:21:41,934 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  
+2020-12-10 17:21:54,764 DEBUG [OpenStock] [indi_interect.py:221] -  단축코드   580013
+2020-12-10 17:21:54,764 DEBUG [OpenStock] [indi_interect.py:222] -  ssibal 데이터 갯수 안맞아  

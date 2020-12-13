@@ -1,6 +1,8 @@
 from src.com.stock.common.import_lib import *
 from src.com.stock.common import import_lib  as com_vari
 
+
+
 def tr_output_dict(tr_name):
     result_output_dict = {}
     result_output_dict["single_output"] = {}
@@ -45,516 +47,102 @@ class tr_result():
 
         self.result = {"list": self.list, "lsitLen": self.listLen}
 
-class real_tr_object(QMainWindow):
-    def __init__(self, tr_name, db_collection):
+class real_indi_object(QMainWindow):
+    def __init__(self, tr_name):
         super().__init__()
-        # Indi API event
         self.tr_name = tr_name
-
+        # Indi API event
         if tr_name not in com_vari.indiReal_dict.keys():
             com_vari.indiReal_dict[tr_name] = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
         # Indi API event
-        com_vari.indiReal_dict[self.tr_name ].ReceiveRTData.connect(self.ReceiveRTData)
-        com_vari.indiReal_dict[self.tr_name ].ReceiveSysMsg.connect(self.ReceiveSysMsg)
+        com_vari.indiReal_dict[self.tr_name].ReceiveRTData.connect(self.ReceiveRTData)
+        com_vari.indiReal_dict[self.tr_name].ReceiveSysMsg.connect(self.ReceiveSysMsg)
 
-        self.rqidD = {}  # TR 관리를 위해 사전 변수를 하나 생성합니다.
-        self.collection = db_collection
-        self.col_name = {}
-        self.input_index = 0
+        self.collection = make_collection("stock_data" , com_vari.DEFAILT_TR_DB_NAME[tr_name])
 
-        self.list = []
-        self.listLen = 0
-
-        self.input_list = []
-        self.pk_dict = []
+        self.input_dict_list = []
+        self.pk_dict_list = []
         self.collection_len = 0
+        self.in_out_builder = InOutBuilder(self.tr_name , com_vari.path_to_tr_file)
 
-    def set_multi_call(self, input_list, output_dict, pk_dict, collection_len):
-
+    def set_input_data(self,input_list):
         self.input_list = input_list
-        self.pk_dict = pk_dict
-        self.collection_len = collection_len
-        self.col_name = output_dict
-        print(self.input_list)
-        for input in input_list :
-            #ret1 = com_vari.indiReal_dict[self.tr_name ].dynamicCall("UnRequestRTReg(QString, QString)", self.tr_name, input)
-            ret1 = True
-            if not ret1:
-                print("실시간 TR   "+ self.tr_name +"  에 대한   종목코드  " + input + " 등록 해제 실패")
-                ret1 = com_vari.indiReal_dict[self.tr_name ].dynamicCall("RequestRTReg(QString, QString)", self.tr_name, input)
-                if not ret1:
-                    print("실시간 TR   "+ self.tr_name +"  에 대한   종목코드  " + input + " 등록  실패")
-                else:
-                    print("실시간 TR   "+ self.tr_name +"  에 대한   종목코드  " + input+ " 등록  성공")
+        self.in_out_builder.set_input_list(self.input_list)
+        self.input_data_list = self.in_out_builder.get_input_data_list()
+        self.single_output_dict = self.in_out_builder.get_single_output_dict()
+        self.static_pk_dict = self.in_out_builder.get_static_pk_dict()
+    def call_tr(self, input_data_list="first_call"):
+        if input_data_list =="first_call":
+            pass
+        else:
+            self.input_data_list = input_data_list
 
+        for stock_code in self.input_data_list:
+            ret = com_vari.indiReal_dict[self.tr_name].dynamicCall("RequestRTReg(QString, QString)", self.tr_name, stock_code)
+            if  ret:
+                print("실시간 TR   " + self.tr_name + "  에 대한   종목코드  " + stock_code + " 등록  성공")
             else:
-                print("실시간 TR   "+ self.tr_name +"  에 대한   종목코드  " + input+ " 등록 해제 성공")
-                ret1 = com_vari.indiReal_dict[self.tr_name ].dynamicCall("RequestRTReg(QString, QString)", self.tr_name, input)
-                if not ret1:
-                    print("실시간 TR   "+ self.tr_name +"  에 대한   종목코드  " + input + " 등록  실패")
-                else:
-                    print("실시간 TR   "+ self.tr_name +"  에 대한   종목코드  " + input+ " 등록  성공")
+                print("실시간 TR   " + self.tr_name + "  에 대한   종목코드  " + stock_code + " 등록  실패")
 
+    def set_tr_data(self, tr_name, indi_object, single_output_dict, static_pk_dict):
+        single_output_data = {}
+        if single_output_dict:
+            print(len(single_output_dict))
+            for key, value in single_output_dict.items():
+                if (indi_object.dynamicCall("GetSingleData(int)", key) == None):
+                    print("  key   " + key + "   value    " + value)
+                single_output_data[value.strip()] = indi_object.dynamicCall("GetSingleData(int)", key)
+        if static_pk_dict:
+            for key, value in static_pk_dict.items():
+                single_output_data[key.strip()] = value
+        if not bool(single_output_data):
+            print("실시간 TR  " + tr_name + "   데이터 reaceive 까진 왔으나 single_out_data 에  지정 안됨")
+            pass
+        return single_output_data
+
+    def db_update(self , tr_name, single_output_data ):
+        if tr_name == "SK":
+            data_input = self.collection.find_one(
+                {'단축코드': single_output_data['단축코드'], '체결시간': single_output_data['체결시간'],
+                 "일자": single_output_data["일자"]})
+        if tr_name == "SP":
+            data_input = self.collection.find_one(
+                {'단축코드': single_output_data['단축코드'], '시간': single_output_data['시간'],
+                 "일자": single_output_data["일자"]})
+        if tr_name == "SC":
+            data_input = self.collection.find_one(
+                {'단축코드': single_output_data['단축코드'], '체결시간': single_output_data['체결시간'],
+                 "일자": single_output_data["일자"]})
+            analysis(tr_name,single_output_data )
+        if data_input != None:
+            single_output_data['_id'] = data_input['_id']
+            self.collection.replace_one(data_input, single_output_data, upsert=True)
+        else:
+            self.collection.insert_one(single_output_data)
+        analysis(tr_name, single_output_data)
+        print(
+            "실시간 TR  " + tr_name + "  단축코드   " + single_output_data['단축코드'] + "  실시간 아웃풋   " + str(single_output_data))
 
     def ReceiveRTData(self, realType):
-        if realType == "SK":
-            DATA = {}
-            # 데이터 받기
-            DATA['단축코드'] = com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 1)
-            DATA['시간'] = com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 2)
-            DATA['국내총순매수수량'] = (int)(com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 41))
-            DATA['외국계순매수수량'] = (int)(com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 47))
-            DATA['전체순매수수량'] = (int)(com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 53))
-            for key , value in self.pk_dict.items():
-                DATA[key] = value
+        print("실시간  TR data 수신 !!!!    " + realType)
+        single_output_data = {}
+        single_output_data = self.set_tr_data(realType , com_vari.indiReal_dict[self.tr_name] , self.single_output_dict , self.static_pk_dict)
 
-            if self.collection.find_one({'단축코드': DATA['단축코드'], '시간':DATA['시간'], "일자": DATA["일자"]}) != None:
-                data_input = self.collection.find_one({'단축코드': DATA['단축코드'], '시간':DATA['시간'], "일자": DATA["일자"]}).copy()
-                DATA['_id'] = data_input['_id']
-                self.collection.replace_one(data_input, DATA, upsert=True)
-                print(data_input)
-            else:
-                self.collection.insert_one(DATA)
-                print(DATA)
-
-
-        if realType == "SP":
-            DATA = {}
-            # 데이터 받기
-            DATA['단축코드'] = com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 1)
-            DATA['일자'] = com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 2)
-            DATA['시간'] = com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 3)
-            DATA['매도위탁체결수량'] = com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 12)
-            DATA['매도자기체결수량'] = com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 13)
-            DATA['매수위탁체결수량'] = com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 14)
-            DATA['매수자기체결수량'] = com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 15)
-            DATA['매도위탁체결금액'] = com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 16)
-            DATA['매도자기체결금액'] = com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 17)
-            DATA['매수위탁체결금액'] = com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 18)
-            DATA['매수자기체결금액'] = com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 19)
-            DATA['차익매도위탁체결수량'] = int(com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 27))
-            DATA['차익매수위탁체결수량'] = int(com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 28))
-            DATA['차익매수자기체결수량'] = int(com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 29))
-            DATA['비차익매도위탁체결수량'] = int(com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 30))
-            DATA['비차익매도자기체결수량'] = int(com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 31))
-            DATA['비차익매수위탁체결수량'] = int(com_vari.indiReal_dict[self.tr_name ].dynamicCall("GetSingleData(int)", 32))
-            DATA['비차익위탁프로그램순매수'] = DATA['비차익매수위탁체결수량'] - DATA['비차익매도위탁체결수량']
-            DATA['차익위탁프로그램순매수'] = DATA['차익매수위탁체결수량'] - DATA['차익매도위탁체결수량']
-
-            if self.collection.find_one({'단축코드': DATA['단축코드'], '시간':DATA['시간'], "일자": DATA["일자"]}) != None:
-                data_input = self.collection.find_one({'단축코드': DATA['단축코드'], '시간':DATA['시간'], "일자": DATA["일자"]}).copy()
-                DATA['_id'] = data_input['_id']
-                self.collection.replace_one(data_input, DATA, upsert=True)
-                print(data_input)
-
-            else:
-                self.collection.insert_one(DATA)
-
-                print(DATA)
+        if single_output_data is None:
+            pass
+        else:
+            self.db_update(realType, single_output_data)
 
     # 시스템 메시지를 받은 경우 출력합니다.
     def ReceiveSysMsg(self, MsgID):
         print("System Message Received = ", MsgID)
-        print("System Error Message Received = ", com_vari.indiReal_dict[self.tr_name ].GetErrorMessage())
-
-class tr_object(QMainWindow):
-    def __init__(self, tr_name, db_collection):
-        super().__init__()
-
-        # Indi API event
-        self.IndiTR = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
-        # Indi API event
-        self.IndiTR.ReceiveData.connect(self.ReceiveData)
-        self.IndiTR.ReceiveSysMsg.connect(self.ReceiveSysMsg)
-
-        self.rqidD = {}  # TR 관리를 위해 사전 변수를 하나 생성합니다.
-        self.collection = db_collection
-        self.tr_name = tr_name
-        self.col_name = {}
-        self.input_index = 0
-
-        self.list = []
-        self.listLen = 0
-
-        self.multi= False
-        self.input_dict_list = []
-        self.pk_dict_list = []
-        self.collection_len = 0
-
-    def set_single_call(self, input_dict, output_dict, pk_dict):
-        self.multi= False
-        ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
-        for key, value in input_dict.items():
-            ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
-        rqid = self.IndiTR.dynamicCall("RequestData()")
-        self.rqidD[rqid] = self.tr_name
-        self.col_name = output_dict
-        self.pk_dict = pk_dict
-
-    def set_multi_call(self, input_dict_list, output_dict, pk_dict_list, collection_len):
-        self.multi= True
-        self.list = []
-        self.listLen = 0
-        self.input_index = 0
-
-        self.input_dict_list = input_dict_list
-        self.pk_dict_list = pk_dict_list
-        self.collection_len = collection_len
-
-        ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
-        for key, value in input_dict_list[0].items():
-            ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
-        rqid = self.IndiTR.dynamicCall("RequestData()")
-
-        self.rqidD[rqid] = self.tr_name
-        self.col_name = output_dict
-
-    def inner_call(self):
-        ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
-        for key, value in self.input_dict_list[self.input_index].items():
-            ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
-        rqid = self.IndiTR.dynamicCall("RequestData()")
-        self.rqidD[rqid] = self.tr_name
-
-    def ReceiveData(self, rqid):
-        TRName = self.rqidD[rqid]
-        #com_vari.TR_1206_logger.debug("TR_1206 데이터 수신")
-        if TRName == self.tr_name:
-            nCnt = self.IndiTR.dynamicCall("GetMultiRowCount()")
-            singleCnt = self.IndiTR.dynamicCall("GetSingleRowCount()")
-            self.list = []
-            self.listLen = nCnt
-            if(self.multi):
-                for i in range(0, nCnt):
-                    # 데이터 받기
-                    DATA = {}
-                    for key , value in self.pk_dict_list[self.input_index].items():
-                        DATA[key] = value
-                    for key, value in self.col_name.items():
-                        if self.tr_name == "TR_1205":
-                            if key != 0 and key != 1 and key != 2 :
-                                DATA[value.strip()] = int(self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key))
-                            else:
-                                DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
-                        else:
-                            DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
-                        # print(DATA)
-                    update_collection(self.collection, DATA)
-                    self.list.append(DATA)
-
-                print(self.list)
-                if(self.list == []):
-                    for key, value in self.input_dict_list[self.input_index].items():
-                        com_vari.upjong_code_mst_logger.debug("데이터없음  key  "  +  str(key)  + "  value   " + value)
-                    for key , value in self.pk_dict_list[self.input_index].items():
-                        com_vari.upjong_code_mst_logger.debug("데이터없음  key  "  +  key  + "  value   " + value)
-                    com_vari.upjong_code_mst_logger.debug("데이터 없음 체크 완료")
-
-                if(TRName == "TR_1206" and com_vari.TR_1206_len_counts != self.listLen):
-                    logging_string = TRName +" 단축코드 : "+self.pk_dict_list[self.input_index]["단축코드"] + "가 " +str(nCnt)  + " 만큼 적재 되었습니다."
-                    com_vari.TR_1206_logger.debug(logging_string)
-                print()
-                self.input_index += 1
-                if self.input_index != self.collection_len:
-                    self.inner_call()
-                else:
-                    QCoreApplication.instance().exit()
-            else:
-                for i in range(0, nCnt):
-                    # 데이터 받기
-                    DATA = {}
-                    for key, value in self.pk_dict.items():
-                        DATA[key] = value
-                    for key, value in self.col_name.items():
-                        DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
-                    print(DATA)
-                    update_collection(self.collection, DATA)
-                QCoreApplication.instance().exit()
-
-    def GetDataAll(self):
-        result = tr_result(self.list, self.listLen)
-        return result
-    # 시스템 메시지를 받은 경우 출력합니다.
-    def ReceiveSysMsg(self, MsgID):
-        print("System Message Received = ", MsgID)
-        print("System Error Message Received = ",self.IndiTR.GetErrorMessage())
-
-
-class tr_object(QMainWindow):
-    def __init__(self, tr_name, db_collection, control):
-        super().__init__()
-        self.total_list = []
-        # Indi API event
-        self.IndiTR = control
-        # Indi API event
-        self.IndiTR.ReceiveData.connect(self.ReceiveData)
-        self.IndiTR.ReceiveSysMsg.connect(self.ReceiveSysMsg)
-
-        self.rqidD = {}  # TR 관리를 위해 사전 변수를 하나 생성합니다.
-        self.collection = db_collection
-        self.tr_name = tr_name
-        self.col_name = {}
-        self.input_index = 0
-
-        self.list = []
-        self.listLen = 0
-
-        self.multi= False
-        self.input_dict_list = []
-        self.pk_dict_list = []
-        self.collection_len = 0
-
-    def set_single_call(self, input_dict, output_dict, pk_dict):
-        self.multi= False
-        ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
-        for key, value in input_dict.items():
-            ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
-        rqid = self.IndiTR.dynamicCall("RequestData()")
-        self.rqidD[rqid] = self.tr_name
-        self.col_name = output_dict
-        self.pk_dict = pk_dict
-
-    def set_multi_call(self, input_dict_list, output_dict, pk_dict_list, collection_len):
-        self.multi= True
-        self.list = []
-        self.listLen = 0
-        self.input_index = 0
-
-        self.input_dict_list = input_dict_list
-        self.pk_dict_list = pk_dict_list
-        self.collection_len = collection_len
-
-        ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
-        for key, value in input_dict_list[0].items():
-            ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
-        rqid = self.IndiTR.dynamicCall("RequestData()")
-
-        self.rqidD[rqid] = self.tr_name
-        self.col_name = output_dict
-
-    def inner_call(self):
-        ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
-        for key, value in self.input_dict_list[self.input_index].items():
-            ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
-        rqid = self.IndiTR.dynamicCall("RequestData()")
-        self.rqidD[rqid] = self.tr_name
-
-    def ReceiveData(self, rqid):
-        TRName = self.rqidD[rqid]
-        #com_vari.TR_1206_logger.debug("TR_1206 데이터 수신")
-        if TRName == self.tr_name:
-            nCnt = self.IndiTR.dynamicCall("GetMultiRowCount()")
-            singleCnt = self.IndiTR.dynamicCall("GetSingleRowCount()")
-            self.list = []
-            self.listLen = nCnt
-            if(self.multi):
-                for i in range(0, nCnt):
-                    # 데이터 받기
-                    DATA = {}
-                    for key , value in self.pk_dict_list[self.input_index].items():
-                        DATA[key] = value
-                    for key, value in self.col_name.items():
-                        if self.tr_name == "TR_1205":
-                            if key != 0 and key != 1 and key != 2 :
-                                DATA[value.strip()] = int(self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key))
-                            else:
-                                DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key).strip()
-                        else:
-                            DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key).strip()
-                        # print(DATA)
-                    self.list.append(DATA)
-                if len(self.list) != 0 :
-                    self.total_list.extend(copy(self.list))
-                else:
-                    print("self list 데이터 가 없어 시발")
-                print(self.list)
-                if(self.list == []):
-                    for key, value in self.input_dict_list[self.input_index].items():
-                        com_vari.upjong_code_mst_logger.debug("데이터없음  key  "  +  str(key)  + "  value   " + value)
-                    for key , value in self.pk_dict_list[self.input_index].items():
-                        com_vari.upjong_code_mst_logger.debug("데이터없음  key  "  +  key  + "  value   " + value)
-                    com_vari.upjong_code_mst_logger.debug("데이터 없음 체크 완료")
-
-                if(TRName == "TR_1206" and com_vari.TR_1206_len_counts != self.listLen):
-                    logging_string = TRName +" 단축코드 : "+self.pk_dict_list[self.input_index]["단축코드"] + "가 " +str(nCnt)  + " 만큼 적재 되었습니다."
-                    com_vari.TR_1206_logger.debug(logging_string)
-                print()
-                self.input_index += 1
-                if self.input_index != self.collection_len:
-                    self.inner_call()
-                else:
-                    if self.total_list == []:
-                        pass
-                    else:
-                        self.collection.insert_many(self.total_list)
-                    QCoreApplication.instance().exit()
-            else:
-                for i in range(0, nCnt):
-                    # 데이터 받기
-                    DATA = {}
-                    for key, value in self.pk_dict.items():
-                        DATA[key] = value
-                    for key, value in self.col_name.items():
-                        DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
-                    print(DATA)
-                    if self.pk_dict_list == []:
-                        update_collection(self.collection, DATA)
-                    else:
-                        update_collection_sec(self.collection, DATA,self.pk_dict_list[self.input_index])
-                QCoreApplication.instance().exit()
-
-    def GetDataAll(self):
-        result = tr_result(self.list, self.listLen)
-        return result
-    # 시스템 메시지를 받은 경우 출력합니다.
-    def ReceiveSysMsg(self, MsgID):
-        print("System Message Received = ", MsgID)
-        print("System Error Message Received = ",self.IndiTR.GetErrorMessage())
-
-
-class tr_class(QMainWindow):
-    def __init__(self, tr_name, db_collection, indi_control):
-        super().__init__()
-
-        # Indi API event
-        self.IndiTR =indi_control
-
-        self.output_col = tr_output_dict(tr_name)
-        # Indi API event
-        self.IndiTR.ReceiveData.connect(self.ReceiveData)
-        self.IndiTR.ReceiveSysMsg.connect(self.ReceiveSysMsg)
-
-        self.rqidD = {}  # TR 관리를 위해 사전 변수를 하나 생성합니다.
-        self.collection = db_collection
-        self.tr_name = tr_name
-        self.input_index = 0
-
-        self.list = []
-        self.listLen = 0
-
-        self.multi= False
-        self.input_dict_list = []
-        self.pk_dict_list = []
-        self.collection_len = 0
-
-    def set_single_call(self, input_dict , pk_dict):
-        self.multi= False
-        ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
-        for key, value in input_dict.items():
-            ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
-        rqid = self.IndiTR.dynamicCall("RequestData()")
-        self.rqidD[rqid] = self.tr_name
-        self.pk_dict = pk_dict
-
-    def set_multi_call(self, input_dict_list, pk_dict_list, collection_len):
-        self.multi= True
-        self.list = []
-        self.listLen = 0
-        self.input_index = 0
-
-        self.input_dict_list = input_dict_list
-        self.pk_dict_list = pk_dict_list
-        self.collection_len = collection_len
-
-        ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
-        for key, value in input_dict_list[0].items():
-            ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
-        rqid = self.IndiTR.dynamicCall("RequestData()")
-
-        self.rqidD[rqid] = self.tr_name
-
-    def inner_call(self):
-        ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
-        for key, value in self.input_dict_list[self.input_index].items():
-            ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
-        rqid = self.IndiTR.dynamicCall("RequestData()")
-        self.rqidD[rqid] = self.tr_name
-
-    def ReceiveData(self, rqid):
-        TRName = self.rqidD[rqid]
-
-        if TRName == self.tr_name:
-            nCnt = self.IndiTR.dynamicCall("GetMultiRowCount()")
-            singleCnt = self.IndiTR.dynamicCall("GetSingleRowCount()")
-            self.list = []
-            self.listLen = nCnt
-
-            if(self.multi):
-                for i in range(0, nCnt):
-                    # 데이터 받기
-                    DATA = {}
-                    if len(self.pk_dict_list)  != 0:
-                        for key , value in self.pk_dict_list[self.input_index].items():
-                            DATA[key] = value
-                    if singleCnt != 0 :
-                        for key, value in self.output_col["single_output"].items():
-                            print(key)
-                            print(value)
-                            DATA[value.strip()] = self.IndiTR.dynamicCall("GetSingleData(int)", key)
-                    if nCnt != 0 :
-                        for key, value in self.output_col["multi_output"].items():
-                            if self.tr_name == "TR_1205":
-                                if key != 0 and key != 1 and key != 2 :
-                                    DATA[value.strip()] = int(self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key))
-                                else:
-                                    DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
-                            else:
-                                DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
-                        #update_collection(self.collection, DATA)
-                        self.list.append(DATA)
-                print(self.list)
-                if self.list == []:
-                    pass
-                else:
-                    self.collection.insert_many(self.list)
-                if(self.list == []):
-                    for key, value in self.input_dict_list[self.input_index].items():
-                        com_vari.upjong_code_mst_logger.debug("데이터없음  key  "  +  str(key)  + "  value   " + value)
-                    for key , value in self.pk_dict_list[self.input_index].items():
-                        com_vari.upjong_code_mst_logger.debug("데이터없음  key  "  +  key  + "  value   " + value)
-                    com_vari.upjong_code_mst_logger.debug("데이터 없음 체크 완료")
-
-                if(TRName == "TR_1206" and com_vari.TR_1206_len_counts != self.listLen):
-                    logging_string = TRName +" 단축코드 : "+self.pk_dict_list[self.input_index]["단축코드"] + "가 " +str(nCnt)  + " 만큼 적재 되었습니다."
-                    com_vari.TR_1206_logger.debug(logging_string)
-                print()
-                self.input_index += 1
-                if self.input_index != self.collection_len:
-                    self.inner_call()
-                else:
-                    QCoreApplication.instance().exit()
-            else:
-                for i in range(0, nCnt):
-                    # 데이터 받기
-                    DATA = {}
-                    if singleCnt != 0:
-                        for key, value in self.output_col["single_output"].items():
-                            DATA[value.strip()] = self.IndiTR.dynamicCall("GetSingleData(int)", key)
-                    if len(self.pk_dict) != 0:
-                        for key, value in self.pk_dict.items():
-                            DATA[key] = value
-                    if nCnt != 0 :
-                        for key, value  in self.output_col["multi_output"].items():
-                            print(type(key))
-                            DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
-                        print(DATA)
-                        update_collection(self.collection, DATA)
-                QCoreApplication.instance().exit()
-
-    def GetDataAll(self):
-        result = tr_result(self.list, self.listLen)
-        return result
-    # 시스템 메시지를 받은 경우 출력합니다.
-    def ReceiveSysMsg(self, MsgID):
-        print("System Message Received = ", MsgID)
-        print("System Error Message Received = ",self.IndiTR.GetErrorMessage())
+        print("System Error Message Received = ", com_vari.indiReal_dict[self.tr_name].GetErrorMessage())
 
 
 
 class indi_object(QMainWindow):
     def __init__(self, tr_name , control):
         super().__init__()
-        self.total_list = []
         # Indi API event
         self.IndiTR = control
         # Indi API event
@@ -564,12 +152,7 @@ class indi_object(QMainWindow):
         self.rqidD = {}  # TR 관리를 위해 사전 변수를 하나 생성합니다.
         self.collection = make_collection("stock_data" , com_vari.DEFAILT_TR_DB_NAME[tr_name])
         self.tr_name = tr_name
-        self.input_index = 0
 
-        self.list = []
-        self.listLen = 0
-
-        self.multi= False
         self.input_dict_list = []
         self.pk_dict_list = []
         self.collection_len = 0
@@ -577,20 +160,30 @@ class indi_object(QMainWindow):
 
         self.tr_data_list = []
 
+    def set_input_data_dict(self, input_data_dict):
+        self.input_data_dict = input_data_dict
+        self.in_out_builder.set_input_data_dict(self.input_data_dict)
+        self.single_output_dict = self.in_out_builder.get_single_output_dict()
+        self.multi_output_dict = self.in_out_builder.get_multi_output_dict()
+
+
     def set_input_data(self,input_data_list):
         self.input_data_list = input_data_list
         self.in_out_builder.set_input_list(self.input_data_list)
+        self.single_output_dict = self.in_out_builder.get_single_output_dict()
+        self.multi_output_dict = self.in_out_builder.get_multi_output_dict()
 
     def call_tr(self, input_data_dict="first_call"):
-        self.multi= False
         ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
         if input_data_dict =="first_call":
-            self.input_data_dict = self.in_out_builder.get_intput_dict()
+            self.input_data_dict = self.in_out_builder.get_input_dict()
             print(self.input_data_dict)
-        if self.input_data_dict is not None:
+        if not bool(self.input_data_dict) and input_data_dict =="first_call":
+            pass
+        elif bool(self.input_data_dict):
             for key, value in self.input_data_dict.items():
-                print("  key   "  + value)
-                ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
+                print("key   " + str(key)  + "  value  " + value)
+                ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", int(key), str(value))
         else:
             print("input data 가 없습니다 !!")
             QCoreApplication.instance().exit()
@@ -603,9 +196,12 @@ class indi_object(QMainWindow):
         print("TR data 수신 !!!!    " + TRName)
 
         self.pk_data_dict = self.in_out_builder.get_pk_dict()
-        self.single_output_dict = self.in_out_builder.get_single_output_dict()
-        self.multi_output_dict = self.in_out_builder.get_multi_output_dict()
 
+        self.tr_data_list_input = []
+        print( self.IndiTR.dynamicCall("GetErrorState()"))
+        print( self.IndiTR.dynamicCall("GetErrorCode()"))
+        print( self.IndiTR.dynamicCall("GetErrorMessage()"))
+        print( self.IndiTR.dynamicCall("GetCommState()"))
         if TRName == self.tr_name:
             nCnt = self.IndiTR.dynamicCall("GetMultiRowCount()")
             singleCnt = self.IndiTR.dynamicCall("GetSingleRowCount()")
@@ -626,15 +222,27 @@ class indi_object(QMainWindow):
                     final_data = {}
                     final_data.update(single_output_data)
                     final_data.update(multi_output_data)
-                    self.tr_data_list.append(copy(final_data))
-            print("Tr " + self.tr_name + " 의  인풋  " +str(self.input_data_dict) + "  에 대한 아웃풋   ")
-            print(str(self.tr_data_list))
-            print("  tr_data_list   에 추가 되었습니다.....")
-            self.input_data_dict = self.in_out_builder.get_intput_dict()
-            if self.input_data_dict is not None:
+                    self.tr_data_list_input.append(copy(final_data))
+
+            #print("Tr " + self.tr_name + " 의  인풋  " +str(self.input_data_dict) + "  에 대한 아웃풋   ")
+            #print(str(self.tr_data_list_input))
+            self.tr_data_list.extend(copy(self.tr_data_list_input))
+            if len(self.tr_data_list) >= 4000:
+                self.collection.insert_many(self.tr_data_list)
+                self.tr_data_list = []
+            #print("  tr_data_list   에 추가 되었습니다.....")
+            self.input_data_dict = self.in_out_builder.get_input_dict()
+            if  bool (self.input_data_dict) :
                 self.call_tr(self.input_data_dict)
             else:
                 print(" 마지막 루프 tr 호출 종료")
+                print(" tr_data_list 가 DB에 저장 됩니다  ")
+                print(self.tr_data_list)
+                if self.tr_data_list == [] :
+                    print("Tr data list 가 없습니다")
+                else:
+                    self.collection.insert_many(self.tr_data_list)
+                print(" tr_data_list 저장 완료  ")
                 QCoreApplication.instance().exit()
 
     def GetDataAll(self):

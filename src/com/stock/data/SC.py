@@ -5,14 +5,19 @@ import sys
 sys.path.append("C:\\dev\\OpenStock")
 from src.com.stock.common.import_lib import *
 from src.com.stock.common import import_lib  as com_vari
+
+
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     logic_name= "3daySupply"
     from_collection = make_collection("stock_data", logic_name)
     from_collection = from_collection.find_one({"일자": "20201125"})["stock_code"]
-    SK = real_indi_object("SP")
-    SK.set_input_data(from_collection)
-    SK.call_tr()
+    SC = real_indi_object("SC")
+    SC.set_input_data(from_collection)
+    SC.call_tr()
+
     '''logic_name = "logic3"
 
 
@@ -23,7 +28,7 @@ if __name__ == "__main__":
 
     input_list = []
     for i in from_collection.find({"일자": com_vari.Today_date}):
-        input_list = copy(i["stock_code"])
+        input_list.append(copy(i["stock_code"]))
     pk_dict["일자"] = com_vari.Today_date
 
     collection_len = len(input_list)
