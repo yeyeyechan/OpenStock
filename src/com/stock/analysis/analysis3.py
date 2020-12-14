@@ -26,7 +26,7 @@ def check_rising_stock(data, target_percent):
 if __name__ ==  "__main__":
     #drop_collection("stock_data" , "3daySupply")
     collection = make_collection("stock_data" , "new_TR_1206")
-    date_list = get_kr_working_day("20201214" , "20201214")
+    date_list = get_kr_working_day("20201215" , "20201215")
     for date in date_list:
         day_range = -3
         date_count = abs(day_range)
@@ -74,10 +74,10 @@ if __name__ ==  "__main__":
 
         #save_collection = make_collection("stock_data" , "logic4")
 
-        data = {"일자" :date , "stock_code": ""}
+        data = {"일자" :date.strftime("%Y%m%d") , "stock_code": ""}
         data["stock_code"]= result_list
 
-        update_collection(to_collection,data)
+        update_collection_sec(to_collection , data , {"일자" :date.strftime("%Y%m%d")})
     '''result = check_rising_stock(data,collection,5.0)
 
     print(date)

@@ -41,8 +41,11 @@ def additional_condition(data):
 def check_stock_data_anal4(date, data_collection , target_percent):
     rising_stock = []
     down_stock = []
-    #검증 대상 collection
-    stock_code = data_collection.find_one({"일자" : date})['stock_code']
+    if type(data_collection) == dict :
+        stock_code = data_collection['stock_code']
+    else:
+        #검증 대상 collection
+        stock_code = data_collection.find_one({"일자" : date})['stock_code']
 
     ''' 검증된 종목에 대해 추가 분석
         
@@ -70,7 +73,7 @@ def check_stock_data_anal4(date, data_collection , target_percent):
     TR_SCHART_data = make_collection("stock_data" , "TR_SCHART")
 
     for i in rising_stock_data:
-        rising_before_data = rising_stock_data.find_one({"일자": before_date, "단축코드" : i["단축코드"]})
+        rising_before_data = new_TR_1206.find_one({"일자": before_date, "단축코드" : i["단축코드"]})
         print("단축코드   " + i["단축코드"] + "  누적거래량   " + i["누적거래량"] + " 전일 누적거래량   " + rising_before_data["누적거래량"] + "  외국인 매수 비율  " + str(int(i["외국인순매수거래량"]) / int(i["누적거래량"])) + " 개인 매수 배율   " + str(int(i["개인순매수거래량"]) / int(i["누적거래량"])) + "    기관 매수 비율  " + str(int(i["기관순매수거래량"]) / int(i["누적거래량"])) + " 전일대비율  " + str(i["전일대비율"]))
         print("당일 0905 거래량   " + TR_SCHART_data.find_one({"단축코드" : i["단축코드"] , "일자" : date, "시간" : "0905"})["단위거래량"] + "    전일 0905 거래량   " + TR_SCHART_data.find_one({"단축코드" : i["단축코드"] , "일자" : before_date, "시간" : "0905"})["단위거래량"] )
         print(" 토탈 거래량 비교   전일비  " + str (int(i["누적거래량"])/int(rising_before_data["누적거래량"])))
@@ -96,28 +99,47 @@ def check_stock_data_anal4(date, data_collection , target_percent):
 
 if __name__ ==  "__main__":
 
-    date_list = get_kr_working_day("20200901" , "20201213")
+    date_list = get_kr_working_day("20201214" , "20201214")
 
     for day in date_list:
+        day = day.strftime("%Y%m%d")
         db_name ="3daySupply"
         from_collection = make_collection("stock_data" , db_name)
         stock_code = from_collection.find_one({"일자" : day})
         target_percent = 5.0
         additional_data = make_collection("stock_data" , "additional_data")
-
+        print("3day Supply len   "  +str(from_collection.count()))
         # analysis3 의 로직을통해 구해진 3daysupply 에서 조건을 추가해 additional data를 만든다 TR_SCHART 예측 당일의 데이터를 비교하는 것이기 때문에 따로 빼서 구현
         additional_result = additional_condition(stock_code)
 
+        result1 = check_rising_stock(from_collection.find_one({"일자"  : day}),target_percent)
+
+        print("      3daySupply       ")
+        print(day)
+        print("전체종목수   " + str(result1["전체종목수"]))
+        print("전체종목중상승종목   " + str(len(result1["전체종목중상승종목"])))
+        print("후보종목수   " + str(result1["후보종목수"]))
+        print("후보종목중상승종목   " + str(len(result1["후보종목중상승종목"])))
+        print("전체종목수 - 후보종목수   " + str( result1["전체종목수"]-result1["후보종목수"]))
+        print("후보종목외상승종목   " + str(len(result1["후보종목외상승종목"])))
+        check_stock_data_anal4(day, from_collection, target_percent)
+
+
+        print("      3daySupply       ")
+
         result = check_rising_stock(additional_result,target_percent)
 
-        print(date)
+        print("      additional_data       ")
+        print(day)
         print("전체종목수   " + str(result["전체종목수"]))
         print("전체종목중상승종목   " + str(len(result["전체종목중상승종목"])))
         print("후보종목수   " + str(result["후보종목수"]))
         print("후보종목중상승종목   " + str(len(result["후보종목중상승종목"])))
         print("전체종목수 - 후보종목수   " + str( result["전체종목수"]-result["후보종목수"]))
         print("후보종목외상승종목   " + str(len(result["후보종목외상승종목"])))
-        check_stock_data_anal4(date, additional_data, target_percent)
+        print("      additional_data       ")
+
+        check_stock_data_anal4(day, additional_data, target_percent)
 
     '''print_anal4(date,collection )
     stock_code = collection.find_one({"일자" : date})

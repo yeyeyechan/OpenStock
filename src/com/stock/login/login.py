@@ -18,15 +18,11 @@ class login(QMainWindow):
         while True:
             self.login = self.IndiTR.StartIndi('xamevh123', 'florida1!23', 'florida1!23', 'C:\SHINHAN-i\indi\giexpertstarter.exe')
             if self.login == True :
-                com_vari.mylogger.info("login success")
                 break
         if self.login == True:
-            com_vari.mylogger.info("login success")
             return
-        com_vari.mylogger.info("login failed")
         return
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     login_variable = login()
-    mylogger.info("login program exit")

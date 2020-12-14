@@ -13,7 +13,7 @@ TR_1206 설명
 '''
 
 if __name__ == "__main__":
-    drop_collection("stock_data", "TR_1206")
+    #drop_collection("stock_data", "TR_1206")
     app = QApplication(sys.argv)
 
     from_collection = make_collection("stock_data", "stock_mst")
@@ -22,8 +22,8 @@ if __name__ == "__main__":
     IndiControl = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
 
     TR_1206 = indi_object("TR_1206", IndiControl)
-    start_date = "20200901"
-    end_date = "20201213"
+    start_date = "20201214"
+    end_date = "20201214"
     gubun = "1"
     data_kind = "0"
 
