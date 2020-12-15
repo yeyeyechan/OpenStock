@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     IndiControl = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
 
-    date_list = get_kr_working_day("20201214","20201214")
+    date_list = get_kr_working_day("20201215","20201215")
     TR_SCHART = indi_object("TR_SCHART", IndiControl)
     stock_mst = make_collection("stock_data" , "stock_mst")
     input_dict_list = []
