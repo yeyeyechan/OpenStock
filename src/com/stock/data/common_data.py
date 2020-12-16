@@ -11,7 +11,7 @@ def check_time(real_time , check_time):
     real_time = int(real_time)
 
     check_time = int(check_time)
-    check_time = check_time * 100
+    check_time = check_time * 10000
 
     if real_time <= check_time:
         return True
