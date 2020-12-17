@@ -99,7 +99,7 @@ def check_stock_data_anal4(date, data_collection , target_percent):
 
 if __name__ ==  "__main__":
 
-    date_list = get_kr_working_day("20201215" , "20201215")
+    date_list = get_kr_working_day("20201217" , "20201217")
 
     for day in date_list:
         day = day.strftime("%Y%m%d")

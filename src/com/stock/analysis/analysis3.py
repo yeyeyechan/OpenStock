@@ -26,7 +26,7 @@ def check_rising_stock(data, target_percent):
 if __name__ ==  "__main__":
     #drop_collection("stock_data" , "3daySupply")
     collection = make_collection("stock_data" , "new_TR_1206")
-    date_list = get_kr_working_day("20201215" , "20201215")
+    date_list = get_kr_working_day("20201217" , "20201217")
     for date in date_list:
         day_range = -3
         date_count = abs(day_range)
