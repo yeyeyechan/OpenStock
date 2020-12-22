@@ -31,6 +31,7 @@ from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import *
 import pymongo
+import matplotlib.pyplot as plt
 from src.com.stock.util.mongo_db import *
 from src.com.stock.common.openAPI import *
 from src.com.stock.util.date import *
@@ -47,6 +48,7 @@ from src.com.stock.analysis.analysis2 import *
 from src.com.stock.analysis.analysis3 import *
 from src.com.stock.analysis.analysis4 import *
 from src.com.stock.analysis.analysis5 import *
+from src.com.stock.analysis.graph import *
 from src.com.stock.analysis.real_TR_SCHART import *
 from src.com.stock.analysis.real_checking import *
 from src.com.stock.data.fix_data import *
