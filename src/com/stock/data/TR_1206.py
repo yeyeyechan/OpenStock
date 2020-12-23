@@ -22,8 +22,8 @@ if __name__ == "__main__":
     IndiControl = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
 
     TR_1206 = indi_object("TR_1206", IndiControl)
-    start_date = "20201218"
-    end_date = "20201218"
+    start_date = "20201221"
+    end_date = "20201223"
     gubun = "1"
     data_kind = "0"
 

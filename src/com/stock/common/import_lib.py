@@ -7,6 +7,7 @@ sys.path.append("C:\\dev\\OpenStock\\src\\com\\stock\\tr_data")
 sys.path.append("C:\\dev\\OpenStock\\src\\com\\stock\\util")
 sys.path.append("C:\\dev\\OpenStock\\src\\com\\stock\\util\\logger")
 sys.path.append("C:\\dev\\OpenStock\\src\\com\\stock\\util\\util_data")
+sys.path.append("C:\\dev\\OpenStock\\src\\com\\stock\\graph")
 import os
 import numpy as np
 import pandas as pd
@@ -30,6 +31,11 @@ from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import *
+import dash
+import dash_html_components as html
+from dash.dependencies import Input, Output
+import dash_core_components as dcc
+import random
 import pymongo
 import matplotlib.pyplot as plt
 from src.com.stock.util.mongo_db import *
@@ -52,6 +58,7 @@ from src.com.stock.analysis.graph import *
 from src.com.stock.analysis.real_TR_SCHART import *
 from src.com.stock.analysis.real_checking import *
 from src.com.stock.data.fix_data import *
+from src.com.stock.graph.dash_server import *
 TR_1206_len_counts = 0
 
 myLogger = logging.getLogger("myLogger")

@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     IndiControl = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
 
-    date_list = get_kr_working_day("20201218","20201218")
+    date_list = get_kr_working_day("20201221","20201223")
     TR_SCHART = indi_object("TR_SCHART", IndiControl)
     stock_mst = make_collection("stock_data" , "stock_mst")
     input_dict_list = []
@@ -30,7 +30,7 @@ if __name__ == "__main__":
         time_gap = "5"
         start_date =date_list[0].strftime("%Y%m%d")
         end_date =date_list[-1].strftime("%Y%m%d")
-        search_count = "158"
+        search_count = "237"
         input_dict_list.append(copy([stock_code , graph_kind, time_gap , start_date, end_date, search_count]))
     TR_SCHART.set_input_data(input_dict_list)
     TR_SCHART.call_tr()
