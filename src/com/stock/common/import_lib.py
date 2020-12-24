@@ -58,6 +58,7 @@ from src.com.stock.analysis.graph import *
 from src.com.stock.analysis.real_TR_SCHART import *
 from src.com.stock.analysis.real_checking import *
 from src.com.stock.data.fix_data import *
+from src.com.stock.graph import *
 from src.com.stock.graph.dash_server import *
 TR_1206_len_counts = 0
 
@@ -67,6 +68,32 @@ TR_1206_logger = logging.getLogger("TR_1206")
 simulation_1_logger = logging.getLogger("simulation_1")
 upjong_code_mst_logger = logging.getLogger("upjong_code_mst")
 Today_date = datetime.now()
+time_now = Today_date.strftime("%H%M")
+print(time_now)
+def make_tr_schart_real_count(time_now_string):
+    result = 0
+    print("result  " +str(result))
+    start_time = 9*60 +5
+    time_now_string  = ((int)((int)(time_now_string)/100) )* 60 +(int)((int)(time_now_string)%100)
+    time_diff = (int)(time_now_string) - start_time
+    if (int)(time_diff/5) ==0 and  (int)(time_diff%5) ==0 :
+        result =1
+        return result
+    if (int)(time_diff/5) >0:
+        result += (int)((time_diff)/5)+1
+        print("result  " + str(result))
+
+    if (int)(time_diff%5)  > 0:
+        result += 1
+    print("result  " +str(result))
+    if int(result) > 79:
+        result = 79
+
+    result = str(int(result))
+
+    return result
+tr_schart_real_count = make_tr_schart_real_count(time_now)
+
 Today_date = Today_date.strftime("%Y%m%d")
 real_time_pk_dict = {
     "일자" : Today_date
@@ -85,15 +112,28 @@ indiReal_dict = {}
 path_to_tr_file = "C:\dev\OpenStock\src\com\stock\\tr_data\Indi_TR.xlsx"
 DEFAILT_TR_DB_NAME ={
     "TR_1206" : "TR_1206",
+    "real_TR_1206" : "real_TR_1206",
     "stock_mst" : "stock_mst",
     "TR_1205" : "TR_1205",
     "TR_SCHART" : "TR_SCHART",
+    "real_TR_SCHART" : "real_TR_SCHART",
     "SK" : "SK",
     "SC" : "SC",
     "SP" : "SP",
     "SABA101U1" : "SABA101U1",
 }
-
+DEFAILT_TR_NAME ={
+    "TR_1206" : "TR_1206",
+    "real_TR_1206" : "TR_1206",
+    "stock_mst" : "stock_mst",
+    "TR_1205" : "TR_1205",
+    "TR_SCHART" : "TR_SCHART",
+    "real_TR_SCHART" : "TR_SCHART",
+    "SK" : "SK",
+    "SC" : "SC",
+    "SP" : "SP",
+    "SABA101U1" : "SABA101U1",
+}
 '''KOSPI_UPJONG_CODE={
 "0001"	:"종합주가지수(KOSPI)",
 "0002"	:"대형주",

@@ -23,15 +23,15 @@ if __name__ == "__main__":
 
     if sys.argv[1] == "real_time":
         stock_data = make_collection("stock_data" , "3daySupply").find_one({'일자' :com_vari.Today_date })["stock_code"]
-        drop_collection("stock_data", "real_TR_1206")
-        TR_1206 = indi_object("real_TR_1206", IndiControl)
+        drop_collection("stock_data", "real_TR_1206_3")
+        TR_1206_3 = indi_object("real_TR_1206_3", IndiControl)
         start_date = com_vari.Today_date
         end_date = com_vari.Today_date
         gubun = "1"
         data_kind = "0"
         check_list = integrity_db_count(start_date, end_date, collection_len)
-        com_vari.TR_1206_each_counts = check_list[0]
-        com_vari.TR_1206_all_counts = check_list[1]
+        com_vari.TR_1206_3_each_counts = check_list[0]
+        com_vari.TR_1206_3_all_counts = check_list[1]
         input_list = ["", start_date, end_date, gubun, data_kind]
 
         input_dict_list = []
@@ -64,7 +64,7 @@ if __name__ == "__main__":
 
     app.exec_()
 
-    total_TR_1206_count = make_collection("stock_data", "TR_1206").estimated_document_count()
+    total_TR_1206_count = make_collection("stock_data", "TR_1206_3 ").estimated_document_count()
 
     print("예상되는 실제 db 적재 document 갯수   "+ str(check_list[1]))
     print("실제 db 적제된 document 갯수     "+str(total_TR_1206_count) )

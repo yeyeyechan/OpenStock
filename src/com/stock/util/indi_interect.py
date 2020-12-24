@@ -151,8 +151,8 @@ class indi_object(QMainWindow):
 
         self.rqidD = {}  # TR 관리를 위해 사전 변수를 하나 생성합니다.
         self.collection = make_collection("stock_data" , com_vari.DEFAILT_TR_DB_NAME[tr_name])
-        self.tr_name = tr_name
-
+        self.tr_name = com_vari.DEFAILT_TR_NAME[tr_name]
+        print(self.tr_name)
         self.input_dict_list = []
         self.pk_dict_list = []
         self.collection_len = 0
@@ -226,6 +226,7 @@ class indi_object(QMainWindow):
 
             #print("Tr " + self.tr_name + " 의  인풋  " +str(self.input_data_dict) + "  에 대한 아웃풋   ")
             #print(str(self.tr_data_list_input))
+            print("수신 받은 데이터   " +str(self.tr_data_list_input))
             self.tr_data_list.extend(copy(self.tr_data_list_input))
             if len(self.tr_data_list) >= 4000:
                 self.collection.insert_many(self.tr_data_list)

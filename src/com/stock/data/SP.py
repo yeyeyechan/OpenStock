@@ -9,7 +9,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     logic_name= "3daySupply"
     from_collection = make_collection("stock_data", logic_name)
-    from_collection = from_collection.find_one({"일자": "20201217"})["stock_code"]
+    from_collection = from_collection.find_one({"일자": com_vari.Today_date})["stock_code"]
     SK = real_indi_object("SP")
     SK.set_input_data(from_collection)
     SK.call_tr()
