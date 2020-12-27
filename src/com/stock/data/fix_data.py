@@ -25,7 +25,7 @@ def make_new_float_field (new_collection, before_collection, target_field , filt
 if __name__ == "__main__":
     collection = make_collection("stock_data" , "TR_1206")
     to_collection = make_collection("stock_data" , "new_TR_1206")
-    date_list = get_kr_working_day("20201223" , "20201223")
+    date_list = get_kr_working_day("20201224" , "20201224")
     #drop_collection("stock_data", "new_TR_1206")
     for i in date_list:
         print("날짜 :  " +i.strftime("%Y%m%d") + " 변환시도")

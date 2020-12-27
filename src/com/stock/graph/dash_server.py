@@ -3,12 +3,13 @@ import sys
 sys.path.append("C:\\dev\\OpenStock")
 from src.com.stock.common.import_lib import *
 from src.com.stock.common import import_lib  as com_vari
+
 today = date.today().strftime("%Y%m%d")
 
 ###### data 변수  ######
 
 day = today
-#day = "20201223"
+day = "20201223"
 stock_code_collection = make_collection("stock_data" , "3daySupply")
 stock_code = stock_code_collection.find_one({"일자": day})['stock_code']
 

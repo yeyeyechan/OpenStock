@@ -82,7 +82,7 @@ def check_rising_stock(data, target_percent):
     return result_dict
 if __name__ ==  "__main__":
     #drop_collection("stock_data" , "3daySupply")
-    advanced_find_stock_list("20201224" , "20201224")
+    advanced_find_stock_list("20201228" , "20201228")
     '''collection = make_collection("stock_data" , "new_TR_1206")
     date_list = get_kr_working_day("20201211" , "20201211")
     for date in date_list:

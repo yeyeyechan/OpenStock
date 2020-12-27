@@ -21,7 +21,7 @@ if __name__ == "__main__":
     index =0
     IndiControl = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
 
-    if sys.argv[1] == "real_time":
+    if len(sys.argv) > 1 and  sys.argv[1] == "real_time":
         stock_data = make_collection("stock_data" , "3daySupply").find_one({'일자' :com_vari.Today_date })["stock_code"]
         drop_collection("stock_data", "real_TR_1206")
         TR_1206 = indi_object("real_TR_1206", IndiControl)

@@ -36,7 +36,14 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import dash_core_components as dcc
 import random
+import subprocess
+
 import pymongo
+from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.schedulers.qt import QtScheduler
+from apscheduler.schedulers.background  import BackgroundScheduler
+from apscheduler.triggers.cron import CronTrigger
+
 import matplotlib.pyplot as plt
 from src.com.stock.util.mongo_db import *
 from src.com.stock.common.openAPI import *
@@ -46,6 +53,10 @@ from src.com.stock.common.telegram_bot import *
 from src.com.stock.data.common_data import *
 from src.com.stock.analysis.analysis_filter import *
 from src.com.stock.data.in_out_builder import *
+from src.com.stock.data.TR_SCHART import *
+from src.com.stock.data.TR_SCHART import scheduler_TR_SCHART
+from src.com.stock.data.SP import *
+from src.com.stock.data.SK import *
 from src.com.stock.util.indi_interect import *
 from src.com.stock.util.data_check import *
 from src.com.stock.analysis.analysis import *
@@ -59,7 +70,10 @@ from src.com.stock.analysis.real_TR_SCHART import *
 from src.com.stock.analysis.real_checking import *
 from src.com.stock.data.fix_data import *
 from src.com.stock.graph import *
-from src.com.stock.graph.dash_server import *
+from src.com.stock.job import *
+from src.com.stock.job.job import *
+basic_path = "C:\\dev\\OpenStock\\src\\com\\stock"
+
 TR_1206_len_counts = 0
 
 myLogger = logging.getLogger("myLogger")
