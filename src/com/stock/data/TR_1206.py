@@ -20,7 +20,9 @@ if __name__ == "__main__":
     collection_len = from_collection.estimated_document_count()
     index =0
     IndiControl = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
-
+    if  len(sys.argv) > 1 and  sys.argv[1] == "search":
+        start_date = sys.argv[2]
+        end_date = sys.argv[3]
     if len(sys.argv) > 1 and  sys.argv[1] == "real_time":
         stock_data = make_collection("stock_data" , "3daySupply").find_one({'일자' :com_vari.Today_date })["stock_code"]
         drop_collection("stock_data", "real_TR_1206")
@@ -41,8 +43,6 @@ if __name__ == "__main__":
             input_dict_list.append(copy(input_list))
     else:
         TR_1206 = indi_object("TR_1206", IndiControl)
-        start_date = "20201224"
-        end_date = "20201224"
         gubun = "1"
         data_kind = "0"
         check_list = integrity_db_count(start_date, end_date , collection_len)

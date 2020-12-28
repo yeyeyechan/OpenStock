@@ -58,9 +58,12 @@ def TR_SCHART(**kwargs):
 def call_TR_SCHART():
     print("sibal")
     TR_SCHART(type = 'search',start_date='20200112', end_date='20200115')
+def real_TR_SCHART():
+    print("sibal")
+    TR_SCHART(type = 'real_time',start_date= com_vari.Today_date , end_date=com_vari.Today_date)
 def scheduler_TR_SCHART():
     sched_sc = BlockingScheduler()
-    sched_sc.add_job(call_TR_SCHART, CronTrigger(hour='3-4', minute='*/1'))
+    sched_sc.add_job(real_TR_SCHART, CronTrigger(hour='9-16', minute='*/3'))
     sched_sc.start()
 if __name__ == "__main__":
     scheduler_TR_SCHART()
