@@ -41,6 +41,24 @@ if __name__ == "__main__":
             stock_code = i
             input_list[0] = stock_code
             input_dict_list.append(copy(input_list))
+    if len(sys.argv) > 1 and  sys.argv[1] == "test":
+        stock_data = make_collection("stock_data" , "3daySupply").find_one({'일자' : sys.argv[2] })["stock_code"]
+        drop_collection("stock_data", "real_TR_1206")
+        TR_1206 = indi_object("real_TR_1206", IndiControl)
+        start_date = sys.argv[2]
+        end_date = sys.argv[2]
+        gubun = "1"
+        data_kind = "0"
+        check_list = integrity_db_count(start_date, end_date, collection_len)
+        com_vari.TR_1206_each_counts = check_list[0]
+        com_vari.TR_1206_all_counts = check_list[1]
+        input_list = ["", start_date, end_date, gubun, data_kind]
+
+        input_dict_list = []
+        for i in stock_data:
+            stock_code = i
+            input_list[0] = stock_code
+            input_dict_list.append(copy(input_list))
     else:
         TR_1206 = indi_object("TR_1206", IndiControl)
         gubun = "1"

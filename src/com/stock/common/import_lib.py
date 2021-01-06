@@ -35,6 +35,8 @@ import dash
 import dash_html_components as html
 from dash.dependencies import Input, Output
 import dash_core_components as dcc
+import plotly.graph_objects as go
+
 import random
 import subprocess
 
@@ -45,6 +47,7 @@ from apscheduler.schedulers.background  import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
 
 import matplotlib.pyplot as plt
+from plotly.subplots import make_subplots
 from src.com.stock.util.mongo_db import *
 from src.com.stock.common.openAPI import *
 from src.com.stock.util.date import *

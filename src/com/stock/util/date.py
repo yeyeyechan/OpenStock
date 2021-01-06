@@ -29,7 +29,9 @@ def get_kr_str_working_day_list_by_diff(input_working_date, diff):
     elif diff < 0:
         while diff != 0:
             target_date = target_date - timedelta(days= abs(1))
-            if is_red_day(target_date):
+            if target_date.strftime("%Y%m%d") == "20201231":
+                continue
+            elif is_red_day(target_date):
                 continue
             elif target_date.strftime("%Y%m%d") in kr_holiday:
                 continue
@@ -40,7 +42,9 @@ def get_kr_str_working_day_list_by_diff(input_working_date, diff):
     else:
         while diff != 0:
             target_date = target_date + timedelta(days= abs(1))
-            if is_red_day(target_date):
+            if target_date.strftime("%Y%m%d") == "20201231":
+                continue
+            elif is_red_day(target_date):
                 continue
             elif target_date.strftime("%Y%m%d") in kr_holiday:
                 continue
@@ -62,7 +66,9 @@ def get_kr_working_day_by_diff(input_working_date, diff):
     elif diff < 0:
         while diff != 0:
             target_date = target_date - timedelta(days= abs(diff))
-            if is_red_day(target_date):
+            if target_date.strftime("%Y%m%d") == "20201231":
+                continue
+            elif is_red_day(target_date):
                 continue
             elif target_date.strftime("%Y%m%d") in kr_holiday:
                 continue
@@ -72,7 +78,9 @@ def get_kr_working_day_by_diff(input_working_date, diff):
     else:
         while diff != 0:
             target_date = target_date + timedelta(days= abs(diff))
-            if is_red_day(target_date):
+            if target_date.strftime("%Y%m%d") == "20201231":
+                continue
+            elif is_red_day(target_date):
                 continue
             elif target_date.strftime("%Y%m%d") in kr_holiday:
                 continue
@@ -97,7 +105,9 @@ def get_kr_working_day(start_date, end_date):
     kr_holiday = get_holiday(year_list, "ALL")
     result = []
     for i in date_list:
-        if is_red_day(i):
+        if i.strftime("%Y%m%d") == "20201231":
+            continue
+        elif is_red_day(i):
             continue
         elif i in kr_holiday:
             continue
@@ -105,10 +115,22 @@ def get_kr_working_day(start_date, end_date):
             result.append(i)
 
     return result
+def string_to_datetime(day, hour_min_sec):
+    #day yyyymmdd
+    if len(hour_min_sec) == 4:
+        hour_min_sec+="00"
+    result = datetime.strptime(day+hour_min_sec, "%Y%m%d%H%M%S")
+    return result
 
 if __name__ == "__main__":
-    test_date = datetime(2020,8,18)
-    test_date2 = get_kr_working_day_by_diff(test_date, -1)
+    day = "20201230"
 
-    print(test_date)
-    print(test_date2)
+    real_TR_SCHART = make_collection("stock_data", "real_TR_SCHART")
+    tr_schart_df = []
+    for i in real_TR_SCHART.find({"단축코드": "000020", "일자": day}):
+        tr_schart_df.append(i)
+    tr_schart_df = pd.DataFrame(tr_schart_df)
+
+    tr_schart_df_x = tr_schart_df["시간"]
+    tr_schart_df_x = tr_schart_df_x.apply(lambda x: string_to_datetime(day, x))
+    print(tr_schart_df_x)

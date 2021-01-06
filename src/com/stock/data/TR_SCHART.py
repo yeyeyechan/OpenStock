@@ -28,14 +28,16 @@ def TR_SCHART(**kwargs):
             #stock_mst = make_collection("stock_data" , "stock_mst")
             stock_data = make_collection("stock_data" , "3daySupply").find_one({'일자' :com_vari.Today_date })["stock_code"]
             input_dict_list = []
+            Today_date = datetime.now()
+            time_now = Today_date.strftime("%H%M")
+            tr_schart_real_count = make_tr_schart_real_count(time_now)
             for i in stock_data:
                 stock_code = i
                 graph_kind = "1"
                 time_gap = "5"
                 start_date =date_list[0].strftime("%Y%m%d")
                 end_date =date_list[-1].strftime("%Y%m%d")
-                search_count = com_vari.tr_schart_real_count
-                input_dict_list.append(copy([stock_code , graph_kind, time_gap , start_date, end_date, search_count]))
+                input_dict_list.append(copy([stock_code , graph_kind, time_gap , start_date, end_date, tr_schart_real_count]))
         else:
             TR_SCHART = indi_object("TR_SCHART", IndiControl)
             date_list = get_kr_working_day(start_date, end_date)
@@ -47,7 +49,7 @@ def TR_SCHART(**kwargs):
                 time_gap = "5"
                 start_date =date_list[0].strftime("%Y%m%d")
                 end_date =date_list[-1].strftime("%Y%m%d")
-                search_count = "237"
+                search_count = "79"
                 input_dict_list.append(copy([stock_code , graph_kind, time_gap , start_date, end_date, search_count]))
         TR_SCHART.set_input_data(input_dict_list)
         TR_SCHART.call_tr()
@@ -57,7 +59,7 @@ def TR_SCHART(**kwargs):
     return True
 def call_TR_SCHART():
     print("sibal")
-    TR_SCHART(type = 'search',start_date='20200112', end_date='20200115')
+    TR_SCHART(type = 'search',start_date='20210106', end_date='20210106')
 def real_TR_SCHART():
     print("sibal")
     TR_SCHART(type = 'real_time',start_date= com_vari.Today_date , end_date=com_vari.Today_date)
@@ -66,7 +68,8 @@ def scheduler_TR_SCHART():
     sched_sc.add_job(real_TR_SCHART, CronTrigger(hour='9-16', minute='*/3'))
     sched_sc.start()
 if __name__ == "__main__":
-    scheduler_TR_SCHART()
+    call_TR_SCHART()
+    #scheduler_TR_SCHART()
     '''#drop_collection("stock_data", "TR_SCHART")
     app = QApplication(sys.argv)
 
