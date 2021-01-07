@@ -26,6 +26,9 @@ if __name__ == "__main__":
     if  len(sys.argv) > 1 and  sys.argv[1] == "job":
         start_date = sys.argv[2]
         end_date = sys.argv[3]
+    else:
+        start_date = "20201230"
+        end_date =  "20210106"
     collection = make_collection("stock_data" , "TR_1206")
     to_collection = make_collection("stock_data" , "new_TR_1206")
     date_list = get_kr_working_day(start_date , end_date)

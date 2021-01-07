@@ -20,6 +20,9 @@ if __name__ == "__main__":
     collection_len = from_collection.estimated_document_count()
     index =0
     IndiControl = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
+    if len(sys.argv) ==1 :
+        start_date = "20201230"
+        end_date =  "20210106"
     if  len(sys.argv) > 1 and  sys.argv[1] == "search":
         start_date = sys.argv[2]
         end_date = sys.argv[3]
@@ -63,9 +66,10 @@ if __name__ == "__main__":
         TR_1206 = indi_object("TR_1206", IndiControl)
         gubun = "1"
         data_kind = "0"
-        check_list = integrity_db_count(start_date, end_date , collection_len)
-        com_vari.TR_1206_each_counts = check_list[0]
-        com_vari.TR_1206_all_counts = check_list[1]
+        #check_list = integrity_db_count(start_date, end_date , collection_len)
+        #com_vari.TR_1206_each_counts = check_list[0]
+        #com_vari.TR_1206_all_counts = check_list[1]
+
         input_list = ["", start_date, end_date, gubun, data_kind]
 
         input_dict_list = []

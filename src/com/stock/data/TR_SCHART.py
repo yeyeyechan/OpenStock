@@ -68,8 +68,8 @@ def scheduler_TR_SCHART():
     sched_sc.add_job(real_TR_SCHART, CronTrigger(hour='9-16', minute='*/3'))
     sched_sc.start()
 if __name__ == "__main__":
-    call_TR_SCHART()
-    #scheduler_TR_SCHART()
+    #call_TR_SCHART()
+    scheduler_TR_SCHART()
     '''#drop_collection("stock_data", "TR_SCHART")
     app = QApplication(sys.argv)
 
