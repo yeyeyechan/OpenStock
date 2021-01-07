@@ -12,7 +12,7 @@ today = date.today().strftime("%Y%m%d")
 ###### data 변수  ######
 
 day = today
-day = "20210106"
+day = "20210107"
 before_day = get_kr_working_day_by_diff(day, -1).strftime("%Y%m%d")
 stock_code_collection = make_collection("stock_data" , "3daySupply")
 stock_code = stock_code_collection.find_one({"일자": day})['stock_code']
@@ -147,19 +147,19 @@ def set_stock_code_options(selected_option):
     same_stock = 0
     ratio = 0.0
     five_ratio = 0.0
-    '''if selected_option =="0":
+    '''if selected_option == "0":
+           total_stock = []
+           for i in stock_code:
+               total_stock,  five_up_stock = check_data_up(i,day,total_stock,five_up_stock)
+
+           return [{'label': i, 'value': i} for i in total_stock], total_stock[0], total_count, up_stock, five_up_stock, down_stock, same_stock, ratio, five_ratio
+       #### 외국인 수급 양 ##############'''
+    if selected_option =="0":
         for i in stock_code:
             total_count, up_stock, five_up_stock, down_stock, same_stock, ratio, five_ratio = check_data(i, day, total_count, up_stock, five_up_stock, down_stock, same_stock,ratio, five_ratio)
         ratio = round(ratio, 2)
         five_ratio = round(five_ratio, 2)
-        return [{'label': i , 'value' : i} for i in stock_code], stock_code[0], total_count , up_stock, five_up_stock,  down_stock,same_stock, ratio , five_ratio'''
-    if selected_option == "0":
-        total_stock = []
-        for i in stock_code:
-            total_stock,  five_up_stock = check_data_up(i,day,total_stock,five_up_stock)
-
-        return [{'label': i, 'value': i} for i in total_stock], total_stock[0], total_count, up_stock, five_up_stock, down_stock, same_stock, ratio, five_ratio
-    #### 외국인 수급 양 ##############
+        return [{'label': i , 'value' : i} for i in stock_code], stock_code[0], total_count , up_stock, five_up_stock,  down_stock,same_stock, ratio , five_ratio
     elif selected_option =="1":
         for i in stock_code:
             for_data = int(sk_data.find_one({"단축코드" : i, "일자" : day }, sort=[("체결시간", pymongo.DESCENDING)])["외국계순매수수량"])
