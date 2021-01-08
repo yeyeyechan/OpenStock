@@ -58,6 +58,7 @@ from src.com.stock.analysis.analysis_filter import *
 from src.com.stock.data.in_out_builder import *
 from src.com.stock.data.TR_SCHART import *
 from src.com.stock.data.TR_SCHART import scheduler_TR_SCHART
+from src.com.stock.data import SP
 from src.com.stock.data.SP import *
 from src.com.stock.data.SK import *
 from src.com.stock.util.indi_interect import *

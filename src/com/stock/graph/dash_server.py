@@ -12,7 +12,7 @@ today = date.today().strftime("%Y%m%d")
 ###### data 변수  ######
 
 day = today
-day = "20210107"
+day = "20210108"
 before_day = get_kr_working_day_by_diff(day, -1).strftime("%Y%m%d")
 stock_code_collection = make_collection("stock_data" , "3daySupply")
 stock_code = stock_code_collection.find_one({"일자": day})['stock_code']
@@ -90,13 +90,14 @@ def check_data_2(stock_code, day):
 
     stock_name = stock_mst.find_one({"단축코드" : stock_code})["종목명"]
     stock_ratio = round((real_TR_SCHART_data - tr_1206_data) / tr_1206_data * 100.0, 2)
-    stock_vol =  int(real_tr_1206_data["누적거래량"])
+    #stock_vol =  int(real_tr_1206_data["누적거래량"])
 
-    stock_price =int(real_tr_1206_data["가격"])
+    stock_price =real_TR_SCHART_data
 
-    stock_trd_vol = stock_vol*stock_price
+    #stock_trd_vol = stock_vol*stock_price
 
-    return stock_name , stock_ratio ,stock_vol ,stock_price,stock_trd_vol
+    #return stock_name , stock_ratio ,stock_vol ,stock_price,stock_trd_vol
+    return stock_name , stock_ratio  ,stock_price
 def check_data(stock_code, day, total_count , up_stock, five_up_stock,  down_stock,same_stock, ratio , five_ratio):
     total_count +=1
     real_TR_SCHART_data = int(real_TR_SCHART.find_one({"일자" : day , "단축코드" : stock_code},  sort=[("체결시간", pymongo.DESCENDING)])["종가"])
@@ -224,7 +225,8 @@ def update_output(stock_code_input):
     stock_vol = 0
     stock_price = 0
     stock_trd_vol = 0
-    stock_name, stock_ratio, stock_vol, stock_price, stock_trd_vol = check_data_2(stock_code_input, day)
+    #stock_name, stock_ratio, stock_vol, stock_price, stock_trd_vol = check_data_2(stock_code_input, day)
+    stock_name, stock_ratio, stock_price = check_data_2(stock_code_input, day)
     if (sk_data.count_documents({}) == 0):
         pass
     else:
