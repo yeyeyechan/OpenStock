@@ -19,10 +19,14 @@ stock_code = stock_code_collection.find_one({"일자": day})['stock_code']
 
 sk_data = make_collection("stock_data", "SK")
 sp_data = make_collection("stock_data", "SP")
-real_TR_SCHART = make_collection("stock_data", "real_TR_SCHART")
+#real_TR_SCHART = make_collection("stock_data", "real_TR_SCHART")
+#real_tr_1206 = make_collection("stock_data", "real_TR_1206")
+
+real_TR_SCHART = make_collection("stock_data", "TR_SCHART")
+real_tr_1206 = make_collection("stock_data", "TR_1206")
+
 tr_1206 = make_collection("stock_data", "TR_1206")
 stock_mst = make_collection("stock_data", "stock_mst")
-real_tr_1206 = make_collection("stock_data", "real_TR_1206")
 
 
 ###### data 변수  ######

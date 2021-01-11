@@ -1,9 +1,26 @@
+import sys
+sys.path.append("C:\\dev\\OpenStock")
+
 from src.com.stock.common.import_lib import *
+
 import time
 
 # start_time을 체크
 start_time = time.time()
+def new_anal_function():
+    test_date = "20210111"
+    new_TR_1206 = make_collection("stock_data", "new_TR_1206").find({"일자": test_date})
+    result_db_name = "3daySupply"
+    to_collection = make_collection("stock_data", result_db_name)
+    result ={
+        "일자" : test_date,
+        "stock_code": []
+    }
+    for i in new_TR_1206:
+        if i["전일대비율"] >=0 and int(i["외국인순매수거래량"]) >0 and int(i["개인순매수거래량"]) >0 and int(i["프로그램순매수"]) >0 and int(i["기관순매수거래량"]) >0 and int(i["누적거래량"]) * int(i["가격"]) >= 10000000000 and int(i["외국인순매수거래량"])** int(i["가격"]) >= 400000000 :
+            result["stock_code"].append(i["단축코드"])
 
+    update_collection_sec(to_collection , result , {"일자" :test_date})
 def advanced_find_stock_list(from_date, to_date):
     collection = make_collection("stock_data", "new_TR_1206")
     date_list = get_kr_working_day(from_date, to_date)
@@ -86,6 +103,8 @@ if __name__ ==  "__main__":
         start_date = sys.argv[2]
         end_date = sys.argv[3]
         advanced_find_stock_list(start_date , end_date)
+    else:
+        new_anal_function()
     '''collection = make_collection("stock_data" , "new_TR_1206")
     date_list = get_kr_working_day("20201211" , "20201211")
     for date in date_list:

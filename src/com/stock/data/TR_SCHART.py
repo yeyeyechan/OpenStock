@@ -57,9 +57,9 @@ def TR_SCHART(**kwargs):
     except:
         return False
     return True
-def call_TR_SCHART():
+def call_TR_SCHART(start_date, end_date):
     print("sibal")
-    TR_SCHART(type = 'search',start_date='20200101', end_date='20200101')
+    TR_SCHART(type = 'search',start_date=start_date, end_date=end_date)
 def real_TR_SCHART():
     print("sibal")
     TR_SCHART(type = 'real_time',start_date= com_vari.Today_date , end_date=com_vari.Today_date)
@@ -69,7 +69,12 @@ def scheduler_TR_SCHART():
     sched_sc.start()
 if __name__ == "__main__":
     #call_TR_SCHART()
-    scheduler_TR_SCHART()
+    if sys.argv[1] == "real_time":
+        scheduler_TR_SCHART()
+    elif sys.argv[1] == "search":
+        start_date = sys.argv[2]
+        end_date = sys.argv[3]
+        call_TR_SCHART(start_date, end_date)
     '''#drop_collection("stock_data", "TR_SCHART")
     app = QApplication(sys.argv)
 

@@ -69,6 +69,7 @@ from src.com.stock.analysis.analysis2 import *
 from src.com.stock.analysis.analysis3 import *
 from src.com.stock.analysis.analysis4 import *
 from src.com.stock.analysis.analysis5 import *
+from src.com.stock.analysis.test import *
 from src.com.stock.analysis.graph import *
 from src.com.stock.analysis.real_TR_SCHART import *
 from src.com.stock.analysis.real_checking import *
