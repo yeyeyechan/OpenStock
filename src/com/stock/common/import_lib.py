@@ -131,6 +131,7 @@ indiReal_dict = {}
 path_to_tr_file = "C:\dev\OpenStock\src\com\stock\\tr_data\Indi_TR.xlsx"
 DEFAILT_TR_DB_NAME ={
     "TR_1206" : "TR_1206",
+    "TR_1206_2" : "TR_1206_2",
     "real_TR_1206" : "real_TR_1206",
     "stock_mst" : "stock_mst",
     "TR_1205" : "TR_1205",
@@ -143,6 +144,7 @@ DEFAILT_TR_DB_NAME ={
 }
 DEFAILT_TR_NAME ={
     "TR_1206" : "TR_1206",
+    "TR_1206_2" : "TR_1206",
     "real_TR_1206" : "TR_1206",
     "stock_mst" : "stock_mst",
     "TR_1205" : "TR_1205",

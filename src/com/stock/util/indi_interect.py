@@ -165,6 +165,7 @@ class indi_object(QMainWindow):
         self.in_out_builder.set_input_data_dict(self.input_data_dict)
         self.single_output_dict = self.in_out_builder.get_single_output_dict()
         self.multi_output_dict = self.in_out_builder.get_multi_output_dict()
+        self.static_pk_dict = self.in_out_builder.get_static_pk_dict()
 
 
     def set_input_data(self,input_data_list):
@@ -172,6 +173,7 @@ class indi_object(QMainWindow):
         self.in_out_builder.set_input_list(self.input_data_list)
         self.single_output_dict = self.in_out_builder.get_single_output_dict()
         self.multi_output_dict = self.in_out_builder.get_multi_output_dict()
+        self.static_pk_dict = self.in_out_builder.get_static_pk_dict()
 
     def call_tr(self, input_data_dict="first_call"):
         ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
@@ -213,6 +215,10 @@ class indi_object(QMainWindow):
             if  self.pk_data_dict:
                 for key , value in self.pk_data_dict.items():
                     single_output_data[key.strip()] = value.strip()
+            if self.tr_name == "SK" or self.tr_name =="SP"  or self.tr_name =="real_TR_1206":
+                if self.static_pk_dict:
+                    for key, value in self.static_pk_dict.items():
+                        single_output_data[key.strip()] = value
             for i in range(0, nCnt):
                 if  self.multi_output_dict :
                     multi_output_data = {}

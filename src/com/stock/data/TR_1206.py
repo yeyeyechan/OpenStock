@@ -23,9 +23,22 @@ if __name__ == "__main__":
     if len(sys.argv) ==1 :
         start_date = "20201230"
         end_date =  "20210106"
-    if  len(sys.argv) > 1 and  sys.argv[1] == "search":
+    if  len(sys.argv) > 1 and  sys.argv[1] == "new_search":
         start_date = sys.argv[2]
         end_date = sys.argv[3]
+        TR_1206 = indi_object("TR_1206_2", IndiControl)
+        gubun = "1"
+        data_kind = "0"
+        input_list = ["", start_date, end_date, gubun, data_kind]
+
+        input_dict_list = []
+        for i in from_collection.find():
+            stock_code = i["단축코드"]
+
+            input_list[0] = stock_code
+            input_dict_list.append(copy(input_list))
+
+
     if len(sys.argv) > 1 and  sys.argv[1] == "real_time":
         stock_data = make_collection("stock_data" , "3daySupply").find_one({'일자' :com_vari.Today_date })["stock_code"]
         drop_collection("stock_data", "real_TR_1206")
@@ -62,7 +75,9 @@ if __name__ == "__main__":
             stock_code = i
             input_list[0] = stock_code
             input_dict_list.append(copy(input_list))
-    else:
+    if len(sys.argv) > 1 and sys.argv[1] == "search":
+        start_date = sys.argv[2]
+        end_date = sys.argv[3]
         TR_1206 = indi_object("TR_1206", IndiControl)
         gubun = "1"
         data_kind = "0"

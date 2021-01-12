@@ -31,7 +31,7 @@ def call_SP():
     SP(type = 'search')
 def scheduler_SP():
     sched_sc = BlockingScheduler()
-    sched_sc.add_job(call_SP, CronTrigger(hour='9-16', minute='*/1'))
+    sched_sc.add_job(call_SP, CronTrigger(hour='0-16', minute='*/1'))
     sched_sc.start()
 
 if __name__ == "__main__":
