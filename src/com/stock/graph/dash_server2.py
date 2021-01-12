@@ -37,8 +37,6 @@ radio_option = {
 "실시간 외국계 수급 없음": "3",
 
 }
-
-
 app = dash.Dash(__name__)
 app.layout = html.Div(
     [
@@ -121,11 +119,13 @@ def check_data(stock_code, day, total_count , up_stock, five_up_stock,  down_sto
     five_ratio = five_up_stock/total_count*100.0
     return total_count , up_stock, five_up_stock , down_stock,same_stock, ratio, five_ratio
 def check_data_up(stock_code, day, total_stock ,  five_up_stock):
-    tr_1206_data = float(tr_1206.find_one({"일자" : day , "단축코드" : stock_code})["전일대비율"])
+    real_TR_SCHART_data = int(real_TR_SCHART.find_one({"일자" : day , "단축코드" : stock_code},  sort=[("체결시간", pymongo.DESCENDING)])["종가"])
+    tr_1206_data = int(tr_1206.find_one({"일자" : before_day , "단축코드" : stock_code})["가격"])
 
-    if tr_1206_data > 5.0:
-        five_up_stock += 1
-        total_stock.append(stock_code)
+    if real_TR_SCHART_data > tr_1206_data:
+        if (real_TR_SCHART_data - tr_1206_data)/tr_1206_data*100.0 >=5.0:
+            five_up_stock += 1
+            total_stock.append(stock_code)
     return total_stock, five_up_stock
 @app.callback(
     [
@@ -152,15 +152,19 @@ def set_stock_code_options(selected_option):
     same_stock = 0
     ratio = 0.0
     five_ratio = 0.0
-    # start_time을 체크
-    print(" set_stock_code_options  시간 측정  ")
-    start_time = time.time()
-    if selected_option == "0":
-           #total_stock = []
-           #for i in stock_code:
-           #    total_stock,  five_up_stock = check_data_up(i,day,total_stock,five_up_stock)
-       return [{'label': i, 'value': i} for i in stock_code], stock_code[0], total_count, up_stock, five_up_stock, down_stock, same_stock, ratio, five_ratio
-       #### 외국인 수급 양 ##############
+    '''if selected_option == "0":
+           total_stock = []
+           for i in stock_code:
+               total_stock,  five_up_stock = check_data_up(i,day,total_stock,five_up_stock)
+
+           return [{'label': i, 'value': i} for i in total_stock], total_stock[0], total_count, up_stock, five_up_stock, down_stock, same_stock, ratio, five_ratio
+       #### 외국인 수급 양 ##############'''
+    if selected_option =="0":
+        for i in stock_code:
+            total_count, up_stock, five_up_stock, down_stock, same_stock, ratio, five_ratio = check_data(i, day, total_count, up_stock, five_up_stock, down_stock, same_stock,ratio, five_ratio)
+        ratio = round(ratio, 2)
+        five_ratio = round(five_ratio, 2)
+        return [{'label': i , 'value' : i} for i in stock_code], stock_code[0], total_count , up_stock, five_up_stock,  down_stock,same_stock, ratio , five_ratio
     elif selected_option =="1":
         for i in stock_code:
             for_data = int(sk_data.find_one({"단축코드" : i, "일자" : day }, sort=[("체결시간", pymongo.DESCENDING)])["외국계순매수수량"])
@@ -198,7 +202,6 @@ def set_stock_code_options(selected_option):
         return [{'label': i, 'value': i} for i in no_for_stock_code], no_for_stock_code[0], total_count , up_stock, five_up_stock,  down_stock,same_stock, ratio , five_ratio
     #### 외국인 수급 무 ##############
 
-    print(" set_stock_code_options  시간 측정  완료  ---{}s seconds---".format(time.time() - start_time))
 
 
 @app.callback(
@@ -228,10 +231,6 @@ def update_output(stock_code_input):
     stock_trd_vol = 0
     #stock_name, stock_ratio, stock_vol, stock_price, stock_trd_vol = check_data_2(stock_code_input, day)
     stock_name, stock_ratio, stock_price = check_data_2(stock_code_input, day)
-
-    # start_time을 체크
-    start_time = time.time()
-    print("sk 시간 측정    ")
     if (sk_data.count_documents({}) == 0):
         pass
     else:
@@ -276,10 +275,7 @@ def update_output(stock_code_input):
             )'''
         except:
             print("sk_df 다루던중 오류")
-    print("SK 시간 측정 완료     ---{}s seconds---".format(time.time() - start_time))
-    # start_time을 체크
-    start_time = time.time()
-    print("TR_SCHART 시간 측정 ")
+
     if (real_TR_SCHART.count_documents({}) == 0):
         pass
     else:
@@ -309,36 +305,31 @@ def update_output(stock_code_input):
             #data.append({'x' : tr_schart_df_x , 'y': tr_schart_df_price, 'type' :'line' , 'name' : '5분 단위 현재가'})
         except:
             print("tr_schart_df 다루던중 오류")
-    print("TR_SCHART 시간 측정  완료   ---{}s seconds---".format(time.time() - start_time))
-    # start_time을 체크
-    start_time = time.time()
-    print(" SP   시간 측정  ")
-    if (sp_data.count_documents({}) == 0):
-        pass
-    else:
-        try:
-            sp_df = []
-            for i in sp_data.find({"단축코드": stock_code_input, "일자": day}, sort=[("시간", pymongo.ASCENDING)]):
-                sp_df.append(i)
-            sp_df = pd.DataFrame(sp_df)
+        if (sp_data.count_documents({}) == 0):
+            pass
+        else:
+            try:
+                sp_df = []
+                for i in sp_data.find({"단축코드": stock_code_input, "일자": day}, sort=[("시간", pymongo.ASCENDING)]):
+                    sp_df.append(i)
+                sp_df = pd.DataFrame(sp_df)
 
 
-            sp_df_x = sp_df["시간"].apply(lambda x: string_to_datetime(day, x))
+                sp_df_x = sp_df["시간"].apply(lambda x: string_to_datetime(day, x))
 
-            sp_df_buy = sp_df["비차익매수위탁체결수량"].astype('int32')
-            sp_df_sell = sp_df["비차익매도위탁체결수량"].astype('int32')
-            sp_df_pure = sp_df_buy - sp_df_sell
-            # Add traces
-            fig.add_trace(
-                go.Scatter(x=sp_df_x, y=sp_df_pure, name="프로그램순매수수량"),
-                secondary_y=False,
-            )
-            #data.append({'x': sp_df_x, 'y': sp_df_pure, 'type': 'line', 'name': '프로그램순매수수량'})
-        except:
-            print("sp_df 다루던중 오류")
+                sp_df_buy = sp_df["비차익매수위탁체결수량"].astype('int32')
+                sp_df_sell = sp_df["비차익매도위탁체결수량"].astype('int32')
+                sp_df_pure = sp_df_buy - sp_df_sell
+                # Add traces
+                fig.add_trace(
+                    go.Scatter(x=sp_df_x, y=sp_df_pure, name="프로그램순매수수량"),
+                    secondary_y=False,
+                )
+                #data.append({'x': sp_df_x, 'y': sp_df_pure, 'type': 'line', 'name': '프로그램순매수수량'})
+            except:
+                print("sp_df 다루던중 오류")
     if not data:
         data.append({'x' : [] , 'y': [], 'type' :'line' , 'name' : '데이터 없음'})
-    print("SP 시간 측정 완료  ---{}s seconds---".format(time.time() - start_time))
 
     # Set x-axis title
     fig.update_xaxes(title_text="분석 그래프 ")

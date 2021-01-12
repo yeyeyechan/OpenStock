@@ -13,7 +13,7 @@ if __name__ ==  "__main__":
     result_db_name = "3daySupply"
     to_collection = make_collection("stock_data", result_db_name)
     result ={
-        "일자" : test_date,
+        "일자" : "20210112",
         "stock_code": []
     }
     for i in new_TR_1206:
