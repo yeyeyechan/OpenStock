@@ -12,7 +12,7 @@ today = date.today().strftime("%Y%m%d")
 ###### data 변수  ######
 
 day = today
-day = "20210112"
+day = "20210114"
 before_day = get_kr_working_day_by_diff(day, -1).strftime("%Y%m%d")
 stock_code_collection = make_collection("stock_data" , "3daySupply")
 stock_code = stock_code_collection.find_one({"일자": day})['stock_code']
@@ -241,19 +241,15 @@ def update_output(stock_code_input):
             sk_df = pd.DataFrame(sk_df)
 
             sk_df_x = sk_df["체결시간"].apply ( lambda x : string_to_datetime (day, x))
-            '''print("sk_df_x   ")
-            print(sk_df_x)
-            print("sk_df_x   ")
+
             sk_df_for = sk_df["외국계순매수수량"].astype('int32')
-            print("sk_df_for   ")
-            print(sk_df_for)
-            print("sk_df_for   ")
+
             #data.append( {'x' : sk_df_x , 'y': sk_df_for, 'type' :'line' , 'name' : '외국계순매수수량'})
             # Add traces
             fig.add_trace(
                 go.Scatter(x=sk_df_x, y=sk_df_for, name="외국계순매수수량"),
                 secondary_y=False,
-            )'''
+            )
             sk_df_kor = sk_df["국내총순매수수량"].astype('int32')
             print("sk_df_kor   ")
             print(sk_df_kor)

@@ -3,6 +3,48 @@ import sys
 sys.path.append("C:\\dev\\OpenStock")
 
 from src.com.stock.common.import_lib import *
+def find_stock():
+    data = make_collection("stock_data", "3daySupply")
+    stock_data= data.find_one({"일자" : "20210114"})["stock_code"]
+    TR_1206 = make_collection("stock_data", "new_TR_1206")
+
+    for i in stock_data:
+        TR_1206_data = TR_1206.find_one({"일자" : "20210114" , "단축코드" : i})
+
+        if TR_1206_data["전일대비율"] > 5.0:
+            print(i)
+
+def cleansing_data():
+    data = make_collection("stock_data", "3daySupply")
+    stock_data= data.find_one({"일자" : "20210114"})["stock_code"]
+    SK = make_collection("stock_data", "SK")
+    SP = make_collection("stock_data", "SP")
+
+    for i in stock_data:
+        for j in SK.find({"일자" : "20210114", "단축코드" : i}):
+            if j["체결시간"] =="" :
+                SK.delete_one({"_id" :j["_id"]})
+        for j in SP.find({"일자" : "20210114", "단축코드" : i}):
+            if j["시간"] =="" :
+                SP.delete_one({"_id" :j["_id"]})
+def check_3day_data():
+    data = make_collection("stock_data", "3daySupply")
+    stock_data= data.find_one({"일자" : "20210114"})["stock_code"]
+
+    data.delete_many({"일자" : "20210114"})
+
+    SK = make_collection("stock_data", "SK")
+    SP = make_collection("stock_data", "SP")
+
+    new_data = []
+    for i in stock_data:
+        if SK.find_one({"일자" : "20210114", "단축코드" : i}) is not None and SP.find_one({"일자" : "20210114", "단축코드" : i}) is not None :
+            new_data.append(i)
+
+    result ={"일자" : "20210114" , "stock_code":[]}
+    result["stock_code"] = new_data
+
+    update_collection(data,result)
 
 def find_new_stocks():
     stock_mst = make_collection("stock_data", "stock_mst")
@@ -10,7 +52,7 @@ def find_new_stocks():
 
     #drop_collection("stock_data", "TR_1206_2")
     test_start_date = "20201224"
-    test_end_date = "20210112"
+    test_end_date = "20210113"
     #check = subprocess.call([sys.executable, basic_path + "\\data\\TR_1206.py", "new_search", test_start_date, test_end_date])
     result = []
     for i in stock_mst.find():
@@ -25,21 +67,22 @@ def find_new_stocks():
             if  (int(last_data["가격"]) -  int(first_data["가격"]))/ int(first_data["가격"]) *100.0 <15.0 and int(last_data["가격"]) *int(last_data["누적거래량"])>=10000000000 :
                 print("가격 상승 15 퍼 이내")
                 check =True
-                for j in TR_1206_2.find({"단축코드": i["단축코드"]}):
-                    if int(j["외국인순매수누적거래량"]) < 0 or int(j["기관순매수누적거래량"]) < 0:
+                '''for j in TR_1206_2.find({"단축코드": i["단축코드"]}):
+                    #if int(j["외국인순매수누적거래량"]) < 0 or int(j["기관순매수누적거래량"]) < 0:
+                    if int(j["외국인순매수누적거래량"]) < 0 :
                         print("단축코드   " + i["단축코드"] + "   외국인 순매수 or 기관 순매수 누적개래량 음 발견 ")
                         check = False
-                        break
+                        break'''
                 if check:
                     print("최종 합격 발생")
                     result.append(i["단축코드"])
     result_db_name = "3daySupply"
     to_collection = make_collection("stock_data", result_db_name)
 
-    data = {"일자": "20210113", "stock_code": ""}
+    data = {"일자": "20210114", "stock_code": ""}
     data["stock_code"] = result
 
-    update_collection_sec(to_collection, data, {"일자":"20210113"})
+    update_collection_sec(to_collection, data, {"일자":"20210114"})
     print(result)
     print(len(result))
 
@@ -69,6 +112,7 @@ def make_new_3daySupply():
             print(i["단축코드"])
     update_collection_sec(to_collection , result , {"일자" :test_date})
 if __name__ ==  "__main__":
-    find_new_stocks()
-
-
+    #find_new_stocks()
+    #check_3day_data()
+    #cleansing_data()
+    find_stock()
