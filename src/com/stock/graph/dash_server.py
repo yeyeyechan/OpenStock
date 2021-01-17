@@ -22,7 +22,7 @@ sp_data = make_collection("stock_data", "SP")
 #real_TR_SCHART = make_collection("stock_data", "real_TR_SCHART")
 #real_tr_1206 = make_collection("stock_data", "real_TR_1206")
 
-real_TR_SCHART = make_collection("stock_data", "TR_SCHART")
+real_TR_SCHART = make_collection("stock_data", "real_TR_SCHART")
 real_tr_1206 = make_collection("stock_data", "TR_1206")
 
 tr_1206 = make_collection("stock_data", "TR_1206")

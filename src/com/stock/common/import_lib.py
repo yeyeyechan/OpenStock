@@ -56,6 +56,7 @@ from src.com.stock.common.telegram_bot import *
 from src.com.stock.data.common_data import *
 from src.com.stock.analysis.analysis_filter import *
 from src.com.stock.data.in_out_builder import *
+from src.com.stock.data.TR_1863 import *
 from src.com.stock.data.TR_SCHART import *
 from src.com.stock.data.TR_SCHART import scheduler_TR_SCHART
 from src.com.stock.data import SP
@@ -73,6 +74,7 @@ from src.com.stock.analysis.test import *
 from src.com.stock.analysis.graph import *
 from src.com.stock.analysis.real_TR_SCHART import *
 from src.com.stock.analysis.real_checking import *
+from src.com.stock.analysis.monitoring_server import *
 from src.com.stock.data.fix_data import *
 from src.com.stock.graph import *
 from src.com.stock.job import *
@@ -130,6 +132,7 @@ indiReal_dict = {}
 
 path_to_tr_file = "C:\dev\OpenStock\src\com\stock\\tr_data\Indi_TR.xlsx"
 DEFAILT_TR_DB_NAME ={
+    "TR_1863" : "TR_1863",
     "TR_1206" : "TR_1206",
     "TR_1206_2" : "TR_1206_2",
     "real_TR_1206" : "real_TR_1206",
@@ -143,6 +146,7 @@ DEFAILT_TR_DB_NAME ={
     "SABA101U1" : "SABA101U1",
 }
 DEFAILT_TR_NAME ={
+    "TR_1863" : "TR_1863",
     "TR_1206" : "TR_1206",
     "TR_1206_2" : "TR_1206",
     "real_TR_1206" : "TR_1206",

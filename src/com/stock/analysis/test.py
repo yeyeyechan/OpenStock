@@ -49,10 +49,12 @@ def check_3day_data():
 def find_new_stocks():
     stock_mst = make_collection("stock_data", "stock_mst")
     TR_1206_2 = make_collection("stock_data", "TR_1206_2")
+    result_upjong = {}
+    upjong_code_mst = make_collection("stock_data", "upjong_code_mst")
 
     #drop_collection("stock_data", "TR_1206_2")
     test_start_date = "20201224"
-    test_end_date = "20210113"
+    test_end_date = "20210115"
     #check = subprocess.call([sys.executable, basic_path + "\\data\\TR_1206.py", "new_search", test_start_date, test_end_date])
     result = []
     for i in stock_mst.find():
@@ -62,30 +64,50 @@ def find_new_stocks():
         last_data =TR_1206_2.find_one({'단축코드' : i["단축코드"], "일자" : test_end_date})
         if last_data is None:
             continue
-        if int(last_data["외국인순매수누적거래량"]) >  int(first_data["외국인순매수누적거래량"]):
+        if int(last_data["외국인순매수누적거래량"]) >  int(first_data["외국인순매수누적거래량"]) and int(last_data["개인순매수누적거래량"]) <0 and int(last_data["프로그램누적순매수"]) >0:
             print("단축코드   "  + i["단축코드"] + "   외국인 순매수 누적개래량 비교 성공 ")
-            if  (int(last_data["가격"]) -  int(first_data["가격"]))/ int(first_data["가격"]) *100.0 <15.0 and int(last_data["가격"]) *int(last_data["누적거래량"])>=10000000000 :
-                print("가격 상승 15 퍼 이내")
-                check =True
-                '''for j in TR_1206_2.find({"단축코드": i["단축코드"]}):
-                    #if int(j["외국인순매수누적거래량"]) < 0 or int(j["기관순매수누적거래량"]) < 0:
-                    if int(j["외국인순매수누적거래량"]) < 0 :
-                        print("단축코드   " + i["단축코드"] + "   외국인 순매수 or 기관 순매수 누적개래량 음 발견 ")
-                        check = False
-                        break'''
-                if check:
-                    print("최종 합격 발생")
-                    result.append(i["단축코드"])
+            #if  (int(last_data["가격"]) -  int(first_data["가격"]))/ int(first_data["가격"]) *100.0 <15.0 and int(last_data["가격"]) *int(last_data["누적거래량"])>=10000000000 :
+            #    print("가격 상승 15 퍼 이내")
+            check =True
+            for j in TR_1206_2.find({"단축코드": i["단축코드"]}):
+                #if int(j["외국인순매수누적거래량"]) < 0 or int(j["기관순매수누적거래량"]) < 0:
+                if int(j["외국인순매수누적거래량"]) < 0 :
+                    print("단축코드   " + i["단축코드"] + "   외국인 순매수 or 기관 순매수 누적개래량 음 발견 ")
+                    check = False
+                    break
+            if check:
+                for j in upjong_code_mst.find({"단축코드": i["단축코드"]}):
+                    print(j["업종명"], end="")
+                    if not (j["업종명"] in result_upjong.keys()):
+                        result_upjong[j["업종명"]] = 1
+                    else:
+                        result_upjong[j["업종명"]] += 1
+                print("최종 합격 발생")
+                result.append(i["단축코드"])
     result_db_name = "3daySupply"
     to_collection = make_collection("stock_data", result_db_name)
-
-    data = {"일자": "20210114", "stock_code": ""}
+    to_collection.delete_one({"일자": "20210118"})
+    data = {"일자": "20210118", "stock_code": ""}
     data["stock_code"] = result
 
-    update_collection_sec(to_collection, data, {"일자":"20210114"})
+    update_collection_sec(to_collection, data, {"일자":"20210118"})
     print(result)
+    print(result_upjong)
     print(len(result))
 
+def find_top_upjong():
+    result_db_name = "3daySupply"
+    to_collection = make_collection("stock_data", result_db_name).find_one({"일자" : "20210118"})["stock_code"]
+    upjong_code_mst = make_collection("stock_data", "upjong_code_mst")
+
+    data = {"일자" : "20210118", "stock_data": []}
+    for i in to_collection:
+        for j in upjong_code_mst.find({"단축코드" : i}):
+            if j["업종명"] == "제조업" or  j["업종명"] == "제조":
+                data["stock_data"].append(j["단축코드"])
+    monitoring = make_collection("stock_data", "monitoring")
+    drop_collection("stock_data", "monitoring")
+    monitoring.insert_one(data)
 
 
 def print_top_rising_stock():
@@ -115,4 +137,5 @@ if __name__ ==  "__main__":
     #find_new_stocks()
     #check_3day_data()
     #cleansing_data()
-    find_stock()
+    #find_new_stocks()
+    find_top_upjong()

@@ -17,7 +17,7 @@ def TR_SCHART_JOB():
     sched_sc.start()
 if __name__ == "__main__":
     #check = subprocess.call([sys.executable, basic_path + "\\analysis\\analysis3.py"])
-    target_date = "20210114"
+    target_date = "20210115"
     check = True
     TR_1206 = make_collection("stock_data", "TR_1206")
     date = TR_1206.find_one({"단축코드" : "055550"}, sort=[("일자", pymongo.DESCENDING)])["일자"]

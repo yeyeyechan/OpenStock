@@ -91,7 +91,7 @@ class real_indi_object(QMainWindow):
             for key, value in single_output_dict.items():
                 if (indi_object.dynamicCall("GetSingleData(int)", key) == None):
                     print("  key   " + key + "   value    " + value)
-                single_output_data[value.strip()] = indi_object.dynamicCall("GetSingleData(int)", key)
+                single_output_data[value.strip()] = indi_object.dynamicCall("GetSingleData(int)", key).strip()
         if static_pk_dict:
             for key, value in static_pk_dict.items():
                 single_output_data[key.strip()] = value
@@ -211,7 +211,7 @@ class indi_object(QMainWindow):
             single_output_data = {}
             if  self.single_output_dict:
                 for key , value in self.single_output_dict.items():
-                    single_output_data[value.strip()] = self.IndiTR.dynamicCall("GetSingleData(int)", key)
+                    single_output_data[value.strip()] = self.IndiTR.dynamicCall("GetSingleData(int)", key).strip()
             if  self.pk_data_dict:
                 for key , value in self.pk_data_dict.items():
                     single_output_data[key.strip()] = value.strip()
@@ -223,7 +223,7 @@ class indi_object(QMainWindow):
                 if  self.multi_output_dict :
                     multi_output_data = {}
                     for key , value in self.multi_output_dict.items():
-                        multi_output_data[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
+                        multi_output_data[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key).strip()
 
                     final_data = {}
                     final_data.update(single_output_data)
