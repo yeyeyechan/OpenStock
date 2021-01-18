@@ -156,29 +156,30 @@ class indi_object(QMainWindow):
         self.input_dict_list = []
         self.pk_dict_list = []
         self.collection_len = 0
-        self.in_out_builder = InOutBuilder(self.tr_name , com_vari.path_to_tr_file)
+        self.in_out_builder={}
+        self.in_out_builder[self.tr_name] = InOutBuilder(self.tr_name , com_vari.path_to_tr_file)
 
         self.tr_data_list = []
 
     def set_input_data_dict(self, input_data_dict):
         self.input_data_dict = input_data_dict
-        self.in_out_builder.set_input_data_dict(self.input_data_dict)
-        self.single_output_dict = self.in_out_builder.get_single_output_dict()
-        self.multi_output_dict = self.in_out_builder.get_multi_output_dict()
-        self.static_pk_dict = self.in_out_builder.get_static_pk_dict()
+        self.in_out_builder[self.tr_name].set_input_data_dict(self.input_data_dict)
+        self.single_output_dict = self.in_out_builder[self.tr_name].get_single_output_dict()
+        self.multi_output_dict = self.in_out_builder[self.tr_name].get_multi_output_dict()
+        self.static_pk_dict = self.in_out_builder[self.tr_name].get_static_pk_dict()
 
 
     def set_input_data(self,input_data_list):
         self.input_data_list = input_data_list
-        self.in_out_builder.set_input_list(self.input_data_list)
-        self.single_output_dict = self.in_out_builder.get_single_output_dict()
-        self.multi_output_dict = self.in_out_builder.get_multi_output_dict()
-        self.static_pk_dict = self.in_out_builder.get_static_pk_dict()
+        self.in_out_builder[self.tr_name].set_input_list(deepcopy(self.input_data_list))
+        self.single_output_dict = self.in_out_builder[self.tr_name].get_single_output_dict()
+        self.multi_output_dict = self.in_out_builder[self.tr_name].get_multi_output_dict()
+        self.static_pk_dict = self.in_out_builder[self.tr_name].get_static_pk_dict()
 
     def call_tr(self, input_data_dict="first_call"):
         ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
         if input_data_dict =="first_call":
-            self.input_data_dict = self.in_out_builder.get_input_dict()
+            self.input_data_dict = self.in_out_builder[self.tr_name].get_input_dict()
             print(self.input_data_dict)
         if not bool(self.input_data_dict) and input_data_dict =="first_call":
             pass
@@ -197,7 +198,7 @@ class indi_object(QMainWindow):
         TRName = self.rqidD[rqid]
         print("TR data 수신 !!!!    " + TRName)
 
-        self.pk_data_dict = self.in_out_builder.get_pk_dict()
+        self.pk_data_dict = self.in_out_builder[self.tr_name].get_pk_dict()
 
         self.tr_data_list_input = []
         print( self.IndiTR.dynamicCall("GetErrorState()"))
@@ -235,16 +236,18 @@ class indi_object(QMainWindow):
             print("수신 받은 데이터   " +str(self.tr_data_list_input))
             self.tr_data_list.extend(copy(self.tr_data_list_input))
             if len(self.tr_data_list) >= 4000:
+                print("self.tr_data_list  길이   1 " +str(len(self.tr_data_list)))
                 self.collection.insert_many(self.tr_data_list)
                 self.tr_data_list = []
             #print("  tr_data_list   에 추가 되었습니다.....")
-            self.input_data_dict = self.in_out_builder.get_input_dict()
+            self.input_data_dict = self.in_out_builder[self.tr_name].get_input_dict()
             if  bool (self.input_data_dict) :
                 self.call_tr(self.input_data_dict)
             else:
                 print(" 마지막 루프 tr 호출 종료")
                 print(" tr_data_list 가 DB에 저장 됩니다  ")
                 print(self.tr_data_list)
+                print("self.tr_data_list  길이   2 " +str(len(self.tr_data_list)))
                 if self.tr_data_list == [] :
                     print("Tr data list 가 없습니다")
                 else:

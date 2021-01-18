@@ -39,7 +39,7 @@ def TR_SCHART(**kwargs):
                 end_date =date_list[-1].strftime("%Y%m%d")
                 input_dict_list.append(copy([stock_code , graph_kind, time_gap , start_date, end_date, tr_schart_real_count]))
         else:
-            TR_SCHART = indi_object("real_TR_SCHART", IndiControl)
+            TR_SCHART = indi_object("TR_SCHART", IndiControl)
             date_list = get_kr_working_day(start_date, end_date)
             stock_mst = make_collection("stock_data" , "stock_mst")
             input_dict_list = []
@@ -68,13 +68,15 @@ def scheduler_TR_SCHART():
     sched_sc.add_job(real_TR_SCHART, CronTrigger(hour='9-16', minute='*/5'))
     sched_sc.start()
 if __name__ == "__main__":
-    #call_TR_SCHART()
+    call_TR_SCHART("20210115", "20210115")
+
+    '''call_TR_SCHART()
     if sys.argv[1] == "real_time":
         scheduler_TR_SCHART()
     elif sys.argv[1] == "search":
         start_date = sys.argv[2]
         end_date = sys.argv[3]
-        call_TR_SCHART(start_date, end_date)
+        call_TR_SCHART(start_date, end_date)'''
     '''#drop_collection("stock_data", "TR_SCHART")
     app = QApplication(sys.argv)
 

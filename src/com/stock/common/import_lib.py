@@ -20,6 +20,9 @@ from threading import Thread
 import telegram
 import pythoncom
 from copy import copy
+from copy import deepcopy
+from itertools import tee
+
 import requests
 import urllib.parse as urlparse
 from pytimekr.pytimekr import is_red_day
@@ -132,6 +135,8 @@ indiReal_dict = {}
 
 path_to_tr_file = "C:\dev\OpenStock\src\com\stock\\tr_data\Indi_TR.xlsx"
 DEFAILT_TR_DB_NAME ={
+    "upjong_mst" : "upjong_mst",
+    "upjong_code_mst" : "upjong_code_mst",
     "TR_1863" : "TR_1863",
     "TR_1206" : "TR_1206",
     "TR_1206_2" : "TR_1206_2",
@@ -146,6 +151,8 @@ DEFAILT_TR_DB_NAME ={
     "SABA101U1" : "SABA101U1",
 }
 DEFAILT_TR_NAME ={
+    "upjong_mst": "upjong_mst",
+    "upjong_code_mst": "upjong_code_mst",
     "TR_1863" : "TR_1863",
     "TR_1206" : "TR_1206",
     "TR_1206_2" : "TR_1206",

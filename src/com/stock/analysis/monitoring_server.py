@@ -17,7 +17,7 @@ def call_monitor():
 
     for i in monitoring_data:
         SK_data = SK.find_one({"단축코드" : i , "일자" : com_vari.Today_date}, sort=[("체결시간", pymongo.DESCENDING)])
-        SP_data = SP.find_one({"단축코드" : i , "일자" : com_vari.Today_date}, sort=[("체결시간", pymongo.DESCENDING)])
+        SP_data = SP.find_one({"단축코드" : i , "일자" : com_vari.Today_date}, sort=[("시간", pymongo.DESCENDING)])
         TR_SCHART_data = TR_SCHART.find_one({"단축코드" : i , "일자" :"20210115", "시간" : "1530"})
         real_TR_SCHART_data = TR_SCHART.find_one({"단축코드" : i , "일자" :"20210118", "시간" : "0905"})
 

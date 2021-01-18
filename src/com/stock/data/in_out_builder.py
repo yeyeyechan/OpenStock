@@ -28,8 +28,9 @@ class InOutBuilder:
         self.input_data_list = []
         self.input_dict = {}
         self.input_dict_list = []
-
+        self.input_data_iter= {}
         self.pk_dict = {}
+        self.count = 0
 
     def set_input_data_dict(self , input_data_dict):
         self.input_data_dict = input_data_dict
@@ -41,8 +42,10 @@ class InOutBuilder:
 
     def set_input_list(self, input_data_list ):
         self.input_data_list = input_data_list
+        print("   test id  " + str(id(self.input_data_list)))
         print(self.input_data_list)
-        self.input_data_iter = iter(self.input_data_list)
+        print(self.tr_name)
+        self.input_data_iter[self.tr_name], dummy = tee(iter( deepcopy(input_data_list)))
 
     def get_input_data_list(self):
         return self.input_data_list
@@ -69,7 +72,10 @@ class InOutBuilder:
         try:
             self.input_data = []
             self.input_dict = {}
-            self.input_data = next(self.input_data_iter)
+            self.input_dict[self.tr_name] = {}
+            self.input_data = next(self.input_data_iter[self.tr_name])
+            self.count +=1
+            print("test count   "  + str(self.count))
             if type(self.input_data) is list:
                 inner_input_iter = iter(self.input_data)
                 inner_input_data = next(inner_input_iter)
@@ -77,14 +83,14 @@ class InOutBuilder:
                 pass
             for key in self.single_input_index.values:
                 if type(self.input_data) is list :
-                    self.input_dict[key] = inner_input_data
+                    self.input_dict[self.tr_name][key] = inner_input_data
                     inner_input_data = next(inner_input_iter)
                 else:
-                    self.input_dict[key] = self.input_data
-                    self.input_data = next(self.input_data_iter)
-            return self.input_dict
+                    self.input_dict[self.tr_name][key] = self.input_data
+                    self.input_data = next(self.input_data_iter[self.tr_name])
+            return self.input_dict[self.tr_name]
         except StopIteration :
-            return self.input_dict
+            return self.input_dict[self.tr_name]
 
     def get_pk_dict(self):
         for index , value in enumerate(self.single_input):

@@ -9,57 +9,40 @@ upjong_code_mst 설명
 
 
 '''
+def make_upjong_code_mst():
 
-input_dict = {} # tr 호출 인풋 값 dictionary , make_dict 에 배열을 넣어 만들어준다.
-col_name_in = [
-"단축코드",
-"종목명"
-]  # 아웃풋 컬럼명 배열
-col_name = make_dict(col_name_in) # 아웃풋 컬럼명 배열을 index ,value 형태의 dictionary로 변형
-pk_dict = {"업종코드": "", "업종명": "" , "시장명" : ""} # document 간 pk나 중요정보로 추가되어야하는 값
+    upjong_mst = make_collection("stock_data","upjong_mst")
+    upjong_code_mst = make_collection("stock_data","upjong_code_mst")
+    result = []
+    for i in upjong_code_mst.find():
+        upjong_mst_data = upjong_mst.find_one({"업종코드" : i["업종코드"]})
+        i["업종명"] = upjong_mst_data["업종명"]
+        i["시장코드"] = upjong_mst_data["시장코드"]
+        i["시장명"] = upjong_mst_data["시장명"]
+        del i['_id']
+        result.append(copy(i))
+    drop_collection("stock_data", "upjong_code_mst")
+    upjong_code_mst.insert_many(result)
 
 if __name__ == "__main__":
-    drop_collection("stock_data", "upjong_code_mst")
-
-    from_collection = make_collection("stock_data", "upjong_code_mst")
-
-    pk_dict_list = []
-    input_dict_list = []
-
-    for i in from_collection.find({"시장명": "KOSPI"}):
-        input_dict = make_dict([i["업종코드"]])
-        pk_dict["업종코드"] = i["업종코드"]
-        pk_dict["업종명"] = i["업종명"]
-        pk_dict["시장명"] = i["시장명"]
-
-        input_dict_list.append(copy(input_dict))
-        pk_dict_list.append(copy(pk_dict))
-
-    for i in from_collection.find({"시장명": "KOSDAQ"}):
-        input_dict = make_dict([i["업종코드"]])
-        pk_dict["업종코드"] = i["업종코드"]
-        pk_dict["업종명"] = i["업종명"]
-        pk_dict["시장명"] = i["시장명"]
-
-        input_dict_list.append(copy(input_dict))
-        pk_dict_list.append(copy(pk_dict))
-
     app = QApplication(sys.argv)
 
-    collection = make_collection("stock_data", "upjong_code_mst")
-    index =0
-    activate_Tr = tr_object("upjong_code_mst", collection)
+    drop_collection("stock_data", "upjong_code_mst")
 
+    upjong_code_mst = make_collection("stock_data", "upjong_code_mst")
+    upjong_mst = make_collection("stock_data", "upjong_mst")
 
-    collection_len = len(input_dict_list)
-    com_vari.upjong_code_mst_logger.debug("upjong_code_mst 호출 시작")
-    activate_Tr.set_multi_call(input_dict_list, col_name, pk_dict_list, collection_len)
-    com_vari.upjong_code_mst_logger.debug("upjong_code_mst 호출 완료")
+    IndiControl = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
 
+    upjong_code_mst = indi_object("upjong_code_mst", IndiControl)
+
+    input_dict_list = []
+    for i in upjong_mst.find():
+        input_data = []
+        input_data.append((i["업종코드"]))
+        input_dict_list.append(copy(input_data))
+
+    upjong_code_mst.set_input_data(input_dict_list)
+    upjong_code_mst.call_tr()
     app.exec_()
-
-    total_upjong_code_mst_count = make_collection("stock_data", "upjong_code_mst").estimated_document_count()
-
-    print("실제 db 적제된 document 갯수     "+str(total_upjong_code_mst_count) )
-
-    print("원래")
+    make_upjong_code_mst()
